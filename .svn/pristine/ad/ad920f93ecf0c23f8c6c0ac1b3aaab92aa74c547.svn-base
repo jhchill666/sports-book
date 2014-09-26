@@ -1,0 +1,36 @@
+<aside id="content-side-panel-bets">
+    <div id="bet-slip" class="include">
+  
+		<div class="tab-bar-betslip">
+			<ul>
+				<li><a id="tab-nav-closed">Settled</a></li>
+				<li><a id="tab-nav-open">Open</a></li>
+				<li class="active"><a id="tab-nav-singles">Bet Slip</a></li>
+				
+			</ul>
+		</div>
+
+       <!-- <header>
+            <h2>Bet Slip <a id="clear-bets-button"><i class="fa fa-times"></i> Clear</a>
+                <a id="open-bets-button"><i class="fa fa-times"></i> Open</a></h2>
+        </header>
+        
+        --->
+        
+        <div class="bet-slip-content">
+            <div id="tab-single">
+            	<section class="singles" id="bets-singles"></section>
+				<section class="multiples" id="bets-multiples"></section>
+				<section class="bet-placed" id="bets-confirmation"></section>
+            </div>
+            <div id="tab-open">
+            	<section class="bet-placed" id="bets-open"></section>
+            </div>
+            <div id="tab-settled">
+	             <section class="bet-placed" id="bets-closed"></section>
+            </div>
+          
+        </div>
+    </div>
+
+</aside>

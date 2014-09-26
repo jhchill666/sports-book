@@ -1,0 +1,135 @@
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+define([
+    'marionette',
+    'text!app/view/main/highlights/MatchHighlightsView.tpl.html'
+],
+        function (Marionette, tpl) {
+            return Marionette.View.extend({
+
+
+                dependencies: 'pm=eventSchedulePM, vent',
+                template: _.template(tpl),
+
+
+                /**
+                 *
+                 */
+                ready: function () {
+                    _.bindAll(this, 'onDataComplete', 'onPriceFormatChange');
+
+                    this.pm.on("onDataComplete", this.onDataComplete, this);
+                    this.pm.on("onInplayIncidentChange", this.onInplayIncidentChange, this);
+                    this.pm.on("onParticipantChange", this.onParticipantChange, this);
+
+                    this.vent.bind('globals:priceFormatChange', this.onPriceFormatChange);
+                },
+
+
+                /**
+                 *
+                 */
+                onShow: function () {
+                    this.onDataComplete(this.pm.schedule);
+                },
+
+
+                /**
+                 * @param schedule
+                 */
+                onDataComplete: function (schedule) {
+                    if (_.isUndefined(schedule)) return;
+
+                    var sport = App.globals.sport;
+                    var locale = App.globals.locale;
+
+                    var balancedMarkets = [];
+
+                    // prematch
+                    var mkts = _.each(schedule.attributes.prematch, function (market, val) {
+                        _.each(market, function (att, it) {
+                            if (_.isObject(att.markets)) {
+                                return att.markets;
+                            }
+                        });
+                    });
+
+                    _.each(mkts, function (markets, num) {
+
+                        var data = markets;
+                        var mkts = [];
+
+                        _.each(markets.attributes.markets, function (attr, val) {
+                            if (attr.mostBalanced == true) {
+                                mkts[val] = attr;
+                            }
+                        });
+
+                        balancedMarkets.push({
+                            markets: mkts,
+                            data: data.data,
+                            attributes: markets.attributes
+                        });
+
+                    });
+
+                    var args = {schedule: schedule, locale: locale, sport: sport, balancedMarkets: balancedMarkets, format: App.globals.priceFormat};
+                    this.$el.html(this.template(args));
+
+
+                    $('.hl-list-item').hover(function () {
+
+                        var panelNum = $(this).attr('panel');
+                        var backgroundImg = $(this).attr('backgroundImage');
+
+                        $('#market-highlights .show').removeClass('show');
+
+                        $('#panel-' + panelNum).parent().attr('style', 'background-image:url("images/' + backgroundImg + '");');
+
+                        $('#panel-' + panelNum + ' > div').addClass('show');
+                        $(this).addClass('active');
+
+                    }, function () {
+                        $(this).removeClass('active');
+                    });
+                },
+
+
+                /**
+                 * Handle price format changes - simply re-render the view
+                 */
+                onPriceFormatChange: function() {
+                    this.onDataComplete(this.pm.schedule);
+                },
+                
+
+                /**
+                 * @param event
+                 */
+                onParticipantChange: function (event) {
+                    var eventId = event.id;
+                    var participantAel = 'event-schedule-participant-a-' + eventId;
+                    $('#' + participantAel).html(event.getParticipantA());
+
+                    var participantBel = 'event-schedule-participant-b-' + eventId;
+                    $('#' + participantBel).html(event.getParticipantB());
+                },
+
+
+                /**
+                 * @param incident
+                 */
+                onInplayIncidentChange: function (incident) {
+                    var score = incident.getGoalScore();
+                    var eventId = incident.attributes.eventId;
+                    var inplayEl = 'event-schedule-inplay-score-' + eventId;
+                    $('#' + inplayEl).html(score);
+                }
+            });
+        });
+
+

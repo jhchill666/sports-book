@@ -1,0 +1,68 @@
+/**
+ * Created by Jamie on 18/09/2014.
+ */
+define([
+        'marionette',
+        'common/util/IdUtil'
+    ],
+    function(Marionette, IdUtil) {
+
+        return Marionette.View.extend({
+
+
+            dependencies: 'vent, oddsFactory, schedule=eventScheduleModel',
+            priceChangedMap: [],
+            events: {
+                'click a[id*=-selection-]': 'onSelectionClick'
+            },
+
+
+            /**
+             *
+             */
+            initialize: function() {
+                _.bindAll(this, 'onSelectionPriceChange');
+            },
+
+
+            /**
+             *
+             */
+            ready: function() {
+                this.vent.on('app:timer', this.onGlobalTimerEvent);
+                this.vent.bind('selection:priceChange', this.onSelectionPriceChange);
+            },
+
+
+            /**
+             * @param event
+             */
+            onSelectionClick: function(event) {
+                var id = $(event.currentTarget).attr('id'),
+                    eventId = $(event.currentTarget).attr('eventid');
+
+                this.vent.trigger('selection:click', {
+                    selectionId: IdUtil.extract(id),
+                    eventId: IdUtil.extract(eventId)
+                });
+            },
+
+
+            /**
+             * @param selection
+             */
+            onSelectionPriceChange: function(s) {
+                var newOdds  = this.oddsFactory.getOdds(App.globals.priceFormat, s),
+                    priceUp  = (s._previousAttributes.decimalOdds > s.attributes.decimalOdds);
+
+                var element = $("a[id*='-selection-"+s.id+"']"),
+                    clazz   = (priceUp) ? "priceUp" : "priceDown";
+
+                element.find('em').html(newOdds);
+                element.addClass(clazz);
+
+                // kill the anim after x milliseconds
+                _.delay(function() { element.removeClass(clazz); }, 10000);
+            }
+        });
+    });

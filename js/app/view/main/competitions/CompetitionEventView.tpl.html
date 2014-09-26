@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<section class="include">
+
+ 	<header><h2 class="team"><%= compName %><span class="icon-edit cog"></span></header>
+ 	
+    <ul class="comp-markets">
+        
+        <% var sortedEvents = _.sortBy(events, function(obj){return obj.attributes.name;})%>
+        
+		<% _.each(sortedEvents, function(event) {
+			if(event.attributes.numMarkets != 0){
+		
+			var data = event.Markets.models; %>
+					
+			<div class="market-content">
+                <ul class="market h2h in-play active">
+                
+                    <li id="event-schedule-market-<%= event.id%>" class="<% if( event.attributes.state == 'SUSPENDED'){ %>disabled<%}%> <%=(event.getInplay() == true) ? 'inplay' : ''%>">
+                       
+                       
+                            <div class="time">
+                            
+                             <% if (event.attributes.state == 'SUSPENDED') { %><span class="suspendedTag">Suspended</span><% } %>
+                             
+                             <% if(event.getInplay() == true) { %>
+							 
+	                       	  <em>IN PLAY</em>
+	                       	  <span><%=event.getInplayClock() %></span>
+	                       
+	                        <% } else { %>
+	                      	
+	                      	  <%=moment(event.get('eventTime')).format("h:mm a") %>
+	                        
+	                        <% } %>
+	                        
+							</div>
+
+                       
+                       
+                        <div class="selection">
+							<% if( event.attributes.name != "undefined" && event.attributes.name != 0){ %>
+								 <a href="#<%=sport%>/event/<%=event.id%>">
+									 <span class="team"><%= event.attributes.name %></span>  
+                        		</a> 
+                        	<% } %>
+                        </div>
+                        
+                        <div class="table-wrapper">
+                        	<div class="table">
+	                          <div class="table-row">
+	                          
+		                        <% _.each(data, function(market, index) { 
+		                        	if (index <= 4) {%>
+								
+			                        <div class="prices">
+			                            <span class="market-title"><%= market.attributes.name%></span>
+			                           
+			                            <div class="table">
+			                                <div class="table-row">
+			                                    <% _.each(market.Selections.models, function(s) { %>
+			                                  
+			                                    <div>
+			                                    <a id="event-schedule-selection-<%=s.id%>" eventid="event-schedule-selection-<%=event.attributes.id%>"><i><%=s.type%></i><em><%=s.getOdds(format)%></em></a></div>
+			                                    <% }); %>
+			                                </div>
+			                            </div>
+			                        </div>
+			                        
+		                        <% };
+		                        
+		                        }); %>
+		                        
+	                         </div>
+	                       </div>
+                        </div>
+                        
+                        <div class="options">
+                      	  <a href="#<%=sport%>/event/<%=event.attributes.id%>"><div class="more">+<%= event.attributes.numMarkets %><span>more</span></div></a>
+                      	  
+                        </div>
+                        
+                     
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+
+   
+   
+    <% };}); %>
+   
+   
+    </ul>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+

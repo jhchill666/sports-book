@@ -1,0 +1,605 @@
+.inplay-panel {
+  min-height: 312px;
+  width: 320px;
+  background: #494949;
+  /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover, #494949 9%, #2f2f2f 71%);
+  /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(9%, #494949), color-stop(71%, #2f2f2f));
+  /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover, #494949 9%, #2f2f2f 71%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover, #494949 9%, #2f2f2f 71%);
+  /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover, #494949 9%, #2f2f2f 71%);
+  /* IE10+ */
+  background: radial-gradient(ellipse at center, #494949 9%, #2f2f2f 71%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#494949', endColorstr='#2f2f2f', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+  padding-top: 12px;
+  margin: auto;
+  position: relative;
+}
+.inplay-panel * {
+  font-family: "open_sanscondensed_light";
+  font-weight: 600;
+}
+.inplay-panel .progressBar {
+  height: 15px;
+  width: 300px;
+  background-color: #292F33;
+  margin: auto;
+  box-shadow: inset 0px 0px 23px rgba(0, 0, 0, 0.65);
+  border-radius: 2px;
+  clear: both;
+  position: relative;
+  margin-bottom: 15px;
+}
+.inplay-panel .progressBar .time {
+  height: 20px;
+  width: 60px;
+  background: #49565c;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #49565c 0%, #414c51 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #49565c), color-stop(100%, #414c51));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #49565c 0%, #414c51 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #49565c 0%, #414c51 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #49565c 0%, #414c51 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #49565c 0%, #414c51 100%);
+  /* W3C */
+  border: 1px solid #202325;
+  position: absolute;
+  left: 50%;
+  margin-left: -31px;
+  border-radius: 4px;
+  z-index: 10;
+  margin-top: -15px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+.inplay-panel .progressBar .time i {
+  float: left;
+  margin-top: 2px;
+  margin-left: 4px;
+}
+.inplay-panel .progressBar .time span {
+  display: block;
+  float: right;
+  text-align: center;
+  font-size: 13px;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.27);
+  font-weight: 800;
+  margin-top: 3px;
+  font-family: 'open_sans_condensedbold';
+  margin-right: 4px;
+}
+.inplay-panel .progressBar .activeBar {
+  background: #608229;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #608229 0%, #74a02f 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #608229), color-stop(100%, #74a02f));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #608229 0%, #74a02f 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #608229 0%, #74a02f 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #608229 0%, #74a02f 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, #608229 0%, #74a02f 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#608229', endColorstr='#74a02f', GradientType=1);
+  /* IE6-9 */
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 75%;
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.22);
+  border-radius: 2px 0px 0px 2px;
+}
+.inplay-panel .teams {
+  height: 55px;
+  width: 300px;
+  margin: auto;
+  font-family: "open_sanscondensed_light";
+}
+.inplay-panel .teams .team {
+  float: left;
+  width: 50%;
+  text-align: right;
+  color: #fff;
+  font-size: 26px;
+  position: relative;
+}
+.inplay-panel .teams .team .loc {
+  font-size: 11px;
+  color: #8B8E8F;
+  float: right;
+  font-family: 'open_sans_condensedbold';
+}
+.inplay-panel .teams .team .name {
+  float: right;
+  margin-top: 2px;
+  clear: both;
+}
+.inplay-panel .teams .team .score {
+  float: left;
+  font-size: 36px;
+  margin-left: 13px;
+  margin-top: -5px;
+  position: relative;
+  z-index: 100;
+}
+.inplay-panel .teams .team:first-child {
+  text-align: left;
+}
+.inplay-panel .teams .team:first-child .loc {
+  float: left;
+}
+.inplay-panel .teams .team:first-child .name {
+  float: left;
+}
+.inplay-panel .teams .team:first-child .score {
+  float: right;
+  margin-right: 10px;
+}
+.inplay-panel .teams .team:first-child .flash {
+  left: auto;
+  right: -11px;
+  top: -5px;
+}
+.inplay-panel .v {
+  position: absolute;
+  left: 50.07%;
+  margin-top: 12px;
+  font-size: 24px;
+  color: #84888B;
+  margin-left: -4px;
+}
+.inplay-panel .msg {
+  height: 25px;
+  border-top: 1px solid #565B5E;
+  padding-top: 3px;
+  width: 300px;
+  margin: auto;
+}
+.inplay-panel .msg span {
+  color: #CACDCE;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 700;
+  font-size: 9px;
+}
+.inplay-panel .statRow {
+  width: 300px;
+  margin: auto;
+  margin-top: 15px;
+}
+.inplay-panel .statRow .stats {
+  float: left;
+  width: 100%;
+  margin-bottom: 4px;
+  color: #fff;
+  text-align: center;
+}
+.inplay-panel .statRow .stats > span {
+  display: block;
+  margin-top: 1px;
+  text-transform: uppercase;
+  font-family: 'open_sans_condensedbold';
+  font-weight: 500;
+  font-size: 16px;
+  color: #8B8E8F;
+}
+.inplay-panel .statRow .stats .left {
+  float: left;
+}
+.inplay-panel .statRow .stats .right {
+  float: right;
+}
+.inplay-panel .statRow .stats .left span,
+.inplay-panel .statRow .stats .right span {
+  color: #fff;
+  font-size: 18px;
+  font-family: 'open_sans_condensedbold';
+  font-weight: 500;
+}
+.inplay-panel .statRow .shotsBar {
+  height: 8px;
+  background-color: #3C80A7;
+  margin: auto;
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.37);
+  border-radius: 2px;
+  clear: both;
+  position: relative;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #31363A;
+}
+.inplay-panel .statRow .shotsBar .activeBar {
+  background: #96C5DD;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 35%;
+  box-shadow: inset 0px 1px 0px #CDE4F1;
+  border-radius: 2px 0px 0px 2px;
+  border-right: 1px solid #BBDBEB;
+}
+.inplay-panel .statRow .shotsBar .flare {
+  position: absolute;
+  top: -11px;
+  margin-left: -79px;
+}
+.inplay-panel .statRow .shotsBar .flare div {
+  height: 30px;
+  width: 159px;
+  background-image: url('../images/inplay-assests/row-flare.png');
+}
+.inplay-panel .pitch {
+  background-image: url('../images/inplay-assests/baseball-field.png');
+  height: 150px;
+  width: 300px;
+  margin: auto;
+  border-radius: 2px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.21);
+  border-top: 1px solid #214352;
+  border-bottom: 2px solid #212B11;
+  position: relative;
+  margin-bottom: 23px;
+  border-radius: 3px;
+}
+.inplay-panel .pitch .hide {
+  opacity: 0;
+  filter: alpha(opacity=00);
+  /* For IE8 and earlier */
+}
+.inplay-panel .pitch .sm {
+  color: #EEE259;
+  font-size: 15px;
+  text-shadow: 0px 0px 8px #000;
+}
+.inplay-panel .pitch .lg {
+  color: #FFF;
+  font-size: 18px;
+  text-shadow: 0px 0px 9px #000;
+}
+.panelCover {
+  position: absolute;
+  top: -10px;
+  bottom: 0;
+  left: -1px;
+  right: -1px;
+  border-radius: 3px;
+  background-color: #31373C;
+  z-index: 200;
+}
+.panelCover span {
+  color: #fff;
+  display: block;
+  text-align: center;
+  margin-top: 100px;
+}
+.buttonBox {
+  width: 200px;
+  position: fixed;
+  min-height: 100px;
+  top: 2px;
+  line-height: 1px;
+}
+.buttonBox a {
+  display: block;
+  padding: 2px 2px;
+  border-radius: 3px;
+  border: 1px solid #113246;
+  background-color: #3C80A7;
+  margin: 10px;
+  margin-right: 20px;
+  color: #FFF;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.23);
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.26);
+  font-size: 16px;
+  line-height: 20px;
+  padding-bottom: 4px;
+  font-weight: 600;
+}
+.buttonBox a.sm {
+  font-size: 16px;
+  background-color: #2C9B77;
+}
+.buttonBox a.small {
+  width: 25%;
+  float: left;
+  margin: 0;
+  margin-left: 2%;
+  margin-top: 4px;
+}
+.buttonBox.left {
+  left: 0;
+}
+.buttonBox.right {
+  right: 0;
+}
+.buttonBox .grid-btns {
+  margin-left: 6px;
+}
+.diamond {
+  background-image: url('../images/inplay-assests/diamond.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 170px;
+  width: 170px;
+  margin-top: -10px;
+  margin-left: -10px;
+}
+.toggle-target {
+  background-image: url('../images/inplay-assests/target-pattern.png');
+  height: 70px;
+  width: 70px;
+  box-shadow: 0px 0px 11px #DACA65;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  right: 45px;
+  border: 1px solid #DACA65;
+  opacity: 0;
+}
+.toggle-target .target-area {
+  height: 22px;
+  width: 22px;
+  border: 1px solid #FD2222;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  box-shadow: 0px 0px 14px #F00;
+  background-color: rgba(255, 0, 0, 0.22);
+  background-image: url('../images/inplay-assests/target-area.png');
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.toggle-target #toggle-area-tl {
+  top: -1px;
+  left: -1px;
+}
+.toggle-target #toggle-area-tm {
+  top: -1px;
+  left: 23px;
+}
+.toggle-target #toggle-area-tr {
+  top: -1px;
+  left: 47px;
+}
+.toggle-target #toggle-area-ml {
+  top: 23px;
+  left: -1px;
+}
+.toggle-target #toggle-area-mm {
+  top: 23px;
+  left: 23px;
+}
+.toggle-target #toggle-area-mr {
+  top: 23px;
+  left: 47px;
+}
+.toggle-target #toggle-area-bl {
+  top: 47px;
+  left: -1px;
+}
+.toggle-target #toggle-area-bm {
+  top: 47px;
+  left: 23px;
+}
+.toggle-target #toggle-area-br {
+  top: 47px;
+  left: 47px;
+}
+.toggle-waiting {
+  opacity: 0;
+}
+.toggle-strike {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.toggle-strike .statusText {
+  color: #FAD51A;
+  left: -14px;
+  z-index: 20;
+  text-shadow: 0px 0px 7px #000;
+  font-family: 'open_sans_condensedbold';
+  top: 28px;
+  font-weight: 500;
+}
+.toggle-strike .flash {
+  background-image: url('../images/inplay-assests/glove-flash.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 174px;
+  height: 150px;
+  bottom: 0;
+  right: -16px;
+  position: absolute;
+  opacity: 0;
+}
+.toggle-strike .glove-ball {
+  background-image: url('../images/inplay-assests/glove-ball.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 174px;
+  height: 150px;
+  bottom: -46px;
+  right: 0px;
+  position: absolute;
+  opacity: 0;
+}
+.toggle-strike .glove {
+  width: 174px;
+  height: 150px;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  overflow: hidden;
+}
+.toggle-strike .glove .glove-inner {
+  background-image: url('../images/inplay-assests/glove.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 174px;
+  height: 150px;
+  bottom: -122px;
+  right: -56px;
+  position: absolute;
+}
+.toggle-strike .ball {
+  background-image: url('../images/inplay-assests/ball-moving.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 174px;
+  height: 38px;
+  bottom: 27px;
+  right: -185px;
+  position: absolute;
+  opacity: 0;
+}
+.toggle-strike .strike-count {
+  background-repeat: no-repeat;
+  background-position: center center;
+  bottom: -29px;
+  right: -30px;
+  position: absolute;
+  width: 111px;
+  height: 91px;
+  background-size: 83%;
+  opacity: 0;
+}
+.toggle-strike .strike-count.one {
+  background-image: url('../images/inplay-assests/strike-1.png');
+}
+.toggle-strike .strike-count.two {
+  background-image: url('../images/inplay-assests/strike-2.png');
+}
+.toggle-strike .strike-count.three {
+  background-image: url('../images/inplay-assests/strike-3.png');
+}
+.toggle-left,
+.toggle-top,
+.toggle-right,
+.toggle-bottom {
+  height: 70px;
+  width: 70px;
+  background-image: url('../images/inplay-assests/pitch-highlight-left.png');
+  position: absolute;
+  top: 44px;
+  left: -23px;
+  opacity: 0;
+}
+.toggle-top {
+  background-image: url('../images/inplay-assests/pitch-highlight-top.png');
+  top: -22px;
+  left: 42px;
+}
+.toggle-right {
+  background-image: url('../images/inplay-assests/pitch-highlight-right.png');
+  top: 43px;
+  left: 110px;
+}
+.toggle-bottom {
+  background-image: url('../images/inplay-assests/pitch-highlight-bottom.png');
+  top: 111px;
+  left: 41px;
+}
+.statusText {
+  color: #FFF;
+  font-size: 24px;
+  text-shadow: 0px 0px 8px #000;
+  position: absolute;
+  top: 37px;
+  left: 50%;
+  display: block;
+  text-align: center;
+  right: 7px;
+}
+.cam-1 {
+  background-image: url('../images/inplay-assests/camera-flash.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 106px;
+  width: 106px;
+  position: absolute;
+  top: -13px;
+  left: 109px;
+  opacity: 0;
+}
+.cam-2 {
+  background-image: url('../images/inplay-assests/camera-flash.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 106px;
+  width: 106px;
+  position: absolute;
+  top: -23px;
+  right: -10px;
+  opacity: 0;
+}
+.cam-3 {
+  background-image: url('../images/inplay-assests/camera-flash-2.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 106px;
+  width: 106px;
+  position: absolute;
+  top: 8px;
+  left: 146px;
+  opacity: 0;
+}
+.cam-4 {
+  background-image: url('../images/inplay-assests/camera-flash-3.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 106px;
+  width: 106px;
+  position: absolute;
+  top: 30px;
+  right: -20px;
+  opacity: 0;
+}
+.cam-5 {
+  background-image: url('../images/inplay-assests/camera-flash-2.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 106px;
+  width: 106px;
+  position: absolute;
+  top: -23px;
+  left: 82px;
+  opacity: 0;
+}
+.cam-6 {
+  background-image: url('../images/inplay-assests/camera-flash-3.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 106px;
+  width: 106px;
+  position: absolute;
+  top: -14px;
+  left: -38px;
+  opacity: 0;
+}
+.baseball-still {
+  background-image: url('../images/inplay-assests/baseball-ball.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 90px;
+  height: 60px;
+  position: absolute;
+  bottom: 0;
+  right: 38px;
+}

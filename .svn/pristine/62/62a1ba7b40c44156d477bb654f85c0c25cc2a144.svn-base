@@ -1,0 +1,31 @@
+define(['backbone.command', 'ctx'], function (Command, ctx){
+    return Command.extend({
+
+        execute: function( sports ){
+            if (_.isUndefined(sports)) return;
+
+            var service = ctx.get('apiService');
+            var allSports = _.map(sports.split(','), function(sport) {
+                return sport.toUpperCase();
+            });
+
+            return service.getKeyMarketsForSports(allSports.join(','));
+        },
+
+        
+        success: function(resp){
+            if (_.has(resp, 'Attributes')){
+                var model = ctx.get('eventScheduleModel');
+                var keyMarketsMap = [];
+                var attrib = resp.Attributes.attrib;
+                _.each(attrib, function(val){
+                    keyMarketsMap[val.key] = val.value;
+                });
+                model.setKeyMarketTypes(keyMarketsMap);
+            }
+        },
+        
+        
+    });
+});
+

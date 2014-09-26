@@ -1,0 +1,46 @@
+<ul class="bet-selections dialog-messages">
+    <li class="dialog">
+        <div>
+            <h3>Bet(s) Placed</h3>
+            <p>Ref: PS/455455455455<p>
+        </div>
+    </li>
+</ul>
+
+<ul class="bet-slip-head">
+    <li>
+        <div class="selection">Selection</div>
+        <div class="odds">Odds</div>
+        <div class="stake">Stake</div>
+    </li>
+</ul>
+
+
+<ul class="bet-selections">
+    <% _.each(bets, function(bet) { console.log('bet::', bet); %>
+    
+    <ul class="event">
+        <li><h3><%= bet.eventName() %></h3>
+            <ul class="bet-selections">
+                <li>
+                    <div class="row">
+                        <div class="selection">
+                            <h3><%= bet.selectionName() %></h3>
+                            <p>Win</p>
+                        </div>
+                        <div class="bet-value"><%= bet.fractionalOdds() %></div>
+                        <div class="bet-option"><em>EW</em></div>
+                        <div class="stake">
+                            <em><%= bet.totalStake() %></em>
+                        </div>
+                    </div>
+                    <div class="row2">
+                        <div class="option">Ref: <%= bet.betPlacedRef %></div>
+                        <div class="returns">Returns: &pound;<span><%= bet.estimatedReturnsDisplayVal() %></div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+ <% }); %>   
+</ul>

@@ -1,0 +1,19 @@
+<section class="top">
+
+    <nav>
+        <ul class="sports more">
+            <li><a href="#<%=sport %>"><strong><%=StringUtil.properCase(StringUtil.humanize(sport))%><i class="fa fa-chevron-down"></i></strong></a>
+            	 <ul class="all-sports">
+	                <li><a href="#soccer">Soccer</a></li>
+	                <li><a href="#baseball">Baseball</a></li>
+	                <li><a href="#basketball">Basketball</a></li>
+	                <li><a href="#handball">Handball</a></li>
+                    <li><a href="#volleyball">Volleyball</a></li>
+                    <li><a href="#american_football">American Football</a></li>
+                    <li><a href="#ice_hockey">Ice Hockey</a></li>
+                 </ul>
+            </li>
+            
+        </ul>
+    </nav>
+</section>

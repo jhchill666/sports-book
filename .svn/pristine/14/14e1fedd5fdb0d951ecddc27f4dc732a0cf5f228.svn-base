@@ -1,0 +1,154 @@
+@reg-width:800px;
+@login-width:420px;
+
+/* FIX FOR OVERRIDING MODAL STYLING */
+
+
+#modals{
+
+	.inner {
+        display: table;
+        width: 100%;
+        font-size: 14px;
+        padding: 4px 20px;
+    }
+    label {
+        display: table-cell;
+        width: 100px;
+        text-align: right;
+        padding-right: 10px;
+    }
+    input {
+        padding-left: 20px;
+        width: 100%;
+        font-size: 14px;;
+    }
+    #feedback {
+        width: 100%;
+        color: #e80037;
+        text-align: right;
+    }
+
+	
+	&.registerPop{
+		.bbm-wrapper{
+			.bbm-modal{
+				max-width: 800px;
+				.bbm-modal__section{
+					.inner{
+						label{
+							width:110px;
+						}
+					}			
+				}
+			}
+		}
+	}
+	&.loginPop{
+		.bbm-modal{
+			max-width: 420px;
+		}
+	}
+	.bbm-wrapper{
+		padding:10px;
+		padding-top:10%;
+		position:fixed;
+		.bbm-modal{
+			background: none;
+			width: auto;
+			.bbm-modal__topbar{
+				.opacity-90();
+				border-bottom:2px solid @blue1;
+				margin-bottom:1px;
+				padding: 0 15px;
+				
+				.bbm-button.close{
+					padding:5px 0;
+					background-color: @grey4;
+					color:@white;
+					position: absolute;
+					right: 15px;
+					top: 10px;
+					width: 25px;
+					height: 25px;
+					text-align: center;
+					
+					&:hover{
+						background-color: @grey2;
+						text-decoration: none;
+					}
+				}		
+				.bbm-modal__title{
+					background-color: none;
+					color: #46AFE4;
+					font-weight: bold;
+					font-size: 20px;
+					padding: 15px 0 15px 0;
+					text-shadow: 0 0 3px black;
+				}
+			}
+					
+			.bbm-modal__section{
+				padding:25px 15px;
+				color:@white;
+				font-weight:bold;
+				background-color: @grey2;
+				.left, .right{
+					width: 44%;
+					display: inline-table;
+				}
+				.inner{
+					font-size:12px;
+					padding: 2px 0;
+					
+					label{
+						width: 78px;
+						padding-right:18px;
+						text-align:right;
+					}
+			
+					input, textarea, keygen, select{
+						outline: none !important;
+						border: 0px solid transparent;
+						box-shadow: 0 0 1px #000000;
+						padding: 6px 10px;
+						.border-radius(3px);
+				    }
+				    
+					input:focus, textarea:focus, keygen:focus, select:focus{
+					 	outline: none !important;
+					 	border:0px solid @grey1;
+					 	box-shadow: 0 0 6px #000000;
+					}
+				}
+			}
+			.bbm-modal__bottombar{
+				.opacity-90();
+				padding:15px;
+				margin-top:0px;
+				
+				.bbm-button{
+					box-shadow:none;
+					
+					&.submit{
+						.btn(@blue1, @blue1, @white);
+						width: 88px;
+						display:inline-block;
+						border:none;
+					}
+					&.clear{
+						.btn(@grey4, @grey4, @white);
+						width: 88px;
+						display:inline-block;
+						border:none;
+						margin-right:5px;
+						&:hover{
+							background: @grey2;
+						}
+					}
+				}
+				
+			}
+		}
+	}
+}

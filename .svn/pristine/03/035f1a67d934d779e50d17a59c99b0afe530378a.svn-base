@@ -1,0 +1,56 @@
+define([
+    'marionette',
+    'text!app/view/main/markets/MarketGroups.tpl.html'
+],
+        function(Marionette, tpl) {
+            return Marionette.View.extend({
+
+
+                dependencies: 'marketGroupsViewPM',
+                template: _.template(tpl),
+
+
+                events: {
+                    'click ul li a': 'onMarketGroupClick'
+                },
+
+
+                /**
+                 * @param options
+                 */
+                ready: function(options) {
+                    this.pm = this.marketGroupsViewPM;
+                    this.pm.on("onDataComplete", this.onDataComplete, this);
+                },
+
+
+                /**
+                 * @param event
+                 */
+                onMarketGroupClick: function(event) {
+                    var marketGroupType = $(event.target).attr('marketGroupType');
+                    this.pm.filterByMarketGroup(marketGroupType);
+                   
+					$('.nav-pills li').removeClass('active');
+					$(event.target).parent('li').addClass('active');
+                },
+
+
+                /**
+                 * @param marketGroups
+                 */
+                onDataComplete: function(marketGroups) {
+                    var that = this;
+                    var args = {data:marketGroups};
+                    this.$el.html(this.template(args));
+                    
+                	if ($('.nav-pills li a').length > 0) {
+						$('.nav-pills li a').click(function(e) {
+                            that.onMarketGroupClick(e);
+						});
+					}
+                }
+            });
+        });
+
+        

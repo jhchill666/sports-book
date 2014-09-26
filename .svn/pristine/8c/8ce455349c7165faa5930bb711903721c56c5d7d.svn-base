@@ -1,0 +1,216 @@
+define(['backbone',
+        'app/model/Market',
+        'common/util/CollectionUtil',
+        'app/collection/MarketsCollection',
+        'ctx'
+],
+function (Backbone, Market, collection, MarketsCollection, ctx) {
+    return Backbone.Model.extend({
+
+        marketsCollection:null,            
+
+        defaults: {
+            id : 0,
+            code:'', //SOCCER
+            compId : 0,
+            name : "",
+            state : "ACTIVE",
+            displayed : true,
+            offeredInplay : false,
+            formattedEventTime:'',
+            eventTime : 0,
+            numMarkets : 0,
+            inplay: false,
+            genericInplayAttribs: {
+                score: '',
+                period: '',
+                clock: '',
+                participantA: '',
+                participantB: ''
+            }
+        },
+
+        initialize: function( options ) {
+            this.populate(options);
+        },
+
+        populateDefaults: function(data) {
+            var scope = this;
+            scope.data = data;
+            _.each(data, function(val, key){
+                if (key == 'id') scope.set('id', val);
+                if (_.has(scope.defaults, key)) {
+                    if (scope.attributes[key] != val) {
+                        if (key == 'state') {
+                            if (val == 'S') {
+                                val = 'SUSPENDED';
+                            }
+                            if (val == 'A') {
+                                val = 'ACTIVE';
+                            }
+                            if (val == 'V') {
+                                val = 'VOID';
+                            }
+                        }
+
+                        if (key == 'displayed') {
+                            if (val == 0) {
+                                val = false;
+                            }
+                            if (val == 1) {
+                                val = true;
+                            }
+                        }
+
+                        scope.set(key, val);   
+                    }   
+                }
+            });
+        },
+        
+        populate: function(data){
+            var scope = this;
+            scope.data = data;
+            this.populateDefaults(data);
+
+            if (_.has(data, 'markets')) {
+                this.marketsCollection = this.parseMarkets(data.markets, this.id);   
+            }
+            
+            if (_.has(data, 'attributes')) {
+                var map = _.clone(scope.get("genericInplayAttribs"));
+                var mapChanged = false;
+                _.each(data.attributes.attrib, function(obj){
+                    if (_.has(map, obj.key)) {
+                        map[obj.key] = obj.value;   
+                        mapChanged = true;
+                        scope.setInplay(true);
+                    }
+                });
+                if (mapChanged)
+                this.set("genericInplayAttribs", map);
+            }
+        },
+
+        populateFromEventTradingState: function(data) {
+            var scope = this;
+            scope.data = data;
+            this.populateDefaults(data);
+            
+            if (_.has(data, 'prices')) {
+                var marketsArray = data.prices.market;
+                _.each(marketsArray, function(marketObj){
+                    var marketId = marketObj.id;
+                    if (_.has(marketObj, 'channel')) {
+                        if ( marketObj.channel.length >0 ) {
+                            marketObj.selection = marketObj.channel[0].selection;    
+                        }  
+                    }
+                    
+                    var market = scope.findMarket(marketObj.id);
+                    if (_.isUndefined(market)) {
+                        var newMarket = new Market(marketObj, scope.id);
+                        scope.marketsCollection.add(newMarket);
+                    } else {
+                        scope.listenToOnce(market,"change", scope.onMarketPropertyChange);
+                        market.populate(marketObj);
+                    }
+                    
+                });   
+            }
+        },
+
+        onMarketPropertyChange: function(market) {
+            var vent = ctx.get("vent");
+            //FIXME MAKE THIS OBJECT STRONG.
+            var changedObj = {};
+            changedObj.eventId = market.eventId;
+            changedObj.id = market.id;
+            changedObj.changed = market.changed;
+            vent.trigger('market:propertyChange', changedObj);
+        },
+
+        setInplay: function(isInplay) {
+            this.set('inplay',isInplay);
+        },
+        
+        getInplay: function(isInplay) {
+            return this.get('inplay');
+        },
+        
+        setParticipantA: function(name) {
+            var updatedParticipant = _.clone(this.get("genericInplayAttribs"));
+            updatedParticipant.participantA = name;
+            this.set("genericInplayAttribs", updatedParticipant);
+        },
+        
+        getParticipantA: function() {
+            if (this.get('genericInplayAttribs').participantA == '') {
+                var participants = this.get('name').split('vs');
+                return participants[0];
+            }
+            return this.get('genericInplayAttribs').participantA;
+        },
+        
+        setParticipantB: function(name) {
+            var updatedParticipant = _.clone(this.get("genericInplayAttribs"));
+            updatedParticipant.participantB = name;
+            this.set("genericInplayAttribs", updatedParticipant);
+        },
+        
+        getParticipantB: function() {
+            if (this.get('genericInplayAttribs').participantB == '') {
+                var participants = this.get('name').split('vs');
+                return participants[1];
+            }
+            return this.get('genericInplayAttribs').participantB;
+        },
+        
+        getInplayScore: function() {
+            return this.get('genericInplayAttribs').score;
+        },
+        
+        getInplayPeriod: function() {
+            return this.get('genericInplayAttribs').period;
+        },
+        
+        getInplayClock: function() {
+            return this.get('genericInplayAttribs').clock;
+        },
+
+        findMarket: function(id){
+            return this.marketsCollection.findWhere({id:id});
+        },
+
+        findMarketSelections: function(id){
+            var mkt = this.findMarket(id);
+            return mkt.selections;
+        },
+
+        findSelection: function(selectionId){
+            var selection;
+            _.find(this.marketsCollection.models, function(market) {
+                var s = market.findSelection(selectionId);
+                if (!_.isUndefined(s)) {
+                    selection = s; return;
+                }
+            });
+            return selection;
+        },
+
+        parseMarkets: function(mkts, eventId){
+            var markets = _.map(mkts, function(m){
+                var params = _.extend(m, {id: m.id, eventId: eventId});
+                var myMarket = new Market(params);
+                return myMarket;
+            });
+            return new MarketsCollection(markets);
+        },
+        
+        getCurrentEventTime: function() {
+	         return this.get('genericInplayAttribs').clock;;
+        }
+        
+    });
+});
+

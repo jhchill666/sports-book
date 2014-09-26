@@ -1,0 +1,71 @@
+@import  "variables";
+@import  "mixins";
+
+
+body{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 62.5%;
+	
+	a{
+		color: @color-link;
+		text-decoration: none;
+		
+		&:hover{
+			text-decoration: underline;
+		}
+
+	}
+
+	.header-small{
+		h1{
+			color: @color-secondary;
+			font-weight: bold;
+			// padding: 0px 0 5px 10px;
+			padding: 0px 0 5px 0px;
+			font-size: @size-l;
+		}
+
+		p{
+			border-bottom: 2px solid @color-highlight;
+			// padding: 0 10px 8px 10px;
+			padding: 0 10px 8px 0px;
+			margin-bottom: 10px;
+			font-size: 22px; 
+			font-weight: bold;
+			line-height: 0.9em
+		}
+	}
+
+	section{
+		header{
+			
+			h2{
+				border-bottom:2px solid @blue1;
+				font-size: 18px;
+				font-weight: bold;
+				padding-bottom: 8px;
+
+				& + h3{
+					padding-top: 8px;
+				}
+
+			}
+		}
+
+		.header-list{
+			.header-internal-list();
+		}
+
+		p.more{
+			.more-options();
+		}
+	}
+
+
+
+	.wrapper-page{
+		font-size: 1.2em;
+	}
+}

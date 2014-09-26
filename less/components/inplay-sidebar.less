@@ -1,0 +1,2089 @@
+@import  "variables";
+@import  "mixins";
+
+.panelCover {
+	
+	position: absolute;
+	top: -6px;
+	bottom: 0px;
+	left: 0px;
+	right: 1px;
+	background-color: @grey3;
+	z-index: 200;
+	
+	span {
+		color: #D5D5D5;
+		display: block;
+		text-align: center;
+		margin-top: 100px;
+		font-weight: 600;
+	}
+}
+
+#tabs {
+	position: relative;
+}
+
+
+
+
+
+#IPVPanelWrapper{
+	overflow: hidden;
+	background-color: #2C2C2C;
+	height: 269px;
+	margin-bottom: 10px;
+	
+}
+
+.inplay-panel {
+	position: absolute;
+	top: 42px;
+	width: 320px;
+	background: rgb(73,73,73); /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover,  rgba(73,73,73,1) 9%, rgba(47,47,47,1) 71%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(9%,rgba(73,73,73,1)), color-stop(71%,rgba(47,47,47,1))); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  rgba(73,73,73,1) 9%,rgba(47,47,47,1) 71%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  rgba(73,73,73,1) 9%,rgba(47,47,47,1) 71%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  rgba(73,73,73,1) 9%,rgba(47,47,47,1) 71%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  rgba(73,73,73,1) 9%,rgba(47,47,47,1) 71%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#494949', endColorstr='#2f2f2f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	margin: auto;
+	// position:absolute;
+	.addTransitions(0.4s);
+	overflow: hidden;
+	
+	iframe {
+		padding: 10px;
+	}
+	
+	.progressBar {
+		height: 10px;
+		width: 300px;
+		background-color: #1F2327;
+		margin: auto;
+		.box-shadow-inset(0px, 0px, 6px, 0.65);
+		.border-radius(2px); 
+		.clearfix();
+		position: relative;
+		margin-top: 9px;
+		margin-bottom: 7px;
+		
+		.time {
+			height: 20px;
+			width: 60px;
+			border: 1px solid #202325;
+			position: absolute;
+			left: 50%;
+			margin-left: -30px;
+			.border-radius(4px);
+			z-index: 10;
+			margin-top: -4px;
+			.box-shadow(0px, 2px, 6px, 0.5);
+			color: @white;
+			
+			background-color: #3B3C3C;
+			
+			i {
+				float: left;
+				margin-top: 3px;
+				margin-left: 6px;
+			}
+			
+			span {
+				display: block;
+				float: right;
+				text-align: center;
+				font-size: 13px;
+				text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.27);
+				font-weight: 800;
+				margin-top: 2px;
+				margin-right: 4px;
+			}
+		}
+		
+		.activeBar {
+			background: rgb(96,130,41); /* Old browsers */
+			background: -moz-linear-gradient(left,  rgba(96,130,41,1) 0%, rgba(116,160,47,1) 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(96,130,41,1)), color-stop(100%,rgba(116,160,47,1))); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(left,  rgba(96,130,41,1) 0%,rgba(116,160,47,1) 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(left,  rgba(96,130,41,1) 0%,rgba(116,160,47,1) 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(left,  rgba(96,130,41,1) 0%,rgba(116,160,47,1) 100%); /* IE10+ */
+			background: linear-gradient(to right,  rgba(96,130,41,1) 0%,rgba(116,160,47,1) 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#608229', endColorstr='#74a02f',GradientType=1 ); /* IE6-9 */
+			position: absolute;
+			left:0;
+			height:100%;
+			width:75%;
+			.box-shadow-inset(0px, 1px, 0px, 0.2);
+			.border-radius(2px 0 0 2px); 
+		}
+	}
+	
+	
+	.teams {
+	
+			height: 38px;
+			width: 300px;
+			margin: auto;
+		
+		.team {
+			
+			float:left;
+			width:50%;
+			text-align: right;
+			color:#fff;
+			font-size: 26px;
+			position:relative;
+			
+			
+			.loc {
+				font-size: 10px;
+				color: #8B8E8F;
+				float: right;
+				font-weight: 600;
+			}
+			
+			.name {
+				float:right;
+				margin-top: 4px;
+				clear:both;
+				font-size: 16px;
+				max-width: 74%;
+				font-weight: 500;
+				
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				overflow: hidden;
+			}
+			.score {
+				font-size: 22px;
+				left: 8px;
+				top: 11px;
+				position:absolute;
+				font-family: "HelveticaNeue-CondensedBold";
+			}
+			
+			.flash {
+				position: absolute;
+				left: 0;
+				height: 60px;
+				width: 60px;
+				background-image: url('../images/inplay-assests/flash-60.png');
+				background-repeat: no-repeat;
+				background-position: center center;
+				z-index: 50;
+				left: -8px;
+				top: -8px;
+				opacity:0;
+				filter: alpha(opacity=00); /* For IE8 and earlier */
+			}
+			
+			
+			&:first-child {
+				text-align: left;
+				
+				.loc {
+					
+					float: left;
+				}
+
+				
+				.name {
+					float:left;
+				}
+				.score {
+					left:auto;
+					right: 8px;
+				}
+				
+				.flash {
+					left:auto;
+					right: -11px;
+					top: -5px;
+				}
+			}
+			
+		}
+	}
+	
+	.v {
+		position: absolute;
+		left: 50.07%;
+		margin-top: 16px;
+		font-size: 16px;
+		color: #84888B;
+		margin-left: -4px;
+	}
+	
+	.msg {
+		height: 23px;
+		border-top: 1px solid #565B5E;
+		padding-top: 3px;
+		width: 300px;
+		margin: auto;
+		
+		span {
+			color: #CACDCE;
+			font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+			font-weight: 700;
+			font-size: 9px;
+		}
+
+	}
+	
+	
+	
+	// football styles -----------------------------------------------------------------------------
+	
+	.football-pitch {
+			.pitch(#8CA56B, #212B11, 2px);
+			background-image: url('../images/inplay-assests/soccer_field.png');
+			margin-bottom: 10px;
+			margin-top: 4px;
+			
+			.hide {
+				opacity: 0;
+				filter: alpha(opacity=00); /* For IE8 and earlier */
+			}
+			
+			
+			.sm {
+				color: #EEE259;
+				font-size: 15px;
+				text-shadow: 0px 0px 8px @black;
+			}
+			
+			.lg {
+				color: #FFF;
+				font-size: 18px;
+				text-shadow: 0px 0px 9px @black;
+			}
+			
+						
+						
+			// ------------------------------------------------- GOAL 
+			
+			.goal-left {
+				background-image: url('../images/inplay-assests/goal-left.png');
+				height: 150px;
+				width: 400px;
+				position: absolute;
+				left: -200px;
+				
+			}
+			
+			.goal-left-2 {
+				height: 150px;
+				width: 400px;
+				position: absolute;
+				left: -42px;
+				
+				
+				.ball {
+					background-image: url('../images/inplay-assests/goal-left-2.png');
+					height: 150px;
+					width: 400px;
+					position: absolute;
+					z-index:100;
+				}
+				.confetti {
+					background-image: url('../images/inplay-assests/confetti-gif.gif');
+					height: 127px;
+					position: absolute;
+					width: 246px;
+					top: 11px;
+					left: 90px;
+					right: 112px;
+					opacity: 0;
+					filter: alpha(opacity=00);
+				}
+				
+				.lg {
+					display: block;
+					text-align: right;
+					padding-left: 32.5%;
+					margin-top: 2px;
+					font-size: 46px!important;
+					font-family: 'open_sans_condensedbold';
+					margin-top: 48px;
+					position: relative;
+					z-index: 100;
+					opacity:0;
+					filter: alpha(opacity=00);
+				}
+				
+				.sm {
+					display: block;
+					text-align: center;
+					margin-left: 26px;
+					color: #FFEF41!important;
+					text-shadow: 0px 0px 5px @black;
+					font-family: 'open_sans_condensedbold';
+				}
+			}
+			
+			
+			.goal-right {
+				
+				background-image: url('../images/inplay-assests/goal-right.png');
+				height: 150px;
+				width: 400px;
+				position: absolute;
+				right: -240px;
+			}
+			
+			.goal-right-2 {
+				height: 150px;
+				width: 400px;
+				position: absolute;
+				right: -42px;
+				
+				.ball {
+					background-image: url('../images/inplay-assests/goal-right-2.png');
+					height: 150px;
+					width: 400px;
+					position: absolute;
+					z-index:100;
+				}
+				
+				.confetti {
+					background-image: url('../images/inplay-assests/confetti-gif.gif');
+					height: 127px;
+					position: absolute;
+					width: 246px;
+					top: 11px;
+					left: 57px;
+					right: 112px;
+					opacity: 0;
+					filter: alpha(opacity=00);
+					
+				}
+				
+				.lg {
+					display: block;
+					text-align: left;
+					padding-right: 32.5%;
+					margin-top: 2px;
+					font-size: 46px!important;
+					font-family: 'open_sans_condensedbold';
+					margin-top: 48px;
+					position: relative;
+					z-index: 100;
+					opacity:0;
+					filter: alpha(opacity=00);
+				}
+				
+				.sm {
+					display: block;
+					text-align: center;
+					margin-right: 41px;
+					color: #FFEF41!important;
+					text-shadow: 0px 0px 5px @black;
+					font-family: 'open_sans_condensedbold';
+				}
+			}
+			
+			
+			
+			
+			
+			// ------------------------------------------------- ATTACK
+			
+			
+			.attack-left {
+				
+				background-image: url('../images/inplay-assests/attack-left.png');
+				height: 150px;
+				width: 300px;
+				position: absolute;
+			  	left: -100px;
+			  	
+				
+				span {
+					display:block;
+				}
+				
+				.sm {
+					text-align: right;
+					padding-right: 31%;
+					margin-top: 53px;
+					font-family: 'open_sans_condensedbold';
+				}
+				
+				.lg {
+					text-align: right;
+					padding-right: 31%;
+					margin-top: 2px;
+					font-family: 'open_sans_condensedbold';
+				}
+						
+			}
+			
+			.attack-right {
+				
+				background-image: url('../images/inplay-assests/attack-right.png');
+				height: 150px;
+				width: 300px;
+				position: absolute;
+				right: -53px;
+				
+				span {
+					display:block;
+				}
+				
+				.sm {
+					text-align: left;
+					padding-left: 44%;
+					margin-top: 53px;
+					font-family: 'open_sans_condensedbold';
+				}
+				
+				.lg {
+					text-align: left;
+					padding-left: 44%;
+					margin-top: 2px;
+					font-family: 'open_sans_condensedbold';
+				}
+						
+			}
+			
+			
+			.dangerous-attack-left {
+				
+				background-image: url('../images/inplay-assests/dangerous-attack-left.png');
+				height: 150px;
+				width: 300px;
+				position: absolute;
+			  	left: -100px;
+			  	
+				
+				span {
+					display:block;
+				}
+				
+				.sm {
+					text-align: right;
+					padding-right: 14%;
+					margin-top: 53px;
+					font-family: 'open_sans_condensedbold';
+				}
+				
+				.lg {
+					text-align: right;
+					padding-right: 14%;
+					margin-top: 2px;
+					font-family: 'open_sans_condensedbold';
+				}
+						
+			}
+			
+			.dangerous-attack-right {
+				
+				background-image: url('../images/inplay-assests/dangerous-attack-right.png');
+				height: 150px;
+				width: 300px;
+				position: absolute;
+				right: -53px;
+				
+				span {
+					display:block;
+				}
+				
+				.sm {
+					text-align: left;
+					padding-left: 27%;
+					margin-top: 53px;
+					font-family: 'open_sans_condensedbold';
+				}
+				
+				.lg {
+					text-align: left;
+					padding-left: 27%;
+					margin-top: 2px;
+					font-family: 'open_sans_condensedbold';
+				}
+						
+			}
+			
+			// ------------------------------------------------- POSSESSION
+			
+			
+			.possession-left {
+				
+				background-image: url('../images/inplay-assests/possession-left.png');
+				height: 150px;
+				width: 300px;
+				position: absolute;
+			  	left: -100px;
+				
+				span {
+					display:block;
+				}
+				
+				.sm {
+					text-align: right;
+					padding-right: 40%;
+					margin-top: 53px;
+					font-family: 'open_sans_condensedbold';
+				}
+				
+				.lg {
+					text-align: right;
+					padding-right: 40%;
+					margin-top: 2px;
+					font-family: 'open_sans_condensedbold';
+				}
+						
+			}
+			
+			.possession-right {
+				
+				background-image: url('../images/inplay-assests/possession-right.png');
+				height: 150px;
+				width: 300px;
+				position: absolute;
+			  	right: -100px;
+				
+				span {
+					display:block;
+				}
+				
+				.sm {
+					text-align: left;
+					padding-left: 41%;
+					margin-top: 53px;
+					font-family: 'open_sans_condensedbold';
+				}
+				
+				.lg {
+					text-align: left;
+					padding-left: 41%;
+					margin-top: 2px;
+					font-family: 'open_sans_condensedbold';
+				}
+						
+			}
+			
+			
+			
+			// ------------------------------------------------- YELLOW CARDS
+			
+			
+			.possible-yellow-left, .yellow-left {
+				
+				background-image: url('../images/inplay-assests/possible-yellow-left.png');
+				height: 150px;
+				width: 290px;
+				position: absolute;
+			  	left: -53px;
+				
+				span {
+					display:block;
+				}
+				
+				.sm {
+					text-align: left;
+					padding-left: 43%;
+					margin-top: 56px;
+					color: #EEE259!important;
+					font-family: 'open_sans_condensedbold';
+				}
+				
+				.lg {
+					text-align: left;
+					padding-left: 43%;
+					margin-top: 2px;
+					font-family: 'open_sans_condensedbold';
+				}
+						
+			}
+			
+			.yellow-left {
+				background-image: url('../images/inplay-assests/yellow-left.png');
+				.sm {
+					color: #EEE259!important;
+				}
+				
+			}
+			
+			
+			.possible-yellow-right, .yellow-right {
+				
+				background-image: url('../images/inplay-assests/possible-yellow-right.png');
+				height: 150px;
+				width: 290px;
+				position: absolute;
+				right: -53px;
+				
+				span {
+					display:block;
+				}
+				
+				.sm {
+					text-align: right;
+					padding-right: 43%;
+					margin-top: 56px;
+					color: #F0F0F0!important;
+					font-family: 'open_sans_condensedbold';
+					
+				}
+				
+				.lg {
+					text-align: right;
+					padding-right: 43%;
+					margin-top: 2px;
+					font-family: 'open_sans_condensedbold';
+				}
+						
+			}
+			
+			.yellow-right {
+				
+				background-image: url('../images/inplay-assests/yellow-right.png');
+				
+				.sm {
+					color: #EEE259!important;
+				}
+				
+			}
+			
+			
+			
+			// ------------------------------------------------- RED CARDS
+			
+			.possible-red-right, .red-right {
+				background-image: url('../images/inplay-assests/possible-red-right.png');
+				height: 150px;
+				width: 290px;
+				position: absolute;
+				right: -53px;
+				
+				span {
+					display:block;
+				}
+				
+				.sm {
+					text-align: right;
+					padding-right: 43%;
+					margin-top: 56px;
+					color: #EEE259!important;
+					font-family: 'open_sans_condensedbold';
+				}
+				
+				.lg {
+					text-align: right;
+					padding-right: 43%;
+					margin-top: 2px;
+					font-family: 'open_sans_condensedbold';
+				}
+						
+			}
+			
+			.red-right {
+				background-image: url('../images/inplay-assests/red-right.png');
+				
+				.sm {
+					color: #EEE259!important;
+				}
+			}
+			
+			
+			.possible-red-left, .red-left {
+				
+				background-image: url('../images/inplay-assests/possible-red-left.png');
+				height: 150px;
+				width: 290px;
+				position: absolute;
+			  	left: -53px;
+				
+				span {
+					display:block;
+				}
+				
+				.sm {
+					text-align: left;
+					padding-left: 43%;
+					margin-top: 56px;
+					color: #EEE259!important;
+					font-family: 'open_sans_condensedbold';
+				}
+				
+				.lg {
+					text-align: left;
+					padding-left: 43%;
+					margin-top: 2px;
+					font-family: 'open_sans_condensedbold';
+				}
+						
+			}
+			
+			.red-left {
+				background-image: url('../images/inplay-assests/red-left.png');
+				.sm {
+					color: #EEE259!important;
+				}
+			
+			}
+			
+			
+			
+			// ------------------------------------------------- KICK OFF
+			
+			.kick-off-left {
+				
+				background-image: url('../images/inplay-assests/kick-off-left.png');
+				height: 150px;
+				width: 290px;
+				position: absolute;
+				right: -65px;
+				
+				.whistle {
+					height: 150px;
+					width: 300px;
+					position: absolute;
+					
+				}
+				
+				span {
+					display:block;
+				}
+				
+				.sm {
+					text-align: left;
+					margin-top: 1px;
+					padding-left: 47%;
+					font-family: 'open_sans_condensedbold';
+				}
+				
+				.lg {
+					text-align: left;
+					padding-left: 47%;
+					margin-top: 50px;
+					font-size: 36px!important;
+					font-family: 'open_sans_condensedbold';
+				}
+			
+				
+			}
+			
+			
+			.kick-off-right {
+				
+				background-image: url('../images/inplay-assests/kick-off-right.png');
+				height: 150px;
+				width: 290px;
+				position: absolute;
+				left: -65px;
+				
+				.whistle {
+				
+					height: 150px;
+					width: 300px;
+					position: absolute;
+					
+				}
+				
+				span {
+					display:block;
+				}
+				
+				.sm {
+					text-align: right;
+					margin-top: 1px;
+					padding-right: 51%;
+					font-family: 'open_sans_condensedbold';
+				}
+				
+				.lg {
+					text-align: right;
+					padding-right: 51%;
+					margin-top: 50px;
+					font-size: 36px!important;
+					font-family: 'open_sans_condensedbold';
+				}
+			
+				
+			}
+			
+			
+			// ------------------------------------------------- PENALTY
+			
+			
+			.penalty-right-back {
+				
+				background-image: url('../images/inplay-assests/penalty-back-right.png');
+				height: 150px;
+				width: 300px;
+				position: absolute;
+				right: -53px;
+				
+				.penalty-right {
+					background-image: url('../images/inplay-assests/penalty-flare-1.png');
+					position: absolute;
+					height: 150px;
+					width: 300px;
+					background-repeat: no-repeat;
+					background-position: center;
+					left: -6px;
+					opacity:0;
+					filter: alpha(opacity=00);
+					margin-top:75px;
+				}
+				.penalty-right-inner {
+					background-image: url('../images/inplay-assests/penalty-flare-2.png');
+					background-repeat: no-repeat;
+					background-position: center;
+					height: 150px;
+					width: 180px;
+					position:absolute;
+					opacity:0;
+					filter: alpha(opacity=00);
+				}
+				
+				span {
+					display:block;
+				}
+				
+				.sm {
+					text-align: left;
+					padding-left: 43%;
+					margin-top: 44px;
+					color: #8BE8FC!important;
+					font-size: 15px;
+					text-shadow: 0px 0px 8px #424242;
+					font-family: 'open_sans_condensedbold';
+					opacity:0;
+					filter: alpha(opacity=00); /* For IE8 and earlier */
+					
+				}
+				
+				.lg {
+					font-family: 'open_sans_condensedbold';
+					text-align: left;
+					padding-left: 43%;
+					font-size: 38px!important;
+					opacity:0;
+					filter: alpha(opacity=00); /* For IE8 and earlier */
+			
+				}
+						
+			}
+			
+			
+			.penalty-left-back {
+				
+				background-image: url('../images/inplay-assests/penalty-back-left.png');
+				height: 150px;
+				width: 300px;
+				position: absolute;
+				left: -53px;
+				
+				.penalty-left {
+					background-image: url('../images/inplay-assests/penalty-flare-1.png');
+					position: absolute;
+					height: 150px;
+					width: 300px;
+					background-repeat: no-repeat;
+					background-position: center;
+					right: -130px;
+					opacity:0;
+					filter: alpha(opacity=00);
+					margin-top:75px;
+				}
+				.penalty-left-inner {
+					background-image: url('../images/inplay-assests/penalty-flare-2.png');
+					background-repeat: no-repeat;
+					background-position: center;
+					height: 150px;
+					width: 180px;
+					position:absolute;
+					opacity:0;
+					filter: alpha(opacity=00);
+				}
+				
+				span {
+					display:block;
+				}
+				
+				.sm {
+					text-align: left;
+					padding-left: 14%;
+					color: #8BE8FC!important;
+					font-size: 15px;
+					text-shadow: 0px 0px 8px #424242;
+					font-family: 'open_sans_condensedbold';
+					margin-top: 44px;
+					opacity:0;
+					filter: alpha(opacity=00); /* For IE8 and earlier */
+					
+				}
+				
+				.lg {
+					
+					text-align: left;
+					padding-left: 14%;
+					font-family: 'open_sans_condensedbold';
+					font-size: 38px!important;
+					opacity:0;
+					filter: alpha(opacity=00); /* For IE8 and earlier */
+			
+				}
+						
+			}
+			
+			
+			
+			
+			// ------------------------------------------------- SECOND HALF
+			
+			
+			.start-second-left {
+				
+				background-image: url('../images/inplay-assests/second-half-left.png');
+				height: 150px;
+				width: 290px;
+				position: absolute;
+				right: -65px;
+				
+				.whistle {
+					height: 150px;
+					width: 300px;
+					position: absolute;
+				}
+				
+				span {
+					display:block;
+				}
+				
+				.sm {
+					text-align: left;
+					margin-top: 1px;
+					padding-left: 47%;
+					font-family: 'open_sans_condensedbold';
+				}
+				
+				.lg {
+					text-align: left;
+					padding-left: 47%;
+					margin-top: 57px;
+					font-size: 25px!important;
+					font-family: 'open_sans_condensedbold';
+				}
+			
+				
+			}
+			
+			
+			.start-second-right {
+				
+				background-image: url('../images/inplay-assests/second-half-right.png');
+				height: 150px;
+				width: 290px;
+				position: absolute;
+				left: -65px;
+				
+				.whistle {
+				
+					height: 150px;
+					width: 300px;
+					position: absolute;
+					margin-left: -25px;
+					
+				}
+				
+				span {
+					display:block;
+				}
+				
+				.sm {
+					text-align: right;
+					margin-top: 1px;
+					padding-right: 40%;
+					font-family: 'open_sans_condensedbold';
+				}
+				
+				.lg {
+					text-align: right;
+					padding-right: 40%;
+					margin-top: 50px;
+					font-size: 25px!important;
+					font-family: 'open_sans_condensedbold';
+				}
+			
+				
+			}
+			
+			
+			
+			// ------------------------------------------------- CORNER
+			
+			.corner-right {
+				background-image: url('../images/inplay-assests/bottom-left-corner-back.png');
+				background-position: -48px -20px;
+				background-repeat: no-repeat;
+				height:150px;
+				width:300px;
+				top:0;
+				position: absolute;
+				
+				
+				.lg, .sm {
+					text-align: left;
+					display: block;
+					margin-left: 145px;
+					font-family: 'open_sans_condensedbold'!important;
+				}
+				.lg {
+					font-size: 27px!important;
+					
+			
+				}
+				.sm {
+					margin-top: 55px;
+				}
+				
+				.corner-flash {
+					background-image: url('../images/inplay-assests/bottom-left-corner-burst.png');
+					background-position: 0px -25px;
+					background-repeat: no-repeat;
+					height: 170px;
+					width: 335px;
+					position: absolute;
+					left: -54px;
+				}
+				
+				.corner-arrow {
+					background-image: url('../images/inplay-assests/bottom-left-corner-arrow.png');
+					background-position: center -10px;
+					background-repeat: no-repeat;
+					height: 0;
+					width: 100px;
+					position: absolute;
+					bottom: 0;
+					left: -8px;
+				}
+				
+			}
+			
+			
+			
+			.corner-left {
+				background-image: url('../images/inplay-assests/bottom-right-corner-back.png');
+				background-position: 62px -24px;
+				background-repeat: no-repeat;
+				height:150px;
+				width:300px;
+				top:0;
+				position: absolute;
+				
+				
+				.lg, .sm {
+					text-align: right;
+					display: block;
+					margin-right: 130px;
+					font-family: 'open_sans_condensedbold'!important;
+				}
+				.lg {
+					font-size: 27px!important;
+					
+			
+				}
+				.sm {
+					margin-top: 55px;
+				}
+				
+				.corner-flash {
+					background-image: url('../images/inplay-assests/bottom-right-corner-burst.png');
+					background-position: 62px -24px;
+					background-repeat: no-repeat;
+					height: 170px;
+					width: 335px;
+					position: absolute;
+				}
+				
+				.corner-arrow {
+					background-image: url('../images/inplay-assests/bottom-right-corner-arrow.png');
+					background-position: center -10px;
+					background-repeat: no-repeat;
+					height: 0;
+					width: 100px;
+					position: absolute;
+					bottom: 0;
+					right: 0px;
+				}
+				
+			}
+			
+			
+			
+			
+			
+			// ------------------------------------------------- FREE KICK
+			
+			.free-kick-right {
+				
+				background-image: url('../images/inplay-assests/free-kick-right.png');
+				height: 150px;
+				width: 290px;
+				position: absolute;
+				right: 0px;
+				background-position: 65px center;
+			
+				.radar-right {
+					width:50px;
+					height:50px;
+					background-image: url('../images/inplay-assests/radar-right.png');
+					background-position: center center;
+					background-repeat: no-repeat;
+					position: absolute;
+					right: 45px;
+					top: 50%;
+					margin-top: -25px;
+				}
+				
+				span {
+					display:block;
+				}
+				
+				.sm {
+					text-align: right;
+					padding-right: 41%;
+					margin-top: 50px;
+					color: #8BE8FC!important;
+					font-size: 15px;
+					text-shadow: 0px 0px 8px #424242;
+					font-family: 'open_sans_condensedbold';
+				}
+				
+				.lg {
+					text-align: right;
+					padding-right: 41%;
+					margin-top: 2px;
+					text-shadow: 0px 0px 8px #424242;
+					font-family: 'open_sans_condensedbold';
+					font-size: 27px!important;
+				}
+			}
+			
+
+			.free-kick-left {
+				
+				background-image: url('../images/inplay-assests/free-kick-left.png');
+				height: 150px;
+				width: 290px;
+				position: absolute;
+				right: 0px;
+				background-position: -92px center;
+			
+				.radar-left {
+					width:50px;
+					height:50px;
+					background-image: url('../images/inplay-assests/radar-left.png');
+					background-position: center center;
+					background-repeat: no-repeat;
+					position: absolute;
+					left: 36px;
+					top: 50%;
+					margin-top: -25px;
+				}
+				
+				span {
+					display:block;
+				}
+				
+				.sm {
+					text-align: left;
+					padding-left: 41%;
+					margin-top: 50px;
+					color: #8BE8FC!important;
+					font-size: 15px;
+					text-shadow: 0px 0px 8px #424242;
+					font-family: 'open_sans_condensedbold';
+				}
+				
+				.lg {
+					text-align: left;
+					padding-left: 41%;
+					margin-top: 2px;
+					text-shadow: 0px 0px 8px #424242;
+					font-family: 'open_sans_condensedbold';
+					font-size: 27px!important;
+				}
+			
+			}
+
+		}
+		
+		
+		
+		
+		
+		
+	
+	
+	// baseball styles -----------------------------------------------------------------------------
+	
+	.baseball-pitch {
+			.pitch(#1B546D, #212B11, 2px);
+			background-image: url('../images/inplay-assests/baseball-field.png');
+			margin-bottom: 10px;
+			margin-top: 8px;
+			
+			.hide {
+				opacity: 0;
+				filter: alpha(opacity=00); /* For IE8 and earlier */
+			}
+			
+			.sm {
+				color: #EEE259;
+				font-size: 15px;
+				text-shadow: 0px 0px 8px @black;
+			}
+			
+			.lg {
+				color: #FFF;
+				font-size: 18px;
+				text-shadow: 0px 0px 9px @black;
+			}
+			
+		
+			.diamond {
+				background-image:url('../images/inplay-assests/diamond.png');
+				background-repeat: no-repeat;
+				background-position: center center;
+				height:170px;
+				width:170px;
+				margin-top: -10px;
+				margin-left: -10px;
+			}
+			
+
+			// ---------------------------------------------------- STRIKE
+			
+			.strike {
+			
+					position:absolute;
+					right: 0;
+					bottom:0;
+				
+				.statusText {
+					color: #FAD51A;
+					left: -14px;
+					z-index: 20;
+					text-shadow: 0px 0px 7px @black;
+					font-family: 'open_sans_condensedbold';
+					top: 28px;
+					font-weight: 500;
+					font-size: 24px;
+					position: absolute;
+					display: block;
+					text-align: center;
+					right: 7px;
+
+				}
+				
+				.flash {
+					background-image:url('../images/inplay-assests/glove-flash.png');
+					background-repeat: no-repeat;
+					background-position: center center;
+					width:174px;
+					height:150px;
+					bottom:0;
+					right: -30px;
+					position:absolute;
+					opacity:0;
+					filter: alpha(opacity=00); /* For IE8 and earlier */
+				}
+				
+				.glove-ball {
+					background-image:url('../images/inplay-assests/glove-ball.png');
+					background-repeat: no-repeat;
+					background-position: center center;
+					width:174px;
+					height:150px;
+					bottom: -46px;
+					right: -20px;
+					position:absolute;
+					opacity:0;
+					filter: alpha(opacity=00); /* For IE8 and earlier */
+					
+					
+				}
+				
+				.glove {
+					width:174px;
+					height:150px;
+					bottom:0;
+					right: -20px;
+					position:absolute;
+					overflow: hidden;
+					opacity:0;
+					filter: alpha(opacity=00); 
+					
+					.glove-inner {
+						background-image:url('../images/inplay-assests/glove.png');
+						background-repeat: no-repeat;
+						background-position: center center;
+						width:174px;
+						height:150px;
+						bottom: -122px;
+						right: -20px;
+						position:absolute;
+					}
+				}
+				
+				.ball {
+					background-image:url('../images/inplay-assests/ball-moving.png');
+					background-repeat: no-repeat;
+					background-position: center center;
+					width:174px;
+					height: 38px;
+					bottom: 27px;
+					right: -185px;
+					position:absolute;
+					opacity:0;
+					filter: alpha(opacity=00); /* For IE8 and earlier */
+				}
+				
+				
+			} // strike
+
+					
+						
+			
+			// --------------------------------------------------------------- YELLOW HIGHLIGHT		
+						
+						
+			.toggle-left, .toggle-top, .toggle-right, .toggle-bottom  {
+				height:70px;
+				width:70px;
+				background-image:url('../images/inplay-assests/pitch-highlight-left.png');
+				position: absolute;
+				top: 44px;
+				left: -23px;
+				opacity:0;
+			}
+			
+			.toggle-top {
+				background-image:url('../images/inplay-assests/pitch-highlight-top.png');
+				top: -22px;
+				left: 42px;
+			}
+			.toggle-right {
+				background-image:url('../images/inplay-assests/pitch-highlight-right.png');
+				top: 43px;
+				left: 110px;
+			}
+			.toggle-bottom {
+				background-image:url('../images/inplay-assests/pitch-highlight-bottom.png');
+				top: 111px;
+				left: 41px;
+				
+			} // yellow highlight
+			
+			
+			
+		// ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- CAMERAS
+		
+		.cam-1 {
+			background-image: url('../images/inplay-assests/camera-flash.png');
+			.cam-global(106px,106px);
+			top: -13px;
+			left: 109px;
+			opacity:0;
+			filter: alpha(opacity=00); /* For IE8 and earlier */
+		}
+		
+		.cam-2 {
+			background-image: url('../images/inplay-assests/camera-flash.png');
+			.cam-global(106px,106px);
+			top: -23px;
+			right: -10px;
+			opacity:0;
+			filter: alpha(opacity=00); /* For IE8 and earlier */
+		}
+		
+		.cam-3 {
+			background-image: url('../images/inplay-assests/camera-flash-2.png');
+			.cam-global(106px,106px);
+			top: 8px;
+			left: 146px;
+			opacity:0;
+			filter: alpha(opacity=00); /* For IE8 and earlier */
+		}
+		
+		.cam-4 {
+			background-image: url('../images/inplay-assests/camera-flash-3.png');
+			.cam-global(106px,106px);
+			top: 30px;
+			right: -20px;
+			opacity:0;
+			filter: alpha(opacity=00); /* For IE8 and earlier */
+		}
+		
+		.cam-5 {
+			background-image: url('../images/inplay-assests/camera-flash-2.png');
+			background-repeat: no-repeat;
+			background-position: center center;
+			height:106px;
+			width:106px;
+			position:absolute;
+			top: -23px;
+			left: 82px;
+			opacity:0;
+			filter: alpha(opacity=00); /* For IE8 and earlier */
+		}
+		
+		.cam-6 {
+			background-image: url('../images/inplay-assests/camera-flash-3.png');
+			.cam-global(106px,106px);
+			top: -14px;
+			left: -38px;
+			opacity:0;
+			filter: alpha(opacity=00); /* For IE8 and earlier */
+		}
+		
+		// ball		
+					
+		.ball {
+			
+			height: 137px;
+			width: 152px;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			right: 4px;
+			
+			.gif {
+				height: 150px;
+				position:absolute;
+				z-index: 10;
+				left:-50px;
+				width: 100%;
+				
+				> div {
+					background-image: url('../images/inplay-assests/baseball-gif2.gif');
+					background-repeat: no-repeat;
+					background-position: center center;
+					background-size: 0%;
+					width: 100%;
+					position:absolute;
+					height: 150px;
+				}
+			}
+			
+			.splash {
+				width: 100%;
+				margin: auto;
+				height: 150px;
+				background-image: url('../images/inplay-assests/ball-flash.png');
+				background-repeat: no-repeat;
+				background-position: center center;
+				margin-top: -6px;
+				margin-right: -3px;
+				opacity:0;
+				filter: alpha(opacity=00); /* For IE8 and earlier */
+				z-index: 20;
+				position: relative;
+
+			}
+			
+			.lbl {
+				font-family: 'open_sans_condensedbold';
+				font-size: 25px;
+				color: #FAD51A;
+				left: -14px;
+				z-index: 20;
+				font-family: 'open_sans_condensedbold';
+				text-shadow: 0px 0px 5px @black;
+				text-align: center;
+				padding-top: 20px;
+				opacity:0;
+				filter: alpha(opacity=00); /* For IE8 and earlier */
+			}
+			
+		}
+		
+					
+		.out {
+			
+			height: 137px;
+			width: 152px;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			right: 4px;
+			
+			.gif {
+				height: 150px;
+				background-image: url('../images/inplay-assests/baseball-gif2.gif');
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: 0%;
+				width: 100%;
+				position:absolute;
+				z-index: 10;
+			}
+			
+			.splash {
+				width: 100%;
+				margin: auto;
+				height: 150px;
+				background-image: url('../images/inplay-assests/ball-flash.png');
+				background-repeat: no-repeat;
+				background-position: center center;
+				margin-top: -6px;
+				margin-right: -3px;
+				opacity:0;
+				filter: alpha(opacity=00); /* For IE8 and earlier */
+				z-index: 20;
+				position: relative;
+
+			}
+			
+			.lbl {
+				font-family: 'open_sans_condensedbold';
+				font-size: 25px;
+				color: #FAD51A;
+				left: -14px;
+				z-index: 20;
+				font-family: 'open_sans_condensedbold';
+				text-shadow: 0px 0px 5px @black;
+				text-align: center;
+				padding-top: 20px;
+				opacity:0;
+				filter: alpha(opacity=00); /* For IE8 and earlier */
+			}
+			
+		}
+
+	
+	}
+	
+	
+	z-index:-10;
+		> * {
+			display:none;
+		}
+
+	
+	&.openTab {
+		z-index:100;
+		> * {
+			display:inherit;
+		}
+
+	}
+	
+	
+	
+}
+
+
+	// basketball styles -----------------------------------------------------------------------------
+	
+	.basketball-court {
+			background-image: url('../images/inplay-assests/basketball-court.png');
+			.pitch(#1B546D, #212B11, 2px);
+			margin-bottom: 10px;
+			margin-top: 8px;			
+						
+			.basket, .basket-opposite{
+				width: 340px;
+				height: 200px;
+				opacity:0;
+				filter: alpha(opacity=00); /* For IE8 and earlier */
+				position:absolute;
+				background-repeat: no-repeat;
+				.cover{
+					position:absolute;
+					opacity:0;
+					filter: alpha(opacity=00); /* For IE8 and earlier */
+				}
+				.empty-basket, .dunk-basket, .basket-1, .basket-2, .basket-3  {
+					background-repeat: no-repeat;
+					position:absolute;
+					
+					height: 200px;
+					opacity:0;
+					filter: alpha(opacity=00); /* For IE8 and earlier */
+	
+				}
+				
+				.name {
+					font-family: 'open_sans_condensedbold';
+					font-size: 22px;
+					color: #FFF;
+					z-index: 20;
+					position: relative;
+					text-shadow: 0px 0px 6px @black;
+					opacity:0;
+					filter: alpha(opacity=00); /* For IE8 and earlier */
+					display:block;
+					white-space: nowrap;
+				}
+				.action {
+					font-family: 'open_sans_condensedbold';
+					font-size: 50px;
+					color: #FFCA41;
+					z-index: 20;
+					display: block;
+					text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.78);
+					position: relative;
+					opacity:0;
+					filter: alpha(opacity=00); /* For IE8 and earlier */
+				}
+				
+				
+			}			
+						
+							
+			.basket-opposite{				
+				background-position: center right;
+				margin-top: -30px;
+				margin-left: 5px;
+			
+				.cover {
+					top: 30px;
+					bottom: 23px;
+					left: -5px;
+					right:45px;
+					.opacity-60-black();
+
+				}
+				.empty-basket{
+					
+				}
+				.empty-basket, .dunk-basket, .basket-1, .basket-2, .basket-3  {
+					background-position: center right;
+					width: 306px;
+					left: -8px;
+				}
+				
+				.animated-ball {
+					background-image: url('../images/inplay-assests/moving-basketball-opposite.png');
+					background-repeat: no-repeat;
+					background-position: center center;
+					position:absolute;
+					width: 100px;
+					height: 100px;
+					left: 100px;
+					top: -70px;
+					
+				}
+				
+				.empty-basket {
+					background-image: url('../images/inplay-assests/empty-basket-opposite.png');
+				}
+				
+				.dunk-basket {
+					background-image: url('../images/inplay-assests/dunk-basket-opposite.png');
+				}
+				
+				.basket-1 {
+					background-image: url('../images/inplay-assests/pre-slamdunk-opposite.png');
+				}
+				
+				.basket-2 {
+					background-image: url('../images/inplay-assests/slamdunk-opposite.png');
+				}
+				
+				.basket-3 {
+					background-image: url('../images/inplay-assests/post-slamdunk-opposite.png');
+				}
+				
+				.name {
+						margin-right:-200px;
+						text-align: right;
+				}
+				
+				.action {
+					margin-top: 63px;
+					margin-left: 260px;
+				}
+			
+			}
+
+			.basket{				
+				background-position: center right;
+				margin-top: -30px;
+				margin-left: 5px;
+			
+				.cover {
+					top: 30px;
+					bottom: 23px;
+					left: -5px;
+					right:45px;
+					background-image:url('../images/opacity-60-black.png');
+
+				}
+				.empty-basket, .dunk-basket, .basket-1, .basket-2, .basket-3  {
+					background-position: center right;
+					width: 340px;
+				}
+				
+				.animated-ball {
+					background-image: url('../images/inplay-assests/moving-basketball.png');
+					background-repeat: no-repeat;
+					background-position: center center;
+					position:absolute;
+					width: 100px;
+					height: 100px;
+					left: 100px;
+					top: -70px;
+					
+				}
+				
+				.empty-basket {
+					background-image: url('../images/inplay-assests/empty-basket.png');
+				}
+				
+				.dunk-basket {
+					background-image: url('../images/inplay-assests/dunk-basket.png');
+				}
+				
+				.basket-1 {
+					background-image: url('../images/inplay-assests/pre-slamdunk.png');
+				}
+				
+				.basket-2 {
+					background-image: url('../images/inplay-assests/slamdunk.png');
+				}
+				
+				.basket-3 {
+					background-image: url('../images/inplay-assests/post-slamdunk.png');
+				}
+				
+				.name {
+					margin-left: -34px;
+				}
+				
+				.action {
+					margin-top: 63px;
+					margin-left: -34px;
+				}
+			
+			}
+
+
+/// BOUNCE W KEY
+
+
+		.bounce, .bounce-opposite{
+					background-repeat: no-repeat;
+					background-position: center right;
+					position:absolute;
+					height: 200px;
+					opacity:0;
+					filter: alpha(opacity=00); /* For IE8 and earlier */
+					
+					.cover {
+						position:absolute;
+						top: 30px;
+						bottom: 23px;
+						left: -5px;
+						right:45px;
+						background-image:url('../images/opacity-60-black.png');
+						opacity:0;
+						filter: alpha(opacity=00); /* For IE8 and earlier */
+					}
+					.animated-ball {
+						background-repeat: no-repeat;
+						background-position: center center;
+						position:absolute;
+						width: 100px;
+						height: 100px;
+						
+					}
+					.empty-basket, .bounce-basket {
+						
+						background-repeat: no-repeat;
+						background-position: center right;
+						position:absolute;
+						width: 340px;
+						height: 200px;
+	
+					}
+					.ex-point {
+
+						background-repeat: no-repeat;
+						background-position: center;
+						width: 65px;
+						height: 65px;
+						position:absolute;
+					}
+					
+					.bounce-basket, .ex-point, .name, .action  {
+						opacity:0;
+						filter: alpha(opacity=00); /* For IE8 and earlier */
+					}
+					.name {
+						font-family: 'open_sans_condensedbold';
+						font-size: 22px;
+						color: #FFF;
+						z-index: 20;
+						position: relative;
+						text-shadow: 0px 0px 6px @black;
+						display:block;
+						white-space: nowrap;
+					}
+					.action {
+						font-family: 'open_sans_condensedbold';
+						font-size: 40px;
+						color: #FFCA41;
+						z-index: 20;
+						display: block;
+						text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.78);
+						position: relative;
+				}
+	
+		}
+
+
+		.bounce-opposite {
+					width: 340px;
+					margin-top: -30px;
+					margin-left: 5px;
+					
+					.animated-ball {
+						background-image: url('../images/inplay-assests/moving-basketball-opposite.png');
+						left: 160px;
+						top: -70px;
+					}
+					
+					.empty-basket-b{
+						background-image: url('../images/inplay-assests/empty-basket-opposite.png');
+					}
+					
+					.ex-point {
+						background-image: url('../images/inplay-assests/ex-point.png');
+						left: 45px;
+						top: 100px;
+					}
+					
+					.bounce-basket {
+						background-image: url('../images/inplay-assests/basketball-bounce-opposite.png');
+						left: -38px;
+					}
+					
+					.name {
+						margin-right: -110px;
+						text-align:right;
+					}
+					
+					.action {
+							margin-top: 66px;
+							margin-left: 260px;
+					}
+			
+			}
+
+			.bounce {
+					width: 340px;
+					margin-top: -30px;
+					margin-left: 5px;
+					
+					.animated-ball {
+						background-image: url('../images/inplay-assests/moving-basketball.png');
+						left: 35px;
+						top: -70px;
+					}
+					
+					.empty-basket-b {
+						background-image: url('../images/inplay-assests/empty-basket.png');
+					}
+					
+					.ex-point {
+						background-image: url('../images/inplay-assests/ex-point.png');
+						left: 170px;
+						top: 100px;
+					}
+					
+					.bounce-basket {
+						background-image: url('../images/inplay-assests/basketball-bounce.png');
+					}
+					
+					.name {
+						margin-left: -34px;
+					}
+					
+					.action {
+						margin-top: 66px;
+						margin-left: -34px;
+					}
+			
+			}			
+	}
+
+
+
+
+
+
+		.block, .block-opp{
+			background-repeat: no-repeat;
+			background-position: center right;
+			position:absolute;
+			height: 200px;
+			opacity:0;
+			filter: alpha(opacity=00); /* For IE8 and earlier */
+			
+			.cover {
+				position:absolute;
+				top: 30px;
+				bottom: 23px;
+				left: -5px;
+				right:45px;
+				background-image:url('../images/opacity-60-black.png');
+				opacity:0;
+				filter: alpha(opacity=00); /* For IE8 and earlier */
+			}
+			.animated-ball {
+				background-repeat: no-repeat;
+				background-position: center center;
+				position:absolute;
+				width: 100px;
+				height: 100px;
+				
+			}
+			.empty-basket, .basketball-block {
+				
+				background-repeat: no-repeat;
+				background-position: center right;
+				position:absolute;
+				width: 340px;
+				height: 200px;
+
+			}
+			.basketball-block-pre  {
+				background-repeat: no-repeat;
+				background-position: center;
+				width: 65px;
+				height: 65px;
+				position:absolute;
+			}
+			
+			.basketball-block, .basketball-block-pre, .name, .action  {
+				opacity:0;
+				filter: alpha(opacity=00); /* For IE8 and earlier */
+			}
+			.name {
+				font-family: 'open_sans_condensedbold';
+				font-size: 22px;
+				color: #FFF;
+				z-index: 20;
+				position: relative;
+				text-shadow: 0px 0px 6px @black;
+				display:block;
+				white-space: nowrap;
+			}
+			.action {
+				font-family: 'open_sans_condensedbold';
+				font-size: 44px;
+				color: #FFCA41;
+				z-index: 20;
+				display: block;
+				text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.78);
+				position: relative;
+			}
+	
+		}
+
+
+		.block{
+			width: 340px;
+			margin-top: -30px;
+			margin-left: 5px;
+			
+			.animated-ball {
+				background-image: url('../images/inplay-assests/moving-basketball-horizontal.png');
+				left: -130px;
+				top: 53px;
+
+			}
+			
+			.basketball-block-pre {
+				background-image: url('../images/inplay-assests/basketball-block-pre.png');
+				left: 255px;
+				top: 3px;
+				width:100%;
+				height:100%;
+			}
+			
+			.basketball-block {
+				background-image: url('../images/inplay-assests/basketball-block.png');
+				left: -12px;
+				top: 3px;
+			}
+			
+			.name {
+				margin-left: 260px;
+			}
+			
+			.action {
+					margin-top: 95px;
+					margin-left: 260px;
+			}
+		
+		}
+		
+		.block-opp{
+			width: 340px;
+			margin-top: -30px;
+			margin-left: 5px;
+			
+			.animated-ball {
+				background-image: url('../images/inplay-assests/moving-basketball-horizontal.png');
+				left: 320px;
+				top: 53px;
+
+			}
+			
+			.basketball-block-pre {
+				background-image: url('../images/inplay-assests/basketball-block-pre-opposite.png');
+				left: -100px;
+				top: 3px;
+				width:100%;
+				height:100%;
+			}
+			
+			.basketball-block {
+				background-image: url('../images/inplay-assests/basketball-block-opposite.png');
+				left: -28px;
+				top: 3px;
+			}
+			
+			.name {
+				margin-right: 400px;
+				text-align:right;
+			}
+			
+			.action {
+					margin-top: 95px;
+					margin-left: -100px;
+			}
+		
+		}
+
+	
+
+
+
+
+
+.statusText {
+	color: #FAD51A;
+	left: -14px;
+	z-index: 20;
+	text-shadow: 0px 0px 7px @black;
+	font-family: 'open_sans_condensedbold';
+	top: 28px;
+	font-weight: 500;
+}
+
+
+
+
+
+

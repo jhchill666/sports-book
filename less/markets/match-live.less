@@ -1,0 +1,173 @@
+@import  "../components/variables";
+@import  "../components/mixins";
+
+.match-live{
+	background: black;
+	color: white;
+	padding: 25px;
+	font-size: 12px;
+	.clearfix();
+
+	.identity{
+		width: 15%;
+		float: left;
+
+		img{
+			border: 4px solid @color-highlight;
+			width: 100%;
+		}
+
+	}
+
+	.data{
+		width: 70%;
+		float: left;
+		padding: 0 5px;
+
+		.row{
+			//background: red;
+			margin-bottom: 5px;
+			padding: 3px;
+
+			&.header{
+				span{
+					font-size: 10px;
+				}
+			}
+
+			&.home{
+				background-image: linear-gradient(to right, @color-highlight, fade(@color-highlight, 20%));
+
+				.games{
+					border: 2px solid @color-highlight;
+					padding: 3px;
+				}
+			}
+
+			&.away{
+				background-image: linear-gradient(to left, @color-highlight, fade(@color-highlight, 20%));
+
+				.games{
+					border: 2px solid darken(@color-highlight, 30%);
+					padding: 3px;
+				}
+			}
+
+			span{
+				display: table-cell;
+				min-width: 40px;
+				text-align: center;
+				vertical-align: middle;
+				font-size: 16px;
+				
+				&.selection{
+					width: 100%;
+					text-align: left;
+					padding-left: 8%;
+					
+
+					&.active{
+						&:before{
+							font-family: fontAwesome;
+							content: "\f0a3";
+							position: absolute;
+							margin-left: -32px;
+						}
+					}
+
+				}
+
+			}
+		}
+
+		.momentum{
+			.clearfix();
+			margin-top: 20px;
+			font-weight: bold;
+			position: relative;
+
+			.home{
+				width: 40%;
+				float: left;
+				margin-top: -12px;
+
+				& .scale{
+					span{
+						em{
+							left: 14px;
+						}
+					}
+				}
+
+
+			}
+
+			h2{
+				text-align: center;
+			}
+
+			.away{
+				width: 40%;
+				float: right;
+				margin-top: -12px;		
+				
+				& .scale{
+					margin-left: 0;
+					margin-right: 20%;
+
+					span{
+						float: right;
+						width: 55%;
+						box-shadow: inset -1px 1px 0px fade(@white, 40%);
+						em{
+							right: 14px;
+						}
+					}
+				}
+
+			}
+
+			.scale{
+				width: 80%;
+				background: @grey4;
+				float: left;
+				height: 12px;
+				.border-radius(6px); 
+				padding: 3px 4px;
+				margin-left: 20%;
+
+				span{
+					display: block;
+					height: 6px;
+					.border-radius(3px); 
+					width: 70%;
+					background: @color-highlight;
+					float: left;
+					box-shadow: inset 1px 1px 0px fade(@white, 40%);
+
+					em{
+						position: absolute;
+						top: 0;
+					}
+				}
+			}
+
+		}
+
+		.expand{
+			text-align: center;
+			padding-top: 20px;
+			font-size: 12px;
+			font-weight: bold;
+
+			&:before,
+			&:after{
+				font-family: fontAwesome;
+				content: "\f0d7";
+				padding: 0 10px;
+			}
+		}
+
+	}
+
+}

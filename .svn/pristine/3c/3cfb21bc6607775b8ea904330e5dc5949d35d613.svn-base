@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<section class="include">
+
+<header><h2 class="team"><span class="icon-edit cog"><%=country.name%></span></header>
+<ul class="comp-markets">
+
+	<% _.each(country.competition, function(league) {
+		
+		var sortedCountries = _.sortBy(league.event, function(obj){return obj.name;})
+                
+		_.each(sortedCountries, function(event) {
+		
+			 if(event.numMarkets != 0){ %>
+			 
+				<div class="market-content">
+	                <ul class="market h2h in-play active">
+	                
+	                    <li <% if( event.state == 'SUSPENDED'){ %>class="suspend"<%}%>>
+	                    
+	                        <div class="selection comp-view">
+								<% if( event.name != "undefined" && event.name != 0){%>
+									<%  var participants = event.name.split('vs'); %>
+									 <% if( event.state != "SUSPENDED"){ %> 
+									 <a href="#<%=sport%>/event/<%=event.id%>"> <% } %>
+										 <span class="team"><%= participants[0] %></span>   
+										 <span class="team"><%= participants[1] %></span>  
+	                        		 <% if( event.state != "SUSPENDED"){  %> </a> <% } %>
+	                        	<% } %>
+	                        </div>
+	                        
+	                        <div class="table-wrapper">
+	                        	<div class="table">
+		                        	<div class="table-row">
+
+		                          		<% if( event.state == "SUSPENDED"){ %>
+		                          
+					                          <div class="suspended">
+					                          		<span>Suspended</span>
+					                          </div>
+		                          
+										<% } else {%>
+										
+					                        <% _.each(event.markets, function(market, index) { 
+					                        if (index <= 4) {%>
+					                     
+						                        <div class="prices">
+						                            <span class="market-title"><%= market.name%></span>
+						                           
+						                            <div class="table">
+						                                <div class="table-row">
+						                                    <% _.each(market.selection, function(s) { %>
+						                                    	<div>
+						                                    		<a id="event-schedule-selection-<%=s.id%>" eventid="event-schedule-selection-<%=event.id%>"><i><%=s.type%></i><em><%=s.odds.frac%></em></a>
+						                                    	</div>
+						                                    <% }); %>
+						                                </div>
+						                            </div>
+						                        </div>
+							                        
+										<% };}); } %>
+										
+		                         </div>
+		                       </div>
+	                       </div>
+	                        
+	                       <% if( event.state != "SUSPENDED"){ %> 
+	                        
+	                        		<div class="options">
+											<a href="#<%=sport%>/event/<%=event.id%>">
+												<div class="more">+<%= event.numMarkets %>
+													<span>more</span>
+												</div>
+											</a>
+									</div>
+	                         <%}%>
+	                    </li>
+	                </ul>
+	            </div>
+		<%} else{ }; });}); %>
+    </ul>
+</section>

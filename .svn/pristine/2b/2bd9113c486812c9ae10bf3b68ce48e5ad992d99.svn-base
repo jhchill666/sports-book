@@ -1,0 +1,19 @@
+strong{
+	font-weight: bold;
+}
+
+.centralise{
+	margin: 0 auto;
+}
+
+.float-left{
+	float: left;
+}
+
+.float-right{
+	float: right;
+}
+
+ol{
+	list-style: decimal inside none;
+}

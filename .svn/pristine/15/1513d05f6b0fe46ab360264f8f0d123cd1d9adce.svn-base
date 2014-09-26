@@ -1,0 +1,133 @@
+define(['backbone',
+        'app/model/Selection',
+        'common/util/CollectionUtil',
+        'ctx'
+],
+function (Backbone, Selection, collection, ctx) {
+    return Backbone.Model.extend({
+
+        selections: collection.factory(Selection, {}),
+
+        defaults: {
+          eventId:0,
+          id : 0,
+          name : "",
+          type : "MRES",
+          displayOrder : -500,
+          columnCount : 0,
+          suspended : false,
+          state : 'OPEN',
+          displayed : true,
+          mostBalanced : false
+        },
+
+        
+        initialize: function(data) {
+            this.populate(data);
+        },
+        
+        populate: function(data){
+            var scope = this;
+            scope.data = data;
+            _.each(data, function(val, key){
+                if (key == 'id') scope.set('id', val);
+                if (_.has(scope.defaults, key)) {
+                    if (scope.attributes[key] != val) {
+                        if (key == 'state') {
+                            if (val == 'S') {
+                                val = 'SUSPENDED';
+                            }
+                            if (val == 'A') {
+                                val = 'ACTIVE';
+                            }
+                            if (val == 'V') {
+                                val = 'VOID';
+                            }
+                        }
+
+                        if (key == 'displayed') {
+                            if (val == 0) {
+                                val = false;
+                            }
+                            if (val == 1) {
+                                val = true;
+                            }
+                        }
+
+                        scope.set(key, val);   
+                    }   
+                }
+            });
+
+            if (_.has(data, 'selection')) {
+                this.selections = this.parseSelections(data.selection, this.get('id'), this.get('eventId'));   
+            }
+        },
+        
+        findSelection: function(id){
+//            for (var i = 0; i < this.selections.models.length; i++) {
+//                var selectionObj = this.selections.models[i];
+//                if (selectionObj.id == id) {
+//                    return selectionObj;
+//                }
+//            }
+//            return null;
+//            var returnObj;
+//
+//            this.selections.find(function(model) {
+//                var modelId = model.get('id');
+//                if ( modelId == id ) {
+//                    returnObj = model;
+//                }
+                //var selection = _.findWhere(model.get('id'), id);
+//            })
+//            return returnObj;
+            //var selection = this.selections.findWhere({id:id});
+            //return selection;
+
+            return _.findWhere(this.selections.models, {id: parseInt(id)});
+        },
+
+        
+        onSelectionPriceChange: function(event) {
+            var myChangedValue = event.changed;
+            var vent = ctx.get("vent");
+            var oddsFactory = ctx.get("oddsFactory");
+            var oddsObj = oddsFactory.getOddsByIndex(myChangedValue.rootIdx);
+            event.set('decimalOdds',oddsObj.decimal);
+            event.set('fractionalOdds',oddsObj.fractional);
+            
+            vent.trigger('selection:priceChange', event);
+        },
+        
+        parseSelections: function(selection, marketId, eventId){
+            var scope = this;
+            var selections = _.map(selection, function(s){
+                var options = {};
+                options.marketId = marketId;
+                options.eventId = eventId;
+                if (_.has(s, 'odds')) {
+                    s.decimalOdds = s.odds.dec;
+                    s.fractionalOdds = s.odds.frac;
+                    s.rootIdx = s.odds.rootIdx;                    
+                }
+                var selection = scope.findSelection(s.id);
+                if (_.isUndefined(selection)) {
+                    selection = new Selection(s, options);
+                } else {
+                    //Add Listener here?
+                    //selection.listenToOnce("change:rootIdx", scope.onSelectionPriceChange);
+                    scope.listenToOnce(selection,"change:rootIdx", scope.onSelectionPriceChange);
+                    //s.rootIdx += 1;
+                    selection.populate(s);
+                }
+                return selection;
+            });
+            return collection.factory(Selection, selections);
+        }
+
+        
+        
+    });
+});
+

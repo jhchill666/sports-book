@@ -1,0 +1,115 @@
+
+
+
+<%  if (bets != null && bets.length > 0) { %>
+
+	<ul class="bet-slip-head">
+	    <li>
+	        <div class="selection">Multiples</div>
+	        <div class="stake">+ All Singles</div>
+	    </li>
+	</ul>
+	<!-- <p class="dropzone">Drag bet selections here &hellip;</p> -->
+
+    <ul class="bet-selections add-to-list">
+
+        <% _.each(bets, function(bet) { %>
+
+        <li id="<%= bet.betId() %>">
+            <div class="row">
+                <div class="selection">
+                    <h3><%= bet.name %></h3>
+                    <p><%= bet.bets.length %> bet(s)</p>
+                </div>
+                <div class="bet-value"></div>
+                <!-- <div class="bet-option"><em class="highlight"></em></div> -->
+                <label class="stake">
+                    <span></span>
+                    <input type="text" value="" />
+                </label>
+            </div>
+            <div class="row2">
+                <div class="option"></div>
+                <div class="returns">Returns: &pound;<%= bet.estimatedReturnsDisplayVal() %></div>
+            </div>
+        </li>
+
+        <% }); %>
+
+    </ul>
+<% } %>
+    
+    <div class="bet-total-stake">
+  	  <p>Total Stake: <em>&pound;0.00</em></p>
+	</div>
+	
+	<ul class="cta">
+	    <li><input id="place-bet-button" type="button"/></li>
+	<!--    value="Sign In &amp; Place Bet"-->
+	</ul>
+
+
+
+<!--
+<ul class="bet-slip-head">
+    <li>
+        <div class="selection">Selection</div>
+        <div class="odds">Odds</div>
+        <div class="stake">Stake</div>
+    </li>
+</ul>
+
+<ul class="bet-selections">
+    <li>
+        <div class="row">
+            <div class="selection">
+                <h3>Singles x6</h3>
+            </div>
+            <div class="bet-value">20/1</div>
+            <div class="bet-option"><em>EW</em></div>
+            <label class="stake">
+                <span>Stake</span>
+                <input type="text" value="27.00" />
+            </label>
+        </div>
+        <div class="row2">
+            <div class="option"></div>
+            <div class="returns">Returns: &pound;27.00</div>
+        </div>
+    </li>
+    <li>
+        <div class="row">
+            <div class="selection">
+                <h3>Doubles x10</h3>
+            </div>
+            <div class="bet-value">12/2</div>
+            <div class="bet-option"><em>EW</em></div>
+            <label class="stake">
+                <span>Stake</span>
+                <input type="text" value="27.00" />
+            </label>
+        </div>
+        <div class="row2">
+            <div class="option"></div>
+            <div class="returns">Returns: &pound;27.00</div>
+        </div>
+    </li>
+    <li>
+        <div class="row">
+            <div class="selection">
+                <h3>Trebles x10</h3>
+            </div>
+            <div class="bet-value">12/2</div>
+            <div class="bet-option"><em>EW</em></div>
+            <label class="stake">
+                <span>Stake</span>
+                <input type="text" value="47.50" />
+            </label>
+        </div>
+        <div class="row2">
+            <div class="option"></div>
+            <div class="returns">Returns: &pound;27.00</div>
+        </div>
+    </li>
+</ul>
+ -->

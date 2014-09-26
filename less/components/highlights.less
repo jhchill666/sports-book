@@ -1,0 +1,934 @@
+@import  "../components/variables";
+@import  "../components/mixins";
+
+
+.highlights{
+	width:auto;
+	margin-bottom:10px;
+	height:auto;
+	background-color: #242424;
+	 
+	 &:after {
+		 content:'';
+		 display:table;
+		 clear:both;
+	 }
+	
+/*
+	margin-top: -10px;
+	margin-left: -10px;
+	margin-right: -10px;
+*/
+
+	&.multiple{ 
+		height:80px;
+		ul{
+			width:100%;
+			list-style-type: none;
+			li{
+				display: inline-block;
+				float: left;
+				width: 32%;
+				height: 90px;
+				position: relative;
+				margin-right: 1%;
+
+				&:first-child{
+					// .bg-img("../images/promo-bg-football-2.jpg"); 
+				}
+				&:nth-child(2){
+					// .bg-img("../images/promo-bg-football-1.jpg"); 
+				}
+				&:nth-child(3){
+					// .bg-img("../images/promo-bg-football-3.jpg"); 
+				}
+				
+				.hover{
+					position:absolute;
+					bottom:0px;
+					.opacity-80-white();
+					width:100%%;
+					padding:5px;
+					height:35px;
+					overflow: hidden;
+					.addTransitions(0.5s);
+					.when{
+						display:inline-block;
+						padding-left:0;
+						padding-right:5%;
+						text-align:center;
+						border-right:1px solid #AEAEAE;
+						margin-right:5%;
+						span{
+							display:block;
+							&.date{
+								font-size: @size-s;
+							}
+							&.time{
+								font-weight:bold;
+							}
+							
+						}
+						
+					}
+					.who{
+						width:auto;
+						display:inline-block;
+						span{
+							display:block;
+							&.teams{
+								font-weight:bold;
+								color:@blue1;
+								text-shadow: 0px 0px 2px #fff;
+							}
+							&.div{
+								font-size: @size-s;
+							}
+						}
+					}
+					.hidden{
+						margin:14px 1px;
+						span.btn{
+							background-color: @blue1;
+							color:#fff;
+							font-weight:bold;
+							padding:5px;
+							font-size: 11px;
+							&:hover{
+								background-color: @blue5;
+								.addTransitions(0.4s);
+								cursor:pointer;
+							}
+						}
+					}
+					
+				}
+				&:hover{
+					.hover{
+						  	.addTransitions(0.4s);
+							bottom:0px;
+							height:65px;
+					}
+				}
+			}
+		}
+	}
+
+
+	
+	
+	.hover-info{
+		opacity:0;
+		display:none;
+		color:white;
+		position:absolute;
+		max-width: 100%;
+		
+	}
+	.hover-info.show{
+		
+		opacity:1;
+		display:block;
+		bottom: 0px;
+		
+		
+		
+		span.top{
+					.opacity-70();
+					display: inline-block;
+					height:25px;
+					padding:8px;
+					width:auto;
+					font-weight: 500;
+		}
+		span.bottom{
+					background-color: fade(@blue1, 80%);
+					display:block;
+					height: 30px;
+					padding:10px 8px;
+					text-transform: uppercase;
+					font-weight:bold;
+					padding-right:20px;
+					
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					
+					span{
+						margin-right:20px;
+						color:#222;
+						font-weight:bold;
+					}
+					
+		}
+	}
+	
+	.panel-left {
+		float:left;
+		width:35%;
+		height:188px;
+		background-repeat: no-repeat;
+		background-position: 0px 20%;
+		background-size: cover;
+		background-image: url("../images/promo-bg-soccer-1.jpg");
+		position:relative;
+		
+		#panel-1 {
+			background-image: url("../images/promo-bg-soccer-1.jpg");
+		}
+		#panel-2 {
+			background-image: url("../images/promo-bg-soccer-2.jpg");
+		}
+		#panel-3 {
+			background-image: url("../images/promo-bg-soccer-3.jpg");
+		}
+		
+		&.oneHighlight{
+			height:89px;
+			border-bottom: 1px solid #454545;
+			.hover-info, .hover-info.show{
+				display:none;
+			}
+		}
+		&.twoHighlights{ 
+			height:139px;
+			border-bottom: 1px solid #454545;
+			.hover-info, .hover-info.show{
+				display:none;
+			}
+		}
+	}
+	
+	
+	
+	.list-right {
+		
+		.opacity-95();
+		float:right;
+		width: 65%;
+		height: auto;
+		
+		.market-header {
+			
+			font-weight: 500;
+			border-bottom: 1px solid #454545;
+			color:#fff;
+			
+			h2 {
+				font-size: 14px;
+				font-weight: 600;
+				color: #FFF;
+				float:left;
+				width:60%;
+				padding: 12px;
+				padding-left:14px;
+			}
+			
+			&:after {
+				content:'';
+				display:table;
+				clear:both;
+			}
+			
+			.table {
+				float:left;
+				width:40%;
+				text-align: center;
+				padding-right: 10px;
+				padding-top:10px;
+				font-size: 10px;
+				color:#454545;
+				padding-top: 24px;
+				
+				.table-row {
+					div {
+						padding-right:10px;
+					}
+				}
+			}
+		}
+		
+		ul.highlight-list{
+			margin-top: 0;
+			clear: both;
+	
+		
+			li{
+				border-bottom:1px solid rgb(69, 69, 69);
+				border-top:1px solid transparent;
+				color: white;	
+				display:block;
+				height: 50px;
+				width:100%; 
+				font-weight: 500;
+				clear: both;
+				
+				
+				&.active{
+					background-color:@blue1;
+					border-bottom: 1px solid @blue1;
+					border-top: 1px solid #68AFD2;
+					
+					.col1 {
+						border-right: 1px solid #2684BA;
+						
+						.date{ 
+							color: #0B4B73;
+						}
+					}
+					
+					.col2 {
+						
+						.div {
+							color: #0B4B73;
+						}
+					
+					}
+					
+					.col3 {
+						a {
+							border: 1px solid darken(@blue1, 10%);
+							background: darken(@blue1, 5%);
+							color:@white;
+							
+							i {
+								color:@white;
+							}
+							
+							
+						}
+						.market-title {
+							background-color: darken(@blue1, 5%);
+							color: @white;
+						}
+						
+						
+					}
+					
+					.options {
+						
+						a {
+							border: 1px solid darken(@blue1, 10%);
+							background: darken(@blue1, 5%);
+							color:@white;
+							
+						}
+					}
+					
+					&.inplay {
+					//	background-color:#75AB46;
+					//	border-bottom:1px solid darken(#75AB46, 10%);
+					//	border-top:1px solid darken(#75AB46, 10%);
+						
+						.col2 a.div, .col1 .date  {
+							color: #fff;
+						}
+					}
+					
+				}
+				
+				&:hover {
+					&.active{
+						.col3, .options {
+							a {
+								
+								&:hover {
+									background: darken(@blue1, 10%);
+									border: 1px solid darken(@blue1, 15%);
+									color:@white;
+									
+									i {
+										color:#fff;
+									}
+
+								}
+								
+								i {
+									color: #B8D6E5;
+								}
+							}
+						}
+					}
+				}
+				
+				&:first-child{
+					display:block;
+					width:100%;
+					font-weight:bold;	
+	
+				}
+				&:last-child{
+				/* 	border:none; */
+				}
+				.col1, .col2, .col3{
+					display:inline-block;
+					vertical-align: middle;
+					box-sizing: border-box;
+				}
+				.col1{
+					width:10%;
+					float:left;
+					border-right:1px solid rgb(69, 69, 69);
+					height: 100%;
+					padding-top:10px;
+					
+					span{
+						display:block;
+						text-align:center;
+						
+						&.date{
+							font-size: @size-s;
+							margin-bottom:1px;
+							color:@blue1;
+							
+						}
+						&.time{
+							font-size:13px;
+						}
+					}
+				}
+				.col2{
+				
+					width: 38%;
+					float:left;
+					padding-left: 10px;
+					padding-top:10px;
+					padding-right: 5px;
+
+
+					a {
+					
+						display:block;
+						text-align:left;
+					
+						
+						&.div{
+							font-size: @size-s;
+							margin-bottom: 2px;
+							color: @blue1;
+							font-weight: 600;
+							
+							&:hover {
+								text-decoration:underline;
+							}
+
+						}
+						&.game{
+							font-size:13px;
+							font-weight:bold;
+							color:#fff;
+								
+						white-space: nowrap;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						}
+					}
+					
+				}
+				.col3{
+				
+					float:left;
+					width: 42%;
+					// padding-right: 10px;
+					
+					> div {
+						margin-top: 3px;
+					}
+					
+					.market-title {
+						font-size: 10px;
+						display: block;
+						text-align: center;
+						font-weight: 600;
+						margin-bottom: 3px;
+						padding: 1px;
+						background-color: #3D3D3D;
+						border-radius: 2px 2px 0px 0px;
+						margin-right: 4px;
+						
+						white-space: nowrap;
+							overflow: hidden;
+							text-overflow: ellipsis;
+						
+					}
+					
+					.btn{
+						background-color: @grey5;
+						padding: 7px 0;
+						color: white;
+						display: block;
+						text-align: center;
+						font-size: 12px;
+						font-weight: bold;
+					}
+					
+			
+				} // col
+				
+				.options{
+					width:10%;
+					text-align: right;
+					padding-right: 3px;
+					float: left;
+					
+					a{
+						
+						height: 40px;
+						.price-large(@white, @grey5, #454545, @white, @grey4, @blue2);
+						display: block;
+						font-weight:500;
+						margin:3px;
+						width:auto;
+						margin-right: 2px;
+						margin-left: 2px;
+						float:none;
+						padding-top: 6px;
+						
+						div.more{
+							font-size:11px;
+							display: block;
+							vertical-align: middle;
+							span{
+								display: block;
+							}
+						}
+						&:hover{
+							//	color:#fff;
+							
+							text-decoration: none;
+						}
+					}
+				}
+				
+				&.inplay {
+					
+					.col2 a.div, .col1 .date  {
+						color: #75AB46;
+					}
+				}
+			}
+			
+			
+			&.oneHighlightOld{
+				li{
+					border-bottom:none;
+					height:auto;
+					padding-top:10px;
+					&.active{
+					background-color: transparent;
+					border:none;
+						.col1, .col2, .col2.div, .col3, .col3 a{
+							color:inherit;
+							border:inherit;
+							background: inherit;
+						}
+					}
+					
+					
+					.col1{
+						padding-top:10px;
+						span{
+							font-size:13px;
+							color:@blue1;
+						}
+						
+						span:first-child{
+							margin-right:2px;
+						}
+					}
+					.col2{
+						padding-top:10px;
+						a.div{
+							font-size:12px;
+							color:@grey7;
+						}
+						a.game{
+							font-size:20px;
+						}
+					}
+					.col3{
+						padding-top: 10px;
+					}
+					.col1, .col2{
+						float:none;
+						display:block;
+						width:100%;
+						height:100%;
+						padding-left: 15px;
+						padding-right: 5px;
+						
+						span{
+							display:inline-block;
+
+						}
+						
+					}
+					.col3{
+						display:block;
+						float:none;
+						width: 80%;
+						padding-left: 10px;
+						padding-top:18px;
+						
+						& > div{
+							margin-top:0;
+						}
+					}
+				}
+			}	
+		}
+		
+		
+		.table {
+						
+			display: table;
+			table-layout: fixed;
+			width: 100%;
+			
+			.table-row {
+				display:table-row;
+				
+				.suspended{
+					
+					float: right;
+					
+					span{
+						.pill(#EE1414, @white,34px,120px);
+					}
+				}
+				
+				> * {
+					display:table-cell;
+					
+					a {
+						.price(#fff, @grey3, #454545); // #text, #background, #border
+						
+						padding: 5px;
+						text-align: center;
+						padding-top: 0;
+						padding-bottom: 2px;
+						width: 94%;
+						
+						i {
+							display: block;
+							margin-top: 1px;
+							margin-bottom: 1px;
+						}
+	
+						&:hover{
+						
+							background: @color-highlight;
+							color: @white;
+							border: 1px solid #2B86BB;
+							
+							i {
+								color: @white;
+							}
+						}
+					}
+				}
+			}
+			
+		} // table
+					
+					
+	
+	} // list
+	
+	// margin-top: 2px;
+	
+	
+/*
+	.slide-bar{
+		position: absolute;
+		top:8px;
+		left:8px;
+		height: 20px;
+		width: 100%;
+		//background-color: @grey3;
+		
+		.slide-controls{
+			width:80px;
+			height:100%;
+			// background-color: @grey3;
+			
+			span{
+				border-radius:10px;
+				background-color: @grey10;
+				width:10px;
+				height:10px;
+				margin:0 2px;
+				display:inline-block;
+				.box-shadow(0px, 1px, 4px, 0.6);
+				
+				&.active{
+					background-color: @blue1;
+					&:hover{
+						.inset-dark-shadow;
+					     .anyTransition(box-shadow, 0.2s, linear);
+					    
+					}
+				}
+				
+				&:hover{
+				  background-color: @blue1;
+				  cursor:pointer;
+				   .anyTransition(box-shadow, 0.2s, linear);
+				}
+				
+			}
+		}
+	}
+*/
+	
+
+}
+
+#market-highlights-basketball {
+	
+	.panel-left {
+		
+		background-image: url("../images/promo-bg-basketball-1.jpg");
+		
+		#panel-1 {
+			background-image: url("../images/promo-bg-basketball-1.jpg");
+		}
+		#panel-2 {
+			background-image: url("../images/promo-bg-basketball-2.jpg");
+		}
+		#panel-3 {
+			background-image: url("../images/promo-bg-basketball-3.jpg");
+		}
+	}
+	
+	
+}
+
+#market-highlights-baseball {
+	
+	.panel-left {
+		
+		background-image: url("../images/promo-bg-baseball-1.jpg");
+		
+		#panel-1 {
+			background-image: url("../images/promo-bg-baseball-1.jpg");
+		}
+		#panel-2 {
+			background-image: url("../images/promo-bg-baseball-2.jpg");
+		}
+		#panel-3 {
+			background-image: url("../images/promo-bg-baseball-3.jpg");
+		}
+	}
+	
+	
+}
+
+
+
+
+
+@media all and (max-width: 1350px) {
+
+
+	.highlights {
+	
+		.panel-left {
+			width:100%;
+			height:150px;
+			
+		}
+		.list-right {
+			width:100%;
+			clear:both;
+			height: auto;
+		}
+		
+		.hover-info.show {
+		
+			span.top {
+				height: 22px;
+				padding: 5px;
+				width: 105px;
+				font-weight: 600;
+				font-size: 11px;
+				padding-left: 8px;
+			}
+		
+			span.bottom{
+				font-size: @size-s;
+				height:26px;
+				padding:7px;
+				height: 30px;
+				padding: 0px 8px;
+				font-size:11px;
+				
+				
+				span{
+					margin-right: 5px;
+					font-size: 10px;
+					display: block;
+					margin-top: 3px;
+					margin-bottom: 1px;
+				}
+						
+			}
+		}
+		
+	}
+	
+	
+	
+
+
+/*
+	.highlights{
+		&.multiple{
+			ul{
+				li{
+					.hover{
+						.when{
+							padding-left: 0;
+							padding-right: 2%;
+							margin-right:2%;
+						}
+						.who{
+						
+							span.teams{
+								
+							}
+						}
+					}
+				}
+			}
+		}
+	
+	}
+*/
+
+
+}
+
+@media all and (max-width: 1180px) {
+
+	.highlights {
+	
+	
+		.panel-left {
+			width:100%;
+			height: 150px;
+		}
+		.list-right {
+			width:100%;
+		}
+		
+	
+	
+		.hover-info.show {
+	
+			
+			
+			span.bottom {
+				
+				height: 21px;
+				padding: 5px 8px;
+
+				span {
+					display: inline;
+					font-size:11px;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+@media all and (max-width: 480px) {
+
+	.highlights {
+	
+		
+		.list-right {
+			
+			height:auto;
+		
+		ul.highlight-list li {
+			
+			height:auto;
+			padding-bottom: 10px;
+			
+			
+			&:after {
+				content:'';
+				display:table;
+				clear:both;
+			}
+			
+			.col1 {
+				width:15%;
+				border-right:0;
+				padding-left: 10px;
+				
+				
+			}
+			.col2 {
+				width:85%;
+			}
+			.col3 {
+				width: 85%;
+				clear:both;
+				
+				padding-right: 0;
+				padding-left: 7px;
+				
+				> div {
+					margin-top: 10px;
+				}
+
+			}
+			
+			&.active {
+				.col1{
+					border-right:0;
+				}
+			
+			}
+			
+			.options {
+				width: 15%;
+				margin-top: 7px;
+				
+				> a {
+					margin-left: 0;
+					padding-left:1px;
+					padding-right:1px;
+				}
+			}
+		}
+	  }
+	  
+	  
+	  .hover-info.show span.bottom {
+			padding: 5px 14px;
+		}
+		.hover-info.show span.top {
+			padding-left: 14px;
+		}
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<section class="include">
+
+    <header><h2 class="team"><%= event.attributes.name %><span class="icon-edit cog"></span></header>
+
+    <ul id="event-schedule-event-<%= event.id%>" class="inplay-markets-1">
+
+        <%
+        	var collection = event.Markets.byTypes(marketTypes);
+	        var marketGroupedByType =  _.groupBy(collection.models, function(market) {
+                return market.attributes.type;
+            });
+	        var marketTypes =  _.keys(marketGroupedByType);
+		%>
+
+        <%  _.each(marketTypes, function(type) {
+
+        	var marketGroup = marketGroupedByType[type];
+
+        	_.each(marketGroup, function(market, index) {
+
+        %>
+			
+	        <li id="event-schedule-market-<%= market.id%>">
+	            <div class="tableWrap">
+	
+					<% if(index == 0) { %>
+		                <hr/>
+		                <div class="selection">
+		                     <span class="team home"><%= marketGroup[0].attributes.name %></span>
+		                </div> 
+					<% } %>
+	
+	                <div class="market-prices">
+						<% if(market.attributes.columnCount > 1 && (market.attributes.columnCount <= market.Selections.length)){%>
+			                <% for (colIndex = 1; colIndex <= market.attributes.columnCount; colIndex++) { %>
+								
+			                	<div class="price-col <% if(colIndex == 1){%>c-one<%} %><%if (colIndex == 2){%>c-two<%} %><% if(colIndex == 3){%>c-three<%}%>">
+			                        <% var selFiltered = _.filter(market.Selections.models, function(obj){
+			                        	if(obj.attributes.pos && obj.attributes.pos.col) return obj.attributes.pos.col == colIndex ;
+			                        	return false;
+			                        }); var selSorted = _.sortBy(selFiltered, function(obj){return obj.attributes.pos.row;}); _.each(selSorted, function(selection, i){ %>
+									<% if(selection.attributes.pos && selection.attributes.pos.col){ %>
+			                        <div class="price">
+			                            <a id="event-selection-<%= selection.id %>" eventid="event-selection-<%=event.id%>"
+                                                       title="<%= selection.attributes.name %>"
+                                                       class="rowNum-<%=selection.attributes.pos.row %> colNum-<%= selection.attributes.pos.col  %>">
+			                                <i><%= selection.attributes.name %></i>
+			                                <em><%=selection.getOdds(format) %></em>
+			                            </a>
+			                        </div>
+									<% } %>
+			                    <% })%>
+			                  </div>								
+			              <% } %> 
+	
+	                <% } else {%>
+	                    <% 
+	                    var selElseSorted = _.sortBy(market.Selections.models, function(obj){
+	                    	return obj.attributes.name ;
+	                    }); 
+		                    _.each(selElseSorted, function(selection, i){ 
+		                    %>					
+		                    <div class="price">
+		                        <a id="event-selection-<%= selection.id%>" eventid="event-selection-<%=event.id%>" title="<%= selection.attributes.name %>" class="tooltip">
+		                            <i><%= selection.attributes.name %></i>
+		                            <em><%=selection.getOdds(format) %></em>
+		                        </a>
+		                    </div>
+		
+		                    <% if (i == 3 && market.Selections.length == 3) { %><div class="prices"></div> <% } %>
+		                    <% if (i % 2 == 0 && market.Selections.length > 2) { %> </div><div class="market-prices"> <% } %>
+		
+		                    <% }); %>
+	                    <% } %>
+	                </div>
+	            </div>
+	        </li>
+	         
+	        <% }); %>
+        <% }); %>
+    </ul>
+</section>
+
+
+
+
+
+
+

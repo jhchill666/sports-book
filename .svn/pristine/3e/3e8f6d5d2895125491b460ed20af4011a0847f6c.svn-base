@@ -1,0 +1,7 @@
+<ul class="nav nav-pills market-groups">
+    <% _.each(data, function(group, index) { %>
+        <% if(group.count > 0) { %>
+            <li <% if(index == 0) { %> class="active" <% } %> ><a marketGroupType="<%= group.type %>" ><%= group.name %> <span class="count"><%= group.count %></span></a></li>
+        <% } %>
+    <% }); %>
+</ul>

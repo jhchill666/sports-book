@@ -1,0 +1,14 @@
+<ul class="nav nav-pills market-groups">
+    <% _.each(groups, function(group, index) { %>
+        <li <% if(index == 0) { %> class="active" <% } %> >
+            <a marketGroupType="<%= group.name %>" ><%= group.name %> <span class="count"><%= group.types.length %></span></a>
+        </li>
+    <% }); %>
+</ul>
+
+
+
+<!--match: {-->
+<!--displayOrder: 0,-->
+<!--types: ['OVUN', MRES', 'ETC']-->
+<!--}-->

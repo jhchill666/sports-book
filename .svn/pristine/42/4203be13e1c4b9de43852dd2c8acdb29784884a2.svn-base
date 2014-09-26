@@ -1,0 +1,35 @@
+<ul class="bet-slip-head">
+    <li>
+        <div class="selection">Closed Bets</div>
+        <div class="odds">Odds</div>
+        <div class="stake">Stake</div>
+    </li>
+</ul>
+<ul class="bet-selections">
+    <% _.each(bets, function(bet) { %>
+    <ul class="event">
+        <li><h3></h3>
+        <li><h3></h3>
+            <ul class="bet-selections">
+                <li>
+                    <div class="row">
+                        <div class="selection">
+                            <h3></h3>
+                            <p>Win</p>
+                        </div>
+                        <div class="bet-value"></div>
+                        <div class="bet-option"><em>EW</em></div>
+                        <div class="stake">
+                            <em></em>
+                        </div>
+                    </div>
+                    <div class="row2">
+                        <div class="option">Ref: </div>
+                        <div class="returns">Returns: &pound;<span></div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+ <% }); %>   
+</ul>

@@ -1,0 +1,93 @@
+
+
+<form method="post" action="">
+
+    <div class="bbm-modal__topbar">
+        <h3 class="bbm-modal__title">Register</h3>
+        <a href="#" class="bbm-button close">x</a>
+    </div>
+    <div class="bbm-modal__section">
+		<div class="left">
+	        <div class="inner">
+	            <label>Title</label>
+	            <select>
+	            	
+	            	<option value="none">- None Selected -</option>	
+					  <option value="mr">Mr</option>
+					  <option value="mrs">Mrs</option>
+					  <option value="ms">Ms</option>
+					  <option value="miss">Miss</option>
+					  <option value="dr">Dr</option>
+					  <option value="sir">Sir</option>
+					  <option value="prof">Prof</option>
+				</select>
+	        </div>
+	        <div class="inner">
+	            <label>First Name</label><input name="password" type="text" />
+	        </div>
+	        <div class="inner">
+	            <label>Surname</label><input name="username" type="text" />
+	        </div>
+	        <div class="inner">
+	            <label>Date of Birth</label>
+	            
+	            <select>
+	            	<% for (i = 0; i < 31; i++) { %>
+				    	<option value="<%=i%>"><%=i%></option>
+					<% } %>
+				</select>
+				<select>
+	            	<% _.each(moment.months(), function(month){%> 
+				    	<option value="<%=month%>"><%=month%></option>
+					<% }) %>
+				</select>
+				<select>
+		            <% var currentYear = moment().get("year");
+						for (i = 0; i < 100; i++) { %>
+						<option value="<%=currentYear%>"><%=currentYear%></option>
+						
+						<% currentYear = currentYear - 1;
+					 } %>
+					
+				</select>
+				
+	        </div>
+	        <div class="inner">
+	            <label>Mobile</label><input name="username" type="text" />
+	        </div>
+	        <div class="inner">
+	            <label>Email</label><input name="password" type="text" />
+	        </div>
+		</div>   
+		<div class="right">
+	        <div class="inner">
+	            <label>Address Line 1</label><input name="username" type="text" />
+	        </div>
+	        <div class="inner">
+	            <label>Address Line 2</label><input name="password" type="text" />
+	        </div>
+	        <div class="inner">
+	            <label>City</label><input name="username" type="text" />
+	        </div>
+	        <div class="inner">
+	            <label>Country</label><input name="password" type="text" />
+	        </div>
+	        <div class="inner">
+	            <label>Postcode</label><input name="username" type="text" />
+	        </div>
+		</div> 
+	        
+        <div class="inner">
+            <div id="feedback"></div>
+        </div>
+
+    </div>
+    <div class="bbm-modal__bottombar">
+        <a href="#" class="bbm-button clear">Clear</a>
+        <a href="#" class="bbm-button" type="submit">Register</a>
+    </div>
+
+</form>
+
+
+

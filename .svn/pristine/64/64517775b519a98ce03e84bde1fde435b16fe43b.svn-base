@@ -1,0 +1,14 @@
+<% if(competitions.length > 0){ %>
+	<section>
+	    <h3>Competitions</h3>
+	    <ul>
+	    	<% _.each(competitions, function(competition){ %>
+			    <li>
+			        <a href="#<%=sport%>/competition/<%=competition.id%>">
+			        	<%=competition.name%>
+					</a>
+			    </li>       
+	        <% }) %>
+	    </ul>
+	</section>
+<% } %>

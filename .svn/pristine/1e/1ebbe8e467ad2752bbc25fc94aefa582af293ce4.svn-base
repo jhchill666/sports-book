@@ -1,0 +1,114 @@
+	<div id="IPVPanelWrapper">
+<div id="tabs">
+	
+	<div class="tab-bar">
+			<ul>
+				<li><a href="#close"><i class="fa fa-chevron-up"></i></a></li>
+				<li class="active"><a href="#IPVpanelBasketball">Inplay</a></li>
+				<li><a href="#IPVpanelStream">Live Stream</a></li>
+				
+			</ul>
+		</div>
+	
+		<div id="IPVpanelStream" class="inplay-panel">
+				
+			<iframe width="320" height="234" src="//www.youtube.com/embed/HTdPbC1ku-Q" frameborder="0" allowfullscreen="false"></iframe>
+		
+		</div>
+			
+	 <div id="IPVpanelBasketball" class="inplay-panel openTab">
+	
+			
+			<div class="progressBar">
+				<div class="time center"><i class="fa fa-clock-o"></i>&#160;<span></span></div>
+				<div class="activeBar"></div>
+			</div>
+		
+			<div class="teams">
+				<div class="team">
+					<span class="loc">HOME</span>
+					<span class="name">Bulls</span>
+					<span class="score left">2</span>
+					<div class="flash left"></div>
+				</div>
+				<span class="v">v</span>
+				<div class="team">
+					<span class="loc">AWAY</span>
+					<span class="name">NY Knick</span>
+					<span class="score right">3</span>
+					<div class="flash right"></div>
+				</div>
+			</div>
+			<div class="basketball-court">
+				
+				<div class="basket">
+					<div class="cover"></div>
+					<div class="animated-ball"></div>
+					<div class="empty-basket"></div>
+					<div class="dunk-basket"></div>
+					<div class="basket-1"></div>
+					<div class="basket-2"></div>
+					<div class="basket-3"></div>
+					<span class="action">NET!</span>
+					<span class="name">M. Jordan</span>
+				</div>
+				<div class="basket-opposite">
+					<div class="cover"></div>
+					<div class="animated-ball"></div>
+					<div class="empty-basket"></div>
+					<div class="dunk-basket"></div>
+					<div class="basket-1"></div>
+					<div class="basket-2"></div>
+					<div class="basket-3"></div>
+					<span class="action">NET!</span>
+					<span class="name">M.Jackson</span>
+				</div>
+
+				
+				<div class="bounce">
+					<div class="cover"></div>
+					<div class="animated-ball"></div>
+					<div class="empty-basket-b"></div>
+					<div class="bounce-basket"></div>
+					<div class="ex-point"></div>
+					<span class="action">BOUNCE</span>
+					<span class="name">M. Jordan</span>
+				</div>
+				<div class="bounce-opposite">
+					<div class="cover"></div>
+					<div class="animated-ball"></div>
+					<div class="empty-basket-b"></div>
+					<div class="bounce-basket"></div>
+					<div class="ex-point"></div>
+					<span class="action">BOUNCE</span>
+					<span class="name">M. Jacksonville</span>
+				</div>
+				
+				<div class="block">
+					<div class="cover"></div>
+					<div class="animated-ball"></div>
+					<div class="basketball-block-pre"></div>
+					<div class="basketball-block"></div>
+					<span class="action">BLOCK</span>
+					<span class="name">M. Jordan</span>
+				</div>
+				<div class="block-opp">
+					<div class="cover"></div>
+					<div class="animated-ball"></div>
+					<div class="basketball-block-pre"></div>
+					<div class="basketball-block"></div>
+					<span class="action">BLOCK</span>
+					<span class="name">M. Jacksonville</span>
+				</div>
+				
+				
+			</div> <!-- end of 'pitch' -->
+			
+			<div style="clear:both;"></div>
+			
+		
+	</div> <!-- inpay panel -->
+	
+</div> <!-- tabs -->
+
+	</div>

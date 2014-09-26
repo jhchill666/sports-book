@@ -1,0 +1,140 @@
+@import  "../components/variables";
+@import  "../components/mixins";
+
+.slider-highlights {
+	margin-bottom: 7px;
+}
+
+
+.promos{
+	
+	margin-top: 20px;
+	
+	.promo-block{
+		width: 32.83%;
+		float: left;
+		cursor: pointer;
+		margin-right: 0.5%;
+
+	}
+
+	.promo-head{
+		background: @grey7 url(../images/promo-bg-horses.png);
+		height: 170px;
+		position: relative;
+		
+		h2{
+			background: @color-highlight;
+			padding: 7px;
+			display: inline-block;
+			color: @white;
+			font-size: 12px;
+			font-weight: bold;
+			border-bottom: 0;
+		}
+
+		header{
+			p{
+				background: @grey2;
+				padding: 7px;
+				display: inline-block;
+				color: @color-highlight;
+				font-size: 12px;
+				font-weight: bold;
+			}
+		}
+
+		.promo-content{
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+		}
+		
+		.time {
+			border-right: 1px solid #121212;
+		}
+		
+
+	}
+	
+
+	.market{
+		
+		width: 100%;
+
+		li{
+		
+			&:hover {
+				background:transparent;
+			}
+
+			div{
+				padding: 0;
+				margin-bottom: 1px;
+				.bgfade(@black, 0.7);
+				color: @white;
+				font-weight: bold;
+				border:0;
+
+				a{
+					color: @white;
+					font-weight: bold;
+				}
+			}
+
+		}
+	}
+
+	article{
+		padding: 10px;
+		color: @grey2;
+
+		h3{
+			font-size: 16px;
+			font-weight: bold;
+			padding-bottom: 12px;
+		}
+
+		p{
+			line-height: 1.4em;
+
+			&.cta{
+				padding-top: 20px;
+				font-weight: bold;
+				font-size: 0.9em;
+			}
+		}
+	}
+
+}
+
+@media all and (max-width: 1024px) {
+	
+	.promos .promo-head {
+		background: #BDBDBD url(../images/promo-bg-horses.png);
+		height: 120px;
+	}
+
+}
+
+
+@media all and (max-width: 768px) {
+	
+	.slider-highlights.promos { 
+		height:120px;
+		overflow:hidden;
+		section {
+			
+			&.promo-block{
+				width: 100%;
+				float:left;
+			}
+			
+			.promo-head {
+				height: 120px;
+			}
+		}
+	
+	}
+	
+}

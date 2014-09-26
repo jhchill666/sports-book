@@ -1,0 +1,1153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="01ca035b-56cd-49e6-9491-5c072a034fa5" name="Default" comment="optimization amends">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/app/view/abstract" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/app/model/Event2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/app/collection/EventsCollection.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/app/model/KeyMarketsModel.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/app/model/Market2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/app/model/Selection2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/app/collection/SelectionsCollection.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/view/main/schedule/AbstractSchedulePM.js" afterPath="$PROJECT_DIR$/js/app/view/main/schedule/AbstractSchedulePM.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/core/AppConfig.js" afterPath="$PROJECT_DIR$/js/app/core/AppConfig.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/model/domain/BetsModel.js" afterPath="$PROJECT_DIR$/js/app/model/domain/BetsModel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/view/main/competitions/CompetitionEventView.js" afterPath="$PROJECT_DIR$/js/app/view/main/competitions/CompetitionEventView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/view/main/competitions/CompetitionEventView.tpl.html" afterPath="$PROJECT_DIR$/js/app/view/main/competitions/CompetitionEventView.tpl.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/model/Event.js" afterPath="$PROJECT_DIR$/js/app/model/Event.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/model/EventDetailsModel.js" afterPath="$PROJECT_DIR$/js/app/model/EventDetailsModel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/model/domain/EventModel.js" afterPath="$PROJECT_DIR$/js/app/model/domain/EventModel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/model/EventScheduleModel.js" afterPath="$PROJECT_DIR$/js/app/model/EventScheduleModel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/view/main/schedule/EventSchedulePM.js" afterPath="$PROJECT_DIR$/js/app/view/main/schedule/EventSchedulePM.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/view/main/schedule/EventScheduleView.js" afterPath="$PROJECT_DIR$/js/app/view/main/schedule/EventScheduleView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/view/main/schedule/EventScheduleView.tpl.html" afterPath="$PROJECT_DIR$/js/app/view/main/schedule/EventScheduleView.tpl.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/model/FrontPageModel.js" afterPath="$PROJECT_DIR$/js/app/model/FrontPageModel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/common/command/api/GetFrontPageScheduleCommand.js" afterPath="$PROJECT_DIR$/js/common/command/api/GetFrontPageScheduleCommand.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/common/command/api/GetKeyMarketsForSportCommand.js" afterPath="$PROJECT_DIR$/js/common/command/api/GetKeyMarketsForSportCommand.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/common/command/api/GetSportDisplayTemplateCommand.js" afterPath="$PROJECT_DIR$/js/common/command/api/GetSportDisplayTemplateCommand.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/common/command/api/GetSportScheduleCommand.js" afterPath="$PROJECT_DIR$/js/common/command/api/GetSportScheduleCommand.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/view/header/HeaderView.js" afterPath="$PROJECT_DIR$/js/app/view/header/HeaderView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/view/side/InPlay.js" afterPath="$PROJECT_DIR$/js/app/view/side/InPlay.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/model/Market.js" afterPath="$PROJECT_DIR$/js/app/model/Market.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/view/main/markets/MarketGroups.tpl.html" afterPath="$PROJECT_DIR$/js/app/view/main/markets/MarketGroups.tpl.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/model/MarketGroupsModel.js" afterPath="$PROJECT_DIR$/js/app/model/MarketGroupsModel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/view/main/markets/MarketGroupsView.js" afterPath="$PROJECT_DIR$/js/app/view/main/markets/MarketGroupsView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/view/main/markets/MarketGroupsViewPM.js" afterPath="$PROJECT_DIR$/js/app/view/main/markets/MarketGroupsViewPM.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/collection/MarketsCollection.js" afterPath="$PROJECT_DIR$/js/app/collection/MarketsCollection.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/view/main/markets/MarketsView.js" afterPath="$PROJECT_DIR$/js/app/view/main/markets/MarketsView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/view/main/markets/MarketsView.tpl.html" afterPath="$PROJECT_DIR$/js/app/view/main/markets/MarketsView.tpl.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/view/main/markets/MarketsViewPM.js" afterPath="$PROJECT_DIR$/js/app/view/main/markets/MarketsViewPM.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/view/main/highlights/MatchHighlightsView.js" afterPath="$PROJECT_DIR$/js/app/view/main/highlights/MatchHighlightsView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/view/main/highlights/MatchHighlightsView.tpl.html" afterPath="$PROJECT_DIR$/js/app/view/main/highlights/MatchHighlightsView.tpl.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/model/Selection.js" afterPath="$PROJECT_DIR$/js/app/model/Selection.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/view/main/frontPage/SportsScheduleView.js" afterPath="$PROJECT_DIR$/js/app/view/main/frontPage/SportsScheduleView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/view/main/frontPage/SportsScheduleView.tpl.html" afterPath="$PROJECT_DIR$/js/app/view/main/frontPage/SportsScheduleView.tpl.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/view/main/frontPage/SportsScheduleViewPM.js" afterPath="$PROJECT_DIR$/js/app/view/main/frontPage/SportsScheduleViewPM.js" />
+    </list>
+    <list id="717268cd-5136-4cb7-a979-4e0f5409e431" name="ModelRefactor" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/app/view/abstract/AbstractDataObserver.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/app/view/side/CompetitionsPM.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/app/collection/ScheduleCollection.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/app/model/ScheduleModel.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/app/model/SportSchedule.js" />
+    </list>
+    <ignored path="K8-Sportsbook.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="false" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="K8-Sportsbook" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="AppViewPM.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/app/view/AppViewPM.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="1380">
+              <caret line="36" column="15" selection-start-line="36" selection-start-column="15" selection-end-line="36" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventCache.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/app/model/EventCache.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="174" max-vertical-offset="1425">
+              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventScheduleModel.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/app/model/EventScheduleModel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1950" max-vertical-offset="4170">
+              <caret line="177" column="28" selection-start-line="177" selection-start-column="28" selection-end-line="177" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Selection.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/app/model/Selection.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2145">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Event2.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/app/model/Event2.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2355">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Market2.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/app/model/Market2.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="354" max-vertical-offset="1770">
+              <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Selection2.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/app/model/Selection2.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="369" max-vertical-offset="1305">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Event.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/app/model/Event.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2715" max-vertical-offset="5040">
+              <caret line="196" column="79" selection-start-line="196" selection-start-column="79" selection-end-line="196" selection-end-column="79" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="promo-banner-1.png" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/images/style-beteast/promo-banner-1.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="promo-bg-horses.png" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/images/style-beteast/promo-bg-horses.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="true" />
+    </FindUsagesManager>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/js/app/view/main/countries/CountriesEventViewPM.js" />
+        <option value="$PROJECT_DIR$/js/app/view/main/countries/CountriesViewPM.js" />
+        <option value="$PROJECT_DIR$/js/app/view/main/countries/CountriesView.js" />
+        <option value="$PROJECT_DIR$/js/app/view/side/Competitions.js" />
+        <option value="$PROJECT_DIR$/js/app/view/side/CountriesView.js" />
+        <option value="$PROJECT_DIR$/js/app/view/main/countries/CountriesEventView.js" />
+        <option value="$PROJECT_DIR$/js/app/view/main/countries/CountriesEventView.tpl.html" />
+        <option value="$PROJECT_DIR$/js/app/view/main/competitions/CompetitionsView.js" />
+        <option value="$PROJECT_DIR$/js/app/view/AppViewPM.js" />
+        <option value="$PROJECT_DIR$/js/app/collection/EventsCollection.js" />
+        <option value="$PROJECT_DIR$/js/app/model/Market2.js" />
+        <option value="$PROJECT_DIR$/js/app/model/Event2.js" />
+        <option value="$PROJECT_DIR$/js/app/model/Selection2.js" />
+        <option value="$PROJECT_DIR$/js/app/model/Selection.js" />
+        <option value="$PROJECT_DIR$/js/app/model/Market.js" />
+        <option value="$PROJECT_DIR$/js/app/view/main/competitions/CompetitionEventView.js" />
+        <option value="$PROJECT_DIR$/js/app/model/EventDetailsModel.js" />
+        <option value="$PROJECT_DIR$/js/app/view/main/schedule/AbstractSchedulePM.js" />
+        <option value="$PROJECT_DIR$/js/app/view/main/competitions/CompetitionEventView.tpl.html" />
+        <option value="$PROJECT_DIR$/js/app/view/main/highlights/MatchHighlightsView.js" />
+        <option value="$PROJECT_DIR$/js/app/view/main/highlights/MatchHighlightsView.tpl.html" />
+        <option value="$PROJECT_DIR$/js/app/collection/SelectionsCollection.js" />
+        <option value="$PROJECT_DIR$/js/app/view/main/schedule/EventScheduleView.tpl.html" />
+        <option value="$PROJECT_DIR$/js/app/model/Event.js" />
+        <option value="$PROJECT_DIR$/js/app/view/main/markets/MarketsViewPM.js" />
+        <option value="$PROJECT_DIR$/js/common/command/api/GetSportDisplayTemplateCommand.js" />
+        <option value="$PROJECT_DIR$/js/app/view/main/markets/MarketGroupsViewPM.js" />
+        <option value="$PROJECT_DIR$/js/app/view/main/markets/MarketGroups.tpl.html" />
+        <option value="$PROJECT_DIR$/js/app/view/main/markets/MarketsView.tpl.html" />
+        <option value="$PROJECT_DIR$/js/app/view/main/markets/MarketsView.js" />
+        <option value="$PROJECT_DIR$/js/app/collection/MarketsCollection.js" />
+        <option value="$PROJECT_DIR$/js/app/model/KeysMarketsModel.js" />
+        <option value="$PROJECT_DIR$/js/app/model/MarketGroupsModel.js" />
+        <option value="$PROJECT_DIR$/js/app/view/main/markets/MarketGroupsView.js" />
+        <option value="$PROJECT_DIR$/js/app/model/KeyMarketsModel.js" />
+        <option value="$PROJECT_DIR$/js/app/view/main/frontPage/SportsScheduleView.tpl.html" />
+        <option value="$PROJECT_DIR$/js/common/command/api/GetKeyMarketsForSportCommand.js" />
+        <option value="$PROJECT_DIR$/js/app/view/side/InPlay.js" />
+        <option value="$PROJECT_DIR$/js/app/view/header/HeaderView.js" />
+        <option value="$PROJECT_DIR$/js/app/model/domain/BetsModel.js" />
+        <option value="$PROJECT_DIR$/js/app/model/domain/EventModel.js" />
+        <option value="$PROJECT_DIR$/js/app/core/AppConfig.js" />
+        <option value="$PROJECT_DIR$/js/app/view/main/schedule/EventScheduleView.js" />
+        <option value="$PROJECT_DIR$/js/common/command/api/GetFrontPageScheduleCommand.js" />
+        <option value="$PROJECT_DIR$/js/common/command/api/GetSportScheduleCommand.js" />
+        <option value="$PROJECT_DIR$/js/app/model/FrontPageModel.js" />
+        <option value="$PROJECT_DIR$/js/app/model/EventCache.js" />
+        <option value="$PROJECT_DIR$/js/app/view/main/schedule/EventSchedulePM.js" />
+        <option value="$PROJECT_DIR$/js/app/view/main/frontPage/SportsScheduleView.js" />
+        <option value="$PROJECT_DIR$/js/app/view/main/frontPage/SportsScheduleViewPM.js" />
+        <option value="$PROJECT_DIR$/js/app/model/EventScheduleModel.js" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="22" />
+    <option name="width" value="1919" />
+    <option name="height" value="1054" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>XPath</id>
+          </State>
+          <State>
+            <id>XSLT</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>CoffeeScript</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="false" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="1" id="Add" />
+    <ConfirmationsSetting value="2" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="K8-Sportsbook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="K8-Sportsbook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="K8-Sportsbook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../K8-Back-Office" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FullScreen" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="options.lastSelected" value="editing.templates" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth0" value="247" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth1" value="249" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth2" value="252" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth3" value="75" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth4" value="1046" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder4" value="4" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth0" value="212" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth1" value="215" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth2" value="217" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth3" value="213" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth4" value="1012" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder4" value="4" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/js/app/model" />
+      <recent name="$PROJECT_DIR$/js/app/collection" />
+      <recent name="$PROJECT_DIR$/js/app/view/main/countries" />
+      <recent name="$PROJECT_DIR$/js/app/view/side" />
+      <recent name="$PROJECT_DIR$/js/app/view/regions" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/js/app/view/side/" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.K8">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="name" value="Dart" />
+      <option name="saveOutputToFile" value="false" />
+      <option name="showConsoleOnStdErr" value="false" />
+      <option name="showConsoleOnStdOut" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaScriptRunConfigurationType" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
+      <setting name="configLocationType" value="CONFIG_FILE" />
+      <setting name="settingsFile" value="" />
+      <setting name="serverType" value="INTERNAL" />
+      <setting name="preferredDebugBrowser" value="Chrome" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="false" name="K8" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:63342/K8-Sportsbook/index.html">
+      <RunnerSettings RunnerId="JavascriptDebugRunner" />
+      <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.K8" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>$USER_HOME$/.subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="false" />
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="$PROJECT_DIR$" />
+          <option name="myCopyRoot" value="$PROJECT_DIR$" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="$PROJECT_DIR$" />
+          <option name="myCopyRoot" value="$PROJECT_DIR$" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="01ca035b-56cd-49e6-9491-5c072a034fa5" name="Default" comment="" />
+      <changelist id="717268cd-5136-4cb7-a979-4e0f5409e431" name="ModelRefactor" comment="" />
+      <created>1409895450976</created>
+      <updated>1409895450976</updated>
+    </task>
+    <task id="LOCAL-00001" summary="subscription controller and routing amends">
+      <created>1410159446032</created>
+      <updated>1410159446032</updated>
+    </task>
+    <task id="LOCAL-00002" summary="initial front page restructuring">
+      <created>1410330851093</created>
+      <updated>1410330851093</updated>
+    </task>
+    <task id="LOCAL-00003" summary="headerview listening for sport changes">
+      <created>1410424592027</created>
+      <updated>1410424592027</updated>
+    </task>
+    <task id="LOCAL-00004" summary="front page template changes">
+      <created>1410426438027</created>
+      <updated>1410426438027</updated>
+    </task>
+    <task id="LOCAL-00005" summary="front page multiple sports now showing">
+      <created>1410437075026</created>
+      <updated>1410437075026</updated>
+    </task>
+    <task id="LOCAL-00006" summary="front page updates">
+      <created>1410440180077</created>
+      <updated>1410440180077</updated>
+    </task>
+    <task id="LOCAL-00007" summary="libs added back in">
+      <created>1410441382027</created>
+      <updated>1410441382027</updated>
+    </task>
+    <task id="LOCAL-00008" summary="pre-compiled templates">
+      <created>1410441976029</created>
+      <updated>1410441976029</updated>
+    </task>
+    <task id="LOCAL-00009" summary="first draft betslip templating">
+      <created>1410446918031</created>
+      <updated>1410446918031</updated>
+    </task>
+    <task id="LOCAL-00010" summary="bet templating">
+      <created>1410450164029</created>
+      <updated>1410450164029</updated>
+    </task>
+    <task id="LOCAL-00011" summary="updated single bets logic">
+      <created>1410451230028</created>
+      <updated>1410451230028</updated>
+    </task>
+    <task id="LOCAL-00012" summary="all templates are now being precompiled for performance improvement">
+      <created>1410453715031</created>
+      <updated>1410453715031</updated>
+    </task>
+    <task id="LOCAL-00013" summary="betslip amends">
+      <created>1410502236066</created>
+      <updated>1410502236066</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fixes market filtering for ovun markets">
+      <created>1411029945035</created>
+      <updated>1411029945035</updated>
+    </task>
+    <task id="LOCAL-00015" summary="id now correctly being set on Incident instances">
+      <created>1411029968029</created>
+      <updated>1411029968029</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Incident ids now being pooled in order that an instance received more than once is always ignored">
+      <created>1411030005026</created>
+      <updated>1411030005026</updated>
+    </task>
+    <task id="LOCAL-00017" summary="price up/down indicators now working for markets view">
+      <created>1411030072027</created>
+      <updated>1411030072027</updated>
+    </task>
+    <task id="LOCAL-00018" summary="fix undefined error">
+      <created>1411032316027</created>
+      <updated>1411032316027</updated>
+    </task>
+    <task id="LOCAL-00019" summary="moved price up/down logic into AppViewPM">
+      <created>1411035175030</created>
+      <updated>1411035175030</updated>
+    </task>
+    <task id="LOCAL-00020" summary="removed duplicate logic and added to appviewpm">
+      <created>1411040489026</created>
+      <updated>1411040489026</updated>
+    </task>
+    <task id="LOCAL-00021" summary="hanball added">
+      <created>1411041519030</created>
+      <updated>1411041519031</updated>
+    </task>
+    <task id="LOCAL-00022" summary="all/today/tomorrow fixed once and for all">
+      <created>1411042938027</created>
+      <updated>1411042938027</updated>
+    </task>
+    <task id="LOCAL-00023" summary="volleyball/american football/ice hockey added">
+      <created>1411044303026</created>
+      <updated>1411044303026</updated>
+    </task>
+    <task id="LOCAL-00024" summary="volleyball/american football/ice hockey added">
+      <created>1411044383028</created>
+      <updated>1411044383028</updated>
+    </task>
+    <task id="LOCAL-00025" summary="new clock implementation added">
+      <created>1411050381030</created>
+      <updated>1411050381030</updated>
+    </task>
+    <task id="LOCAL-00026" summary="code clean up">
+      <created>1411052504031</created>
+      <updated>1411052504031</updated>
+    </task>
+    <task id="LOCAL-00027" summary="price up/down selection fix">
+      <created>1411055113044</created>
+      <updated>1411055113044</updated>
+    </task>
+    <task id="LOCAL-00028" summary="price up/down selection fix">
+      <created>1411055138027</created>
+      <updated>1411055138027</updated>
+    </task>
+    <task id="LOCAL-00029" summary="updated optimizations">
+      <created>1411057901030</created>
+      <updated>1411057901030</updated>
+    </task>
+    <task id="LOCAL-00030" summary="bets selection working again">
+      <created>1411113762033</created>
+      <updated>1411113762033</updated>
+    </task>
+    <task id="LOCAL-00031" summary="optimization amends">
+      <created>1411133282031</created>
+      <updated>1411133282031</updated>
+    </task>
+    <task id="LOCAL-00032" summary="optimization amends">
+      <created>1411133306030</created>
+      <updated>1411133306030</updated>
+    </task>
+    <task id="LOCAL-00033" summary="optimization amends">
+      <created>1411133332031</created>
+      <updated>1411133332031</updated>
+    </task>
+    <task id="LOCAL-00034" summary="optimization amends">
+      <created>1411133343023</created>
+      <updated>1411133343023</updated>
+    </task>
+    <task id="LOCAL-00035" summary="optimization amends">
+      <created>1411133392027</created>
+      <updated>1411133392027</updated>
+    </task>
+    <task id="LOCAL-00036" summary="optimization amends">
+      <created>1411133494025</created>
+      <updated>1411133494025</updated>
+    </task>
+    <task id="LOCAL-00037" summary="fixes competitions">
+      <created>1411138813027</created>
+      <updated>1411138813027</updated>
+    </task>
+    <task id="LOCAL-00038" summary="fixed markets">
+      <created>1411139079029</created>
+      <updated>1411139079029</updated>
+    </task>
+    <task id="LOCAL-00039" summary="fixes build">
+      <created>1411146577025</created>
+      <updated>1411146577025</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="22" width="1919" height="1054" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4792531" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952183" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1691254" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43555093" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6008316" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3960499" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5301455" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.74636173" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7006237" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952183" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7723493" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7058212" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6008316" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5301455" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.74636173" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17693523" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="true" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="false" />
+    <MESSAGE value="first draft betslip templating" />
+    <MESSAGE value="bet templating" />
+    <MESSAGE value="updated single bets logic" />
+    <MESSAGE value="all templates are now being precompiled for performance improvement" />
+    <MESSAGE value="betslip amends" />
+    <MESSAGE value="fixes market filtering for ovun markets" />
+    <MESSAGE value="id now correctly being set on Incident instances" />
+    <MESSAGE value="Incident ids now being pooled in order that an instance received more than once is always ignored" />
+    <MESSAGE value="price up/down indicators now working for markets view" />
+    <MESSAGE value="fix" />
+    <MESSAGE value="fix undefined error" />
+    <MESSAGE value="moved price up/down logic into AppViewPM" />
+    <MESSAGE value="removed duplicate logic and added to appviewpm" />
+    <MESSAGE value="hanball added" />
+    <MESSAGE value="all/today/tomorrow fixed once and for all" />
+    <MESSAGE value="volleyball/american football/ice hockey added" />
+    <MESSAGE value="new clock implementation added" />
+    <MESSAGE value="code clean up" />
+    <MESSAGE value="price up/down selection fix" />
+    <MESSAGE value="updated optimizations" />
+    <MESSAGE value="bets selection working again" />
+    <MESSAGE value="optimization amends" />
+    <MESSAGE value="fixes competitions" />
+    <MESSAGE value="fixed markets" />
+    <MESSAGE value="fixes build" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixes build" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/app/view/side/CompetitionsPM.js</url>
+          <line>29</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/app/view/side/CompetitionsPM.js</url>
+          <line>27</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/app/collection/MarketsCollection.js</url>
+          <line>61</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/app/view/AppView.js</url>
+          <line>21</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/app/view/main/schedule/AbstractSchedulePM.js</url>
+          <line>54</line>
+          <option name="timeStamp" value="143" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/app/model/domain/EventModel.js</url>
+          <line>52</line>
+          <option name="timeStamp" value="169" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/app/model/domain/EventModel.js</url>
+          <line>40</line>
+          <option name="timeStamp" value="170" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/app/model/domain/EventModel.js</url>
+          <line>104</line>
+          <option name="timeStamp" value="174" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/app/model/domain/EventModel.js</url>
+          <line>118</line>
+          <option name="timeStamp" value="176" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/app/model/Event.js</url>
+          <line>115</line>
+          <option name="timeStamp" value="182" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/app/model/Event.js</url>
+          <line>88</line>
+          <option name="timeStamp" value="186" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/app/view/main/markets/MarketsViewPM.js</url>
+          <line>47</line>
+          <option name="timeStamp" value="227" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/app/view/main/markets/MarketGroupsViewPM.js</url>
+          <line>68</line>
+          <option name="timeStamp" value="230" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/app/model/domain/EventModel.js</url>
+          <line>85</line>
+          <option name="timeStamp" value="264" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/app/model/domain/EventModel.js</url>
+          <line>64</line>
+          <option name="timeStamp" value="271" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/app/view/main/schedule/EventScheduleView.js</url>
+          <line>93</line>
+          <option name="timeStamp" value="285" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/app/model/Event.js</url>
+          <line>192</line>
+          <option name="timeStamp" value="323" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="324" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/js/libs/backbone.wreqr/lib/backbone.wreqr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47358492" vertical-offset="2839" max-vertical-offset="6585">
+          <caret line="213" column="39" selection-start-line="213" selection-start-column="39" selection-end-line="213" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/control/SubscriptionController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33207548" vertical-offset="199" max-vertical-offset="2580">
+          <caret line="25" column="65" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/model/KeyMarketsModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.8181818" vertical-offset="460" max-vertical-offset="1470">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/common/command/api/GetKeyMarketsForSportCommand.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34577388" vertical-offset="0" max-vertical-offset="911">
+          <caret line="21" column="52" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/view/side/InPlay.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="371" max-vertical-offset="1365">
+          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/view/main/competitions/CompetitionEventView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1170">
+          <caret line="52" column="46" selection-start-line="52" selection-start-column="46" selection-end-line="52" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/view/main/competitions/CompetitionEventViewPM.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="206" max-vertical-offset="1140">
+          <caret line="28" column="63" selection-start-line="28" selection-start-column="63" selection-end-line="28" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/view/main/competitions/CompetitionsView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="934">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/model/domain/BetsModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.461538" vertical-offset="950" max-vertical-offset="4980">
+          <caret line="78" column="54" selection-start-line="78" selection-start-column="54" selection-end-line="78" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/model/domain/EventModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="3945">
+          <caret line="13" column="69" selection-start-line="13" selection-start-column="69" selection-end-line="13" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/core/AppConfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1880" max-vertical-offset="4605">
+          <caret line="147" column="26" selection-start-line="147" selection-start-column="26" selection-end-line="147" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/libs/di-lite/di-lite.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="262" max-vertical-offset="3180">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/common/command/api/GetFrontPageScheduleCommand.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <caret line="20" column="74" selection-start-line="19" selection-start-column="16" selection-end-line="20" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/common/command/api/GetSportScheduleCommand.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/model/FrontPageModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1222" max-vertical-offset="1620">
+          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/model/SportSchedule.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="2521" max-vertical-offset="3330">
+          <caret line="179" column="8" selection-start-line="179" selection-start-column="8" selection-end-line="179" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/libs/underscore/underscore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="12571" max-vertical-offset="20190">
+          <caret line="852" column="0" selection-start-line="852" selection-start-column="0" selection-end-line="852" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/libs/backbone/backbone.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="9916" max-vertical-offset="24210">
+          <caret line="672" column="0" selection-start-line="672" selection-start-column="0" selection-end-line="672" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/view/main/frontPage/SportsScheduleView.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="2520">
+          <caret line="68" column="46" selection-start-line="68" selection-start-column="40" selection-end-line="68" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/view/main/schedule/EventSchedulePM.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1691" max-vertical-offset="2625">
+          <caret line="138" column="68" selection-start-line="138" selection-start-column="68" selection-end-line="138" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/view/regions/MainRegion.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4584" max-vertical-offset="5205">
+          <caret line="317" column="42" selection-start-line="317" selection-start-column="42" selection-end-line="317" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/view/main/frontPage/SportsScheduleView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1695">
+          <caret line="10" column="46" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/view/main/frontPage/SportsScheduleViewPM.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="870" max-vertical-offset="2490">
+          <caret line="82" column="75" selection-start-line="82" selection-start-column="75" selection-end-line="82" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/view/main/schedule/EventScheduleView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1560">
+          <caret line="2" column="59" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/view/main/schedule/EventScheduleView.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="25" max-vertical-offset="1500">
+          <caret line="22" column="61" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/view/popups/login/LoginPopup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="619" max-vertical-offset="1530">
+          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/view/main/competitions/CompetitionsView.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.76559544" vertical-offset="0" max-vertical-offset="1275">
+          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="251" max-vertical-offset="1500">
+          <caret line="50" column="82" selection-start-line="50" selection-start-column="82" selection-end-line="50" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/view/main/countries/CountriesEventView.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.875" vertical-offset="195" max-vertical-offset="1305">
+          <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/common/factory/OddsFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1245">
+          <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32967034" vertical-offset="0" max-vertical-offset="910">
+          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/view/header/HeaderView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3330">
+          <caret line="17" column="69" selection-start-line="17" selection-start-column="69" selection-end-line="17" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/view/AppView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
+          <caret line="11" column="49" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/less/components/header.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.591837" vertical-offset="15855" max-vertical-offset="16755">
+          <caret line="1072" column="45" selection-start-line="1072" selection-start-column="45" selection-end-line="1072" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/common/service/ApiService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2385">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/core/FrameworkConfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="1905">
+          <caret line="40" column="27" selection-start-line="0" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/common/framework/command/Backbone.Command.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1380">
+          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/control/AppController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="480" max-vertical-offset="2205">
+          <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/view/header/HeaderView.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="2850">
+          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/style-beteast/logo-sml.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/style-beteast/logo.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/style-beteast/promo-banner-1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/style-beteast/promo-bg-horses.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/view/AppViewPM.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="1380">
+          <caret line="36" column="15" selection-start-line="36" selection-start-column="15" selection-end-line="36" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/model/Event2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2355">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/model/Market2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="354" max-vertical-offset="1770">
+          <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/model/Selection2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1305">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/model/Event.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2715" max-vertical-offset="5040">
+          <caret line="196" column="79" selection-start-line="196" selection-start-column="79" selection-end-line="196" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/model/EventCache.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="174" max-vertical-offset="1425">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/model/EventScheduleModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1950" max-vertical-offset="4170">
+          <caret line="177" column="28" selection-start-line="177" selection-start-column="28" selection-end-line="177" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app/model/Selection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2145">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

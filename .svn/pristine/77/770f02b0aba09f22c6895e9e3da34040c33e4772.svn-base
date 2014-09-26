@@ -1,0 +1,22 @@
+<% if (typeof coupons !== "undefined") { %>
+    <div class="col padding">
+	<section class="coupons">
+        <header>
+            <h2>Coupons</h2>
+        </header>
+				<ul>
+					<% _.each(coupons, function(coupon){ %>
+						
+						<% var couponLength = coupon.length; %>
+						
+						<li class="<%if(couponLength == 1){%>oneComp<%}if(couponLength == 2){%>twoComp<%}%>">
+					        <a href="#<%=sport%>/coupons/<%=coupon.id%>">
+					        	<%=coupon.name %>
+							</a>
+						</li> 
+						
+					<% }) %>
+				</ul>
+	</section>
+</div>
+<% } %>

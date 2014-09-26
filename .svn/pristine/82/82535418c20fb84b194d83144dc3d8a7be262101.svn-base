@@ -1,0 +1,454 @@
+@import  "../components/variables";
+@import  "../components/mixins";
+
+#main-inplay {
+	pointer-events:none;
+	  * {
+		 pointer-events:none;
+	 }
+}
+.inplay-area {
+	height: 367px;
+	margin-bottom: 10px;
+	background: transparent;
+	margin-left: -10px;
+	margin-bottom: -80px;
+	margin-right: -60px;
+	margin-top: -56px;
+	padding-right: 60px;
+	position: relative;
+	z-index: -1;
+	background-size: 100% 100%;
+	padding-top: 55px;
+	padding-right: 60px;
+	padding-left: 10px;
+	
+	
+	&.baseball{
+		.inplay-box{
+			.teams{
+				.row{
+					span.team{
+						padding-left: 34px;
+						font-size: @size-l;
+						width:42%;
+						
+						&.current{
+							background: url('../images/inplay-assests/baseball-icon.png') no-repeat -8px -6px;
+						}
+					}
+					.stat{
+						font-size: @size-l;
+						width: 5%;
+						
+					}
+				}
+			}
+		}
+	}
+	&.football{
+		.inplay-box{
+			.teams{
+				.row{
+					span.team{
+						// &.current{
+						//	background: url('../images/inplay-assests/football-icon.png') no-repeat -8px -6px;
+						// }
+					}
+				}
+			}
+		}
+	}
+
+	&.basketball{
+		.inplay-box{
+			.iconBar{
+				.icons{
+					.gap{
+						width:40%;
+					}
+				}
+			}
+			.teams{
+				.row{
+					span.team{
+						padding-left: 34px;
+						&.current{
+							background: url('../images/inplay-assests/basketball-icon.png') no-repeat -8px -6px;
+						}
+					}
+				}
+			}
+
+		}
+	}
+
+	.inplay-box {
+		height: 100px;
+		width: 70%;
+		margin: auto;
+		.opacity-70();
+		margin-top: 65px;
+		.box-shadow(0px, -2px, 25px, 0.9);
+		border: 1px solid rgba(36, 36, 36, 0.24);
+		border-top: 1px solid rgba(255, 255, 255, 0.13);
+		z-index: 100;
+		position: relative;
+		pointer-events: auto;
+		
+		.progressBar {
+			height: 10px;
+			background-color: #008000;
+			position: relative;
+			background-color: @grey1;
+			.box-shadow-inset(0px, 0px, 10px, 1); 
+			margin-left: -1px;
+			margin-right: 1px;
+			margin-top: -1px;
+			border-top: 1px solid rgba(63, 63, 63, 0.45);
+			width: 50%;
+			float: left;
+			.quarters{
+				width:86%;
+				.q1, .q2, .q3{
+					height: 7px;
+					width: 25%;
+					border-right: 1px solid rgb(99, 99, 99);
+					display: inline-block;
+					vertical-align: top;
+				}
+				.q2{
+					border-right: 1px solid #fff;
+				}
+			}
+			
+			.activeBar  {
+				.gradient(left, #608229, #74a02f);	
+				position: absolute;
+				left: 0;
+				top:-1px;
+				height: 100%;
+				width: 75%;
+				.box-shadow-inset(0px, 1px, 0px, 0.3);
+				.addTransitions(0.5s);
+			}
+			
+			.time {
+				height: 24px;
+				width: 76px;
+				top: -7px;
+				margin: auto;
+				position: absolute;
+				left: 100%;
+				margin-left: -33px;
+				z-index: 10;
+				.border-radius(2px);
+				.box-shadow-inset(0px, 1px, 0px, 0.3);
+				border: 1px solid rgba(0, 0, 0, 0.27);
+				border-bottom: 1px solid @black;
+				border-top: 1px solid rgba(82, 82, 82, 0.4);
+				background: @grey6;
+				.gradient(top, @grey6, @grey4);	
+				text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+				color: @white;
+				font-weight: 600;
+				padding-top: 3px;
+				text-align: center;
+				text-indent: -2px;
+				font-size: @size-l;
+
+			}
+				
+		}
+		
+		.iconBar {
+		
+			&.full{
+				width:100%;
+			
+			.icons{
+				.gap{
+					.dynamic-stat{
+						padding-left:10px;
+						padding-top:2px;
+						padding-bottom:2px;						
+						color:#FDD70F;
+						text-shadow: 0px 0px 3px @black;
+						font-weight:600;
+					}
+					width:33%;
+				}
+			}
+		}
+		
+			width: 50%;
+			float: left;
+			height: 11px;
+			margin-top: -1px;
+			margin-bottom: -1px;
+			.gradient(top, @transparent, @grey4);	
+			box-shadow: inset 0px 1px 0px #575967;
+			border-bottom: 1px solid #1E1E1E;
+			display:table;
+			margin-left: 1px;
+			margin-right: -1px;
+						
+			.icons {
+				
+				display: table-row;
+				
+				.gap {
+					display:table-cell;
+					width:30%;
+				}
+				span.baseb-icons{
+					display:table-cell;
+					width:4%;
+					position: relative;
+					text-align: center;
+					color:white;
+					text-shadow: 0px 0px 3px @black;
+					&.yellow{
+						color:#FDD70F;
+					}
+				}
+				span.icon {
+					display:table-cell;
+					width:14%;
+					position: relative;
+					
+					> div {
+						.cam-global(50px, 50px);
+						margin-left: -1px;
+						margin-top: -21px;
+						left: 50%;
+						margin-left: -26px;
+					}
+					&.corner-flag div  {
+						background-image:url('../images/inplay-assests/corner-flag-icon.png');
+					}
+					&.yellow-card div  {
+						background-image:url('../images/inplay-assests/yellow-card-icon.png');
+					}
+					&.red-card div  {
+						background-image:url('../images/inplay-assests/red-card-icon.png');
+					}
+					&.penalty div  {
+						background-image:url('../images/inplay-assests/penalty-icon.png');
+					}
+					&.goal div  {
+						background-image:url('../images/inplay-assests/goal-icon.png');
+					}
+					&.point div  {
+						background-image:url('../images/inplay-assests/point-icon.png');
+					}	
+					&.rebound div  {
+						background-image:url('../images/inplay-assests/rebound2-icon.png');
+					}	
+					
+					&.run div  {
+						background-image:url('../images/inplay-assests/run-icon.png');
+					}	
+					&.hr div  {
+						background-image:url('../images/inplay-assests/hr-icon.png');
+					}	
+					&.out div  {
+						background-image:url('../images/inplay-assests/out-icon.png');
+					}	
+					&.home div  {
+						background-image:url('../images/inplay-assests/home-icon.png');
+					}	
+					&.block div  {
+						background-image:url('../images/inplay-assests/block-icon.png');
+					}	
+					&.assist div  {
+						background-image:url('../images/inplay-assests/assist-icon.png');
+					}
+		
+		
+			
+				}
+				
+			}
+
+		}
+	
+		.teams {
+			
+			display:table;
+			width: 100%;
+			margin-left: 1px;
+			padding-top: 1px;
+		
+			.row {
+				display: table-row;
+	
+				&.middle, &.bottom {
+					height: 44px;
+					
+				}
+				
+				&.middle > * {
+					border-bottom: 1px solid rgba(226, 226, 226, 0.1);
+				}
+				
+				> * {
+					display:table-cell;
+					vertical-align: middle;
+					
+					
+				}
+				
+				span.team {
+					font-size: 18px;
+					font-weight: 600;
+					color: #FFF;
+					text-shadow: 0px 0px 3px @black;
+					padding-left: 15px;
+					width:65%;
+					padding-bottom: 5px;
+					
+					
+				}
+				
+				.stat {
+					width:7%;
+					font-size: 20px;
+					font-weight: 600;
+					color: #FFF;
+					text-shadow: 0px 0px 3px @black;
+					text-align: center;
+					
+					
+					&.goal {
+						background-color: rgba(209, 199, 129, 0.1);
+						border-left: 1px solid rgba(37, 35, 21, 0.75);
+						color: #FFDF39;
+					}	
+					&.home{
+						background-color: rgba(138, 123, 72, 0.1);
+						border-left: 1px solid rgba(37, 35, 21, 0.75);
+						color: #FDD70F;
+					}
+				}
+			}
+		
+		}
+	}
+	
+	.box-shadow {
+		height:50px;
+		width: 78%;
+		margin: auto;
+		.clearfix();
+		background-image:url('../images/inplay-assests/floating-shadow.png');
+		background-size: 100% 100%;
+		margin-top:10px;
+		opacity:0.7;
+	}
+	
+	
+	&.football {
+		background-image:url('../images/inplay-assests/main-inplay-pitch.png');
+	}
+	
+	&.basketball {
+		background-image:url('../images/inplay-assests/main-inplay-basketball.png');
+	}
+	
+	&.baseball {
+		background-image:url('../images/inplay-assests/main-inplay-baseball.png');
+	}
+}
+
+@media all and (max-width: 1200px) {
+	
+	.inplay-area {
+		.inplay-box {
+		
+			width: 90%;
+			
+		}
+		.box-shadow {
+			width: 100%;
+		}
+		
+	}
+
+}
+
+@media all and (max-width: 420px) {
+	
+	.inplay-area {
+		
+		height: 285px;
+		
+		.inplay-box {
+			margin-top: 25px;
+			width: 97%;
+			height: 88px;
+		
+			.teams {
+					.row {
+					
+					&.middle, &.bottom{
+						height: 38px;
+					}
+				
+						span.team {
+							font-size: 16px;
+							width: 60%;
+							padding-left: 7px;
+						}
+						
+						.stat {
+							font-size: 16px;
+						}
+				}
+			}
+			
+			.iconBar .icons .gap {
+				width: 28%;
+			}
+			
+			
+			.timeBar {
+				.clock {
+					font-size: 13px;
+					margin-left: -30px;
+					width:60px;
+					height:22px;
+					top:-18px;
+				}
+			}
+
+		}
+		
+		&.basketball, &.baseball{
+			.inplay-box{
+				.teams{
+					.row{
+						span.team{
+							padding-left: 35px;
+						}
+					}
+				}
+	
+			}
+		}
+		
+		.box-shadow {
+			margin-top: 0px;
+			height: 30px;
+		}
+		
+		
+	}
+
+}
+
+
+
+
+
+

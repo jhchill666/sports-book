@@ -1,0 +1,36 @@
+<% if(events.length > 0){ %>
+	<section>
+	    <h3>In Play</h3>
+	    <ul class="panel in-play">
+	    	<% 
+	    		events.forEach(function(event){
+	    		var score = event.getInplayScore().split("-");
+	    	%>
+			    <li>
+			        <a href="#<%=sport%>/event/<%=event.attributes.id%>">
+			        	<div>
+			        		<div class="cell">
+				        		<span class="name" id="sidebar-left-inplay-participant-a-<%=event.attributes.id%>">
+				        			<%=event.getParticipantA()%>
+				        		</span>
+			        		</div>
+			        		<div class="cell">
+				        		<span class="score home" id="sidebar-left-inplay-score-a-<%=event.attributes.id%>">
+				        			<%=score[0]%>
+				        		</span>
+			        		</div>
+			        	</div>
+						<div>
+							<div class="cell">
+								<span class="name" id="sidebar-left-inplay-participant-b-<%=event.attributes.id%>"><%=event.getParticipantB()%></span>
+							</div>
+							<div class="cell">
+								<span class="score away" id="sidebar-left-inplay-score-b-<%=event.attributes.id%>"><%=score[1]%></span>
+							</div>
+						</div>
+					</a>
+			    </li>        
+	        <% }) %>
+	    </ul>
+	</section>
+<% } %>

@@ -1,0 +1,79 @@
+<% if (typeof competitions !== "undefined") { %>
+    <div class="market-cols include">
+
+        <section class="competitions">
+            <header>
+                <h2>Competitions</h2>
+            </header>
+
+			<ul>
+				<% _.each(competitions, function(countryLevel){%>
+					<li>
+						<header>
+                        	<h3><a href="#<%=sport%>/country/<%=countryLevel.id%>"><%=countryLevel.name%></a></h3>
+						</header>
+						
+						<ul>
+							<% _.each(countryLevel.competition, function(next){ %>
+								
+								<% var compLength = countryLevel.competition.length; %>
+								
+								<li class="<%if(compLength == 1){%>oneComp<%}if(compLength == 2){%>twoComp<%}%>">
+							        <a href="#<%=sport%>/competition/<%=next.id%>">
+							        	<%=next.name %>
+									</a>
+								</li> 
+								
+							<% }) %>
+						</ul>
+						
+                    </li> 
+				<% }) %>
+			</ul>
+
+        </section>
+
+<!--    <div class="col padding">
+        <section class="competitions">
+            <header>
+                <h2>Coupons</h2>
+            </header>
+            <ul>
+                <li>
+                    <header>
+                        <h3>When</h3>
+                    </header>
+                    <ul>
+                        <li><a href="#">Weekend Coupon</a></li>
+                        <li><a href="#">Midweek coupon</a></li>
+                        <li><a href="#">Week coupon</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <header>
+                        <h3>What</h3>
+                    </header>
+                    <ul>
+                        <li><a href="#">European Club Action</a></li>
+                        <li><a href="#">International Football</a></li>
+                        <li><a href="#">Headline Offers</a></li>
+                        <li><a href="#">TV Matches</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <header>
+                        <h3>Betting</h3>
+                    </header>
+                    <ul>
+                        <li><a href="#">Double Chance</a></li>
+                        <li><a href="#">Odds On</a></li>
+                        <li><a href="#">Both Teams to Score</a></li>
+                        <li><a href="#">Match Result</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </div>-->
+</div>
+<% } %>
+

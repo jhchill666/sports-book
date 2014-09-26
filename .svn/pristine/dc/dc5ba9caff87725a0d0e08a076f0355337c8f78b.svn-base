@@ -1,0 +1,77 @@
+<ul class="bet-slip-head">
+    <li>
+        <div class="selection">Open Bets</div>
+        <div class="odds">Odds</div>
+        <div class="stake">Stake</div>
+    </li>
+</ul>
+
+ <ul class="bet-selections">
+ 	<% if (bets.length > 0 ) { %>
+	    <% _.each(bets, function(bet) { %>
+	    
+	   		 <% _.each(bet.parts, function(part) { 
+	   		 
+	   		 	 if (part[0]) {  %>
+	    
+			    <ul class="event">
+			        <li>
+		                   <!--
+							<li>
+		                    <div class="row">
+		                        <div class="selection">
+		                            <h3> sdssd </h3>
+		                            <p>Win</p>
+		                        </div>
+		                        <div class="bet-value">1/2</div>
+		                      
+		                        <div class="stake">
+		                            <em><%=bet.stake.amount %></em>
+		                        </div>
+		                    </div>
+		                    <div class="row2">
+		                        <div class="option">Ref: <%=bet.id %></div>
+		                        <div class="returns">Returns: &pound;123<span></div>
+		                    </div>
+		                </li>
+						-->
+		                <h3><%=part[0].event.name %></h3>
+		                 <div class="row">
+		                  	
+			                <div class="selection">
+			                    <p><%= part[0].market.name %></p>
+			                </div>
+			                <div class="option">&#160;</div>
+			                <div class="bet-value"><%=part[0].odds.decimal %></div>
+			                <!-- <div class="bet-option"><em class="highlight"><%= bet.type %></em></div> -->
+			                <label class="stake">
+			                    <span><%=bet.stake.amount %></span>
+			                    <input type="text" value="<%=bet.stake.amount %>" />
+			                </label>
+			            </div>
+			          <!--
+  <div class="row2">
+			                <div class="option"></div>
+			                <div class="returns">Returns: &pound;<span><%=bet.stake.amount %></span></div>
+			            </div>
+-->
+				            
+			        </li>
+			    </ul>
+		    
+				<% }
+			}); %>  
+			
+			  
+			 	<p><span><small>&#160;&#160;Stake</small> <strong>&pound;<%=bet.stake.amount %></strong></span></p>
+			 <br/>
+			                    
+			                    
+	   <% }); %>  
+ 
+ 	<% } else { %>
+    	
+    	<li><p class="noBets">You have no open bets.</p></li>
+    	
+    <% } %>
+</ul>

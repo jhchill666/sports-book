@@ -1,0 +1,185 @@
+<header id="header-main" class="include">
+
+    <nav>
+		<div class="nav-global">
+		    <a href="#"><h1>BetEast</h1></a>
+		    	<div class="show-menu" role="button"><i class="fa fa-bars"></i></div>
+				<div class="betslipToggle" role="button"><span>Betslip</span> <i class="fa fa-file-o"></i></div>
+			<ul>
+				<li><a href="#" class="active">Sports</a></li>
+				<!--
+				<li><a href="#">Poker</a></li>
+				<li><a href="#">Games</a></li>
+				<li><a href="#">News</a></li>
+				<li><a href="#">Promotions</a></li>
+				<li class="show-all"><a href="#">More <i class="fa fa-chevron-down"></i></a></li>
+				-->
+			</ul>
+
+            <div id="user-logged-out" class="user sign-in-cta">
+                    <a class="btn">Sign In</a>
+                   <!--  <a class="btn-grey register">Register</a> -->
+            </div>
+                    
+			<div id="user-logged-in" class="user logged-in" style="display: none;">
+				<a href="#" class="details"></a>
+				<ul class="user-account">
+					<li><a href="#">Deposit</a></li>
+					<li><a href="#">Account</a></li>
+					<li><a href="#" class="messages">Messages</a></li>
+                    <li><a href="#" class="logout">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		
+	
+		
+		<div id="all-menu">
+			<div>
+				<ul>
+					<li>Quick Links</li>
+					<li><a href="#">Sports</a></li>
+					<li><a href="#">Poker</a></li>
+					<li><a href="#">Games</a></li>
+					<li><a href="#">News</a></li>
+					<li><a href="#">Promotions</a></li>
+				</ul>
+				<ul>
+					<li>All Sports</li>
+					<li><a href="#">Soccer</a></li>
+					<li><a href="#">Basketball</a></li>
+<!--					<li><a href="#">Ice Hockey</a></li>-->
+					<li><a href="#">Baseball</a></li>
+				</ul>
+				<ul>
+					<li>Competitions</li>
+				  	<li><a href="#">Premier League</a></li>
+                    <li><a href="#">Copa Del Ray</a></li>
+                    <li><a href="#">DFB Pokal</a></li>
+                    <li><a href="#">Coupe De France</a></li>
+                    <li><a href="#">Serie A</a></li>
+                    <li><a href="#">Championship</a></li>
+                    <li><a href="#">League One</a></li>
+                    <li><a href="#">League Two</a></li>
+                    <li><a href="#">Ligue 1</a></li>
+				</ul>
+			</div>
+		</div>
+
+		
+	
+        <div class="nav-all">
+            <ul>
+                <li><a href="#soccer">Soccer</a></li>
+                <li><a href="#baseball">Baseball</a></li>
+                <li><a href="#basketball">Basketball</a></li>
+                <li><a href="#handball">Handball</a></li>
+                <li><a href="#volleyball">Volleyball</a></li>
+                <li><a href="#american_football">American Football</a></li>
+                <li><a href="#ice_hockey">Ice Hockey</a></li>
+            </ul>
+        </div>
+		
+
+        <div class="nav-main">
+            <div class="nav-main-container">
+          
+				
+			   <%  if (window.location.hash.toString().indexOf('event') == -1 ) { %>
+	             
+	               <ul id="date-nav" class="date-drop">
+						<li><a class="<% if (window.location.hash.substr(1).toString().indexOf('today') == -1 && window.location.hash.substr(1).toString().indexOf('today') == -1 && window.location.hash.substr(1).toString().length <= 15) { %>active<% } %>" id="0" href="#<%=sport%>">All</a></li>
+						<li><a class="<% if (window.location.hash.substr(1).toString().indexOf('today') > -1 ) { %>active<% } %>" id="1" href="#<%=sport%>/today">Today</a></li>
+						<li><a class="<% if (window.location.hash.substr(1).toString().indexOf('tomorrow') > -1 ) { %>active<% } %>" id="2" href="#<%=sport%>/tomorrow">Tomorrow</a></li>
+						
+						<!-- 
+						<% for(i=3; i<8; i++){ %> 
+							<li class="date-<%=i %>"><a class="<% if (window.location.hash.substr(1).toString().indexOf(moment().add(i, 'days').format('MM-DD-YYYY')) > -1 ) { %>active<% } %>" href="#<%=sport%>/date/<%=moment().add(i, 'days').format('MM-DD-YYYY')%>" id="<%=i %>"><%=moment().add(i, 'days').format('dddd Do') %></a></li>
+						<% } %>
+						-->
+						
+	                </ul>
+	                
+	           <% } %>
+				
+                
+                
+                <ul class="date-drop-min">
+					<li><a href="">Today <i class="fa fa-chevron-down"></i></a>
+						<ul>
+							<li><a id="0" href="#<%=sport%>/today">Today</a></li>
+							
+							<li><a id="1" href="#<%=sport%>/tomorrow">Tomorrow</a></li>
+							
+							<!-- <% for(i=2; i<7; i++){ %> 
+								<li class="<%=moment().add(i, 'days').format('MM-DD-YYYY').indexOf(window.location.pathname)%> "><a class="<% if (window.location.hash.substr(1).toString().indexOf(moment().add(i, 'days').format('MM-DD-YYYY')) > -1 ) { %>active<% } %>" href="#<%=sport%>/date/<%=moment().add(i, 'days').format('MM-DD-YYYY')%>" id="<%=i %>"><%=moment().add(i, 'days').format('dddd Do') %></a></li>
+							<% } %> -->
+							
+						</ul>
+					</li>
+                </ul>
+                <ul class="nav-sport">
+                    <li><a href="#">Premier League</a></li>
+                    <li><a href="#">Copa Del Ray</a></li>
+                    <li><a href="#">DFB Pokal</a></li>
+                    <li class="more"><a href="#">More <i class="fa fa-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="#">Coupe De France</a></li>
+                            <li><a href="#">Serie A</a></li>
+                            <li><a href="#">Championship</a></li>
+                            <li><a href="#">League One</a></li>
+                            <li><a href="#">League Two</a></li>
+                            <li><a href="#">Ligue 1</a></li>
+                            <li><a href="#">Premier League</a></li>
+                        </ul>
+                    </li>
+                   
+                </ul>
+                <ul class="price-format-min">
+                	<li class="morePrices"><a id="fractionalPrice">Fractional <i class="fa fa-chevron-down"></i></a>
+                        <ul>
+                            <li><a id="decimalPrice">Decimal</a></li>
+                            <li><a id="americanPrice">American</a></li>
+                        </ul>
+                   </li>
+                </ul>
+                
+                
+                 <ul class="all-sports-min">
+                	<li class="morePrices"><a href="#">All Sports <i class="fa fa-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="#">Sport 1</a></li>
+                            <li><a href="#">Sport 2</a></li>
+                        </ul>
+                   </li>
+                </ul>
+                
+                 <ul class="nav-sport-min">
+                   
+                    <li class="active more"><a href="#">Competition <i class="fa fa-chevron-down"></i></a>
+                        <ul>
+		                    <li><a href="#">Premier League</a></li>
+		                    <li><a href="#">Copa Del Ray</a></li>
+		                    <li><a href="#">DFB Pokal</a></li>
+                            <li><a href="#">Coupe De France</a></li>
+                            <li><a href="#">Serie A</a></li>
+                            <li><a href="#">Championship</a></li>
+                            <li><a href="#">League One</a></li>
+                            <li><a href="#">League Two</a></li>
+                            <li><a href="#">Ligue 1</a></li>
+                            <li><a href="#">Premier League</a></li>
+                        </ul>
+                    </li>
+                    <!--<li><a href="#">World Cup</a></li>
+                    <li><a href="#">French Open</a></li>
+                    <li><a href="#">Tour de France</a></li>-->
+                </ul>
+		
+			   
+		               
+            </div>
+        </div>
+
+    </nav>
+    
+</header>

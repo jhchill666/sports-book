@@ -1,0 +1,140 @@
+@import  "../components/variables";
+@import  "../components/mixins";
+
+.match{
+	
+	font-size: @size-m;
+
+	header{
+		
+		padding: 12px 10px;
+		font-weight: bold;
+		position: relative;
+
+		.secondary{
+			position: absolute;
+			right: 2px;
+			font-size: @size-xs;
+			bottom: 10px;
+		}
+
+		&.header-small{
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+	
+	> ul{
+		
+		padding-bottom: 5px;
+		border-bottom: 1px solid @grey11;
+		margin-bottom: 10px;
+
+		> li{
+			.clearfix();
+
+			header{
+				.header-internal-list();
+			}
+
+			ul{
+				float: left;
+				width: 50%;
+
+				li{
+					padding: 5px 0 0 0;
+					.clearfix();
+
+					a{
+						.price();
+
+						&.active{
+							.price(@black, @color-secondary-2, @color-highlight);
+							width: 100%;
+
+							b{ // Equates to score
+								float: left;
+								width: 40px;
+							}
+							i{ // Equates to score
+								float: left;
+								width: auto;
+							}
+							em{ // Equates to price
+								float: right;
+								width: auto;
+							}
+						}
+
+						width: 100%;
+
+						b{ // Equates to score
+							float: left;
+							width: 40px;
+						}
+						i{ // Equates to score
+							float: left;
+							width: auto;
+						}
+						em{ // Equates to price
+							float: right;
+							width: auto;
+						}
+					}
+				}
+
+				&.home{
+					padding-right: 5px;
+					border-right: 1px solid @grey11;
+				}
+
+				&.away{
+					padding-left: 5px;
+				}
+
+			}
+
+			/*ul{
+				width: 100%;
+				background: @white;
+				.clearfix();
+				margin-bottom: 15px;
+				font-size: 0.9em;
+
+				li{
+					display: block;
+					//width: 65px;
+					width: 33.333333333333%;
+					float: left;
+					text-align: left;
+					padding: 3px 3px 0 0;
+
+					.col &{
+						width: 100%;
+					}
+
+					.col.double &{
+						width: 50%;
+					}
+
+
+					a{
+						font-weight: bold;
+						background: @grey11;
+						display: block;
+						padding: 8px 10px 10px 10px;
+						white-space: nowrap;
+						overflow: hidden;
+						text-overflow: ellipsis;
+
+						&:hover{
+							text-decoration: none;
+							background: darken(@grey11, 5%);
+						}
+					}
+				}
+			}*/
+		}
+	}
+
+}

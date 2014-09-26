@@ -1,0 +1,21 @@
+<% if (typeof countries !== "undefined") { %>
+    <div class="market-cols include">
+
+        <section class="countries">
+            <header>
+                <h2>Countries</h2>
+            </header>
+
+			<ul>
+	    	<% _.each(countries, function(country){ %>
+			    <li>
+			        <a href="#<%=sport%>/country/<%=country.id%>">
+			        	<%=country.name%>
+					</a>
+			    </li>       
+	        <% }) %>
+	    </ul>
+	</section>
+	</div>
+<% } %>
+

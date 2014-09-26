@@ -1,0 +1,81 @@
+define(['backbone'],
+function (Backbone) {
+    return Backbone.Model.extend({
+
+        defaults: {
+            eventId:0,
+            marketId:0,
+            id : 0,
+            state:'ACTIVE',
+            name : "",
+            type : "D",
+            suspended : false,
+            displayed: true,
+          
+            pos: {
+                row : 1,
+                col : 1
+            },
+            
+            //Flattened structure instead of the odds object below returned from the schedule.
+            decimalOdds:  "1.53",
+            fractionalOdds: "8/15",  
+            rootIdx: 0,
+            
+            oddsToDisplay:null,
+//            odds: {
+//                dec: "1.53",
+//                frac:  "8/15",
+//                rootIdx : 656
+//            }
+        },
+
+        
+        initialize: function( data, options ) {
+            this.populate(data);
+            //this.marketId = options.marketId;
+            //this.eventId = options.eventId;
+            this.set('marketId',options.marketId);
+            this.set('eventId',options.eventId);
+        },
+        
+        populate: function(data){
+            var scope = this;
+            scope.data = data;
+            var decimalValue;
+            var priceChanged = false;
+            
+            _.each(data, function(val, key){
+                if (_.has(scope.defaults, key))
+                    if (scope.defaults[key] != val) {
+                        scope.set(key, val);
+                        if (key == 'decimalOdds') {
+                            decimalValue = val;
+                            priceChanged = true;
+                        }
+                    }
+            });
+            
+            if (priceChanged) {
+                this.setDisplayedOdds(decimalValue);   
+            }
+        },
+
+
+        /**
+         * Returns the odds according to the current price
+         * format - ie. either fractional, decimal or american
+         * @returns {Mixed|*}
+         */
+        getOdds: function(format) {
+            var oddsType = 'fractionalOdds';
+            switch(format) {
+                case 'DECIMAL' : oddsType = 'decimalOdds'; break;
+                case 'AMERICAN' : oddsType = 'rootIdx'; break;
+            }
+            return this.get(oddsType);
+        }
+    });
+});
+
+

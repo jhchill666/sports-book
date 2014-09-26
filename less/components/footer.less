@@ -1,0 +1,492 @@
+@import  "variables";
+@import  "mixins";
+
+
+
+
+#footer-main-panel{
+/* 	border-top: 4px solid #2E2E2E; */
+
+	.link-panel{
+	
+		min-height: 35px;
+		margin: 0px;
+		width:100%;
+		.lp-inner{
+			margin-left: 220px;
+			margin-right: 340px;
+			background: #FFFFFF url("../images/style-beteast/footer/gamcare-logos-white.png") right 10px bottom no-repeat;
+			min-height: 41px;
+			color: #666;
+			padding:15px 10px 0 15px;
+			font-size: @size-s;
+			position:relative;
+			a{
+				color:#666;
+				text-decoration: underline;
+			}
+			p{
+				display:inline;
+				
+			}
+			.sign{
+					display:inline-block;
+					width:30px;
+					height:30px;
+					background: #FFFFFF url("../images/style-beteast/footer/18-sign.png") no-repeat;
+					text-indent:-10000px;
+					position:absolute;
+					top:8px;
+					left:248px;
+				}
+			
+		}
+		ul{
+			display: block;
+			padding: 10px 0 0 10px;
+			
+			li{
+				display: inline-block;
+				padding: 0 8px;
+				border-right: 1px solid #fff;
+			
+				&:first-child{
+					padding-left:0;
+				}
+				&:last-child{
+					border:none;
+				}
+				a{
+					color:white;
+					font-size: @size-xs;
+					font-weight: bold;
+				}
+			}
+
+		}
+}
+
+#footer-main{
+	margin-left:235px;
+	margin-right:330px;
+	color: @white;
+	min-height: 100px;
+	width: auto;
+	padding: 6px 0 18px 0;
+	position: relative;
+
+}
+
+.footer-content{
+	min-height: 180px;
+	margin-top: 10px;
+	position: relative;
+	.clearfix();
+	color: @grey8;
+	font-size: @size-s;
+	line-height:14px;
+	padding-top: 15px;
+	/* background: @black url("@{image-path}/footer/bg-footer.png") no-repeat; */
+	margin: 0 auto;
+	font-weight:500;
+		strong{
+			font-weight: bold;
+			color: @white;
+		}
+		h3{
+			font-size: @size-l;
+			color: @white;
+			font-weight: 600;
+			padding-bottom: 6px;
+		}
+		p{
+			line-height: 14px;
+			font-weight: 500;
+			color: #D3D3D3;
+		}
+		ul{
+			font-weight: bold;
+			font-size: @size-m;
+			
+			li{
+				margin: 3px 0 9px 0;
+				font-size: 13px;
+				text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.16);
+			}
+		}
+		.section-1{
+			float: left;
+			width: 30%;
+			ul{ 	list-style-image: url("../images/style-beteast/footer/bullet.png");
+					margin-left: 0; 
+				    padding-left: 15px;
+				    li {
+				    	padding-left: 0px;
+				    	color:@blue1;
+					}
+				}
+
+			a{
+				color: @blue1;
+				&:hover{
+					text-decoration: underline;
+				}
+			
+			&:nth-child(5){
+				article{
+					margin-right:0;
+				}
+			}
+			
+		}
+	}
+
+	.section-2{
+		width:36%;
+		float: left;
+		padding: 0px 30px 0 10px;
+		
+	}
+	.section-3{
+		width: 32%;
+		float: left;
+		
+		
+		
+		.box{
+			border:1px solid #666;
+			padding:5px 10px;
+			margin-top:8px;
+		}
+		
+		span{
+			display: block;
+		
+			margin: 2px 0;
+			color: white;
+			font-size: @size-s;
+		}
+		ul{
+			line-height:18px;
+			margin-top:10px;
+			color:white;
+			a{
+				color:white;
+				
+			}
+		}
+	}
+}
+
+	.strapline{
+		display:none;
+		border-top: 1px dotted @grey6;
+		height:30px;
+		padding-top:5px;
+		text-align: center;
+		font-size: @size-l;
+		font-weight: bold;
+	}
+}
+
+@media all and (max-width:1280px){
+	
+	#footer-main {
+	margin-left:230px;
+		.footer-content{
+			.section-1{
+				height:200px;
+								
+			}
+			.section-2{
+				width:66%;
+				padding:0;
+				padding-left: 20px;
+			}
+			.section-3{
+				width:66%;
+				margin-top:15px;
+				padding-left: 20px;
+				.box{
+						span{
+							display:inline;
+							&:nth-child(2){
+								border-left:1px solid #666;
+								border-right:1px solid #666;
+								padding:0 6px;		
+								margin:0 5px;	
+							}
+					
+							&:first-child, &:last-child{
+								border:none;
+								padding:0;
+								margin:0;
+							}
+						}
+					}
+
+			}
+		} 
+		
+	}
+	.link-panel{
+			.lp-inner{
+				margin:0 0 0 10px;
+				padding-top:15px;
+				margin-right:0;
+				background: #2e2e2e url("../images/style-beteast/footer/gamcare-logos-white.png") right 10px bottom no-repeat;
+				p{
+					line-height:14px;
+				}
+			}
+		}
+
+	
+}
+
+@media all and (max-width:1024px){
+	#footer-main-panel{		
+		#footer-main {
+			margin-right:355px;
+			padding:10px 0;
+			width:auto !important;
+			.footer-content{
+				padding:0;
+				.section-1{
+					width:100%;
+					height:auto;
+				}
+				.section-2{
+					width:100%;
+					padding:0;
+					margin-top:15px;
+					margin-left:0;
+				}
+				.section-3{
+					width:100%;
+					margin-top:15px;
+					padding:0;
+					margin-bottom:30px;
+					.box{
+						span{
+							display:inline;
+							&:nth-child(2){
+								border-left:1px solid #666;
+								border-right:1px solid #666;
+								padding:0 6px;		
+								margin:0 5px;	
+							}
+					
+							&:first-child, &:last-child{
+								border:none;
+								padding:0;
+								margin:0;
+							}
+						}
+					}
+				}
+			}
+		}	
+		.link-panel{
+			.lp-inner{
+				height:70px;
+				padding:10px 0 0 10px;
+				background: #fff url("../images/style-beteast/footer/gamcare-logos-white.png") left 10px bottom 6px no-repeat;
+				p{
+					width:100%;
+					line-height:14px;
+					padding:0;
+				}
+				.sign{
+					top:4px;
+					left:245px;
+				}
+			}
+		}
+
+	}	
+}
+@media all and (max-width:960px){
+	#footer-main-panel{		
+		#footer-main {
+		margin-left:210px;
+		margin-right:15px;
+			.footer-content{
+				.section-1{
+					width:30%;
+				}
+				.section-2{
+					width:40%;
+					margin-right:5%;
+					padding-left:20px;
+					margin-top:0;
+				}
+				.section-3{
+					width:25%;
+					margin-top:0;
+					padding-left: 0;
+					.box{
+						
+						span{
+							display:block;
+							border:none;
+							&:nth-child(2){
+							border:none;
+							display:block;
+							margin:0;
+							padding:0;
+						}
+						}
+					}
+				}
+			}
+		}
+				.link-panel{
+			.lp-inner{
+				margin-left:195px;
+				margin-right:10px;
+				p{
+			
+					line-height:14px;
+				}
+			}
+		}
+	}
+
+
+}
+
+
+@media all and (max-width:768px){
+	#footer-main-panel{		
+		#footer-main {
+	
+			.footer-content{
+				.section-1{
+					width:23%;
+					height:280px;
+				}
+				.section-2{
+					width:75%;
+					padding:0 0 0 30px;
+					margin-right:0;
+				}
+				.section-3{
+					width:75%;
+					margin-top:15px;
+					margin-right:0;
+					padding:0 0 0 30px;
+					.box{
+					span{	
+						display:inline;
+					
+						&:first-child{
+							padding-left:0;
+						}
+						&:nth-child(2){
+						display:inline;
+						border-right:1px solid #666;
+						border-left:1px solid #666;
+						padding:0 8px;
+						}
+						&:last-child{
+							border:none;	
+						}
+					}
+				}
+
+				}
+	
+			}
+		}
+	
+	}	
+	
+}
+@media all and (max-width:650px){
+		#footer-main-panel{		
+		
+			#footer-main {
+				margin-left:20px;
+				margin-top: 15px;
+				
+			}
+		
+
+		
+		.link-panel{
+			.lp-inner{
+				margin-left:10px;
+				p{
+					width:100%;
+					line-height:14px;
+					padding:0;
+				}
+			}
+		}
+	}
+}
+
+@media all and (max-width:480px){
+
+	#footer-main-panel{		
+		#footer-main {
+			margin: 0 15px;
+			padding:10px 0;
+			width:auto !important;
+			.footer-content{
+			padding:0;
+				.section-1{
+					width:100%;
+					height:auto;
+				}
+				.section-2{
+					width:100%;
+					padding:0;
+					margin-top:15px;
+					margin-left:0;
+				}
+				.section-3{
+					width:100%;
+					margin-top:15px;
+					padding:0;
+					margin-bottom:30px;
+					.box{
+						span{
+							display:inline;
+							&:nth-child(2){
+								border-left:1px solid #666;
+								border-right:1px solid #666;
+								padding:0 6px;		
+								margin:0 5px;	
+							}
+					
+							&:first-child, &:last-child{
+								border:none;
+								padding:0;
+								margin:0;
+							}
+						}
+					}
+				}
+			}
+		}
+
+	}
+}
+
+@media all and (max-width:420px){
+	#footer-main-panel{		
+		.link-panel{
+			.lp-inner{
+
+				p{
+					width:100%;
+					line-height:14px;
+					padding:0;
+				}
+			}
+		}
+	}
+}
+

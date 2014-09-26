@@ -1,0 +1,233 @@
+<% if (typeof schedule !== "undefined") { %>
+
+
+<div class="highlights single-sidebar">
+
+    <div class="panel-left" style="background-image:url('images/promo-bg-<%=sport.toLowerCase() %>-1.jpg');">
+
+        <% _.each(events, function(event, val){  %>
+
+            <a class="<%=sport%>-image-<%=val %>" id="panel-<%=val %>" href="#<%=sport%>/event/<%=event.id%>">
+                <div class="hover-info <%=(val == 0) ? 'show' : '' %>">
+                    <span class="top"><%=schedule.getCompetitionsNameById(event.attributes.compId)%></span>
+                    <span class="bottom"><span><%=event.attributes.name %></span>
+                </div>
+            </a>
+
+        <% }); %>
+
+    </div>
+
+    <div class="list-right">
+
+        <div class="market-header">
+            <h2>Match Highlights</h2>
+        </div>
+
+        <ul class="highlight-list">
+
+            <% _.each(events, function(event, val){  %>
+
+            <li class="hl-list-item <%=(event.attributes.inplay == true) ? 'inplay' : '' %>" panel="<%=val %>" backgroundImage="promo-bg-<%=sport.toLowerCase() %>-<%=val %>.jpg">
+
+                <div class="col1">
+                    <% if (event.attributes.inplay == true) { %>
+                    <span class="date">IN PLAY</span>
+                    <% } else { %>
+                    <span class="date"><%=moment(event.attributes.eventTime).format('ddd') %></span>
+                    <% } %>
+                    <span class="time"><%=moment(event.attributes.eventTime).format('hh:ss') %></span>
+                </div>
+
+                <div class="col2">
+                    <a href="#<%=sport%>/competition/<%=event.attributes.compId%>" class="div"><%=schedule.getCompetitionsNameById(event.attributes.compId)%></a>
+                    <a href="#<%=sport%>/event/<%=event.id%>" class="game"><%=event.attributes.name %></a>
+                </div>
+
+                <div class="col3">
+
+                    <div class="table-wrapper">
+                        <div class="table">
+                            <div class="table-row">
+
+                                <% var balancedMarkets = event.Markets.byMostBalanced(); %>
+
+                                <% _.each(_.first(balancedMarkets.models, 1), function(market, loop) { %>
+
+                                <div class="prices">
+                                    <span class="market-title"><%=market.attributes.name %></span>
+                                    <div class="table">
+                                        <div class="table-row">
+
+                                            <%  _.each(market.Selections.models, function(selection, integer) {  %>
+                                                <div><a id="event-highlight-selection-<%=selection.id%>"
+                                                        eventid="event-highlight-selection-<%=market.attributes.eventId%>">
+                                                        <i><%=selection.attributes.type%></i>
+                                                        <em><%=selection.getOdds(format) %></em></a>
+                                                </div>
+                                            <% }); %>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <% }) %>	
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="options">
+                    <a href="#<%=sport%>/competition/<%=schedule.getCompetitionsNameById(event.attributes.compId)%>"><div class="more">+<%=event.attributes.numMarkets %><span>more</span></div></a>
+                </div>
+            </li>
+
+            <% }); %>
+
+        </ul>
+
+
+
+    </div><!-- list -->
+
+
+
+    <!--
+                            <div class="slide-bar">
+                                    <div class="slide-controls">
+                                            <span class="hl-btn active"></span>
+                                            <span class="hl-btn"></span>
+                                            <span class="hl-btn"></span>
+                                    </div>
+                            </div>
+    -->
+
+</div> 
+
+<!--
+         <li class="hl-list-item">
+                  <div class="col1">
+                         <span class="date">Tue</span>
+                         <span class="time">17:30</span>
+                  </div>
+                  <div class="col2">
+                        <span class="div">Premier League</span>
+                        <span class="game">Arsenal 0 - 1 Man Utd</span>
+                  </div>
+                  <div class="col3">
+                        <a class="btn">Action</a>
+                  </div>
+          </li>
+          <li class="hl-list-item">
+                  <div class="col1">
+                        <span class="date">Wed</span>
+                        <span class="time">18:30</span>
+                  </div>
+                  <div class="col2">
+                        <span class="div">Premier League</span>
+                        <span class="game">Tottenham 0 - 1 Man City</span>
+                  </div>
+                  <div class="col3">
+                        <a class="btn">Action</a>
+                  </div>
+                  
+          </li>
+
+-->
+
+
+
+</div>
+
+<% } %>
+
+
+
+<!--
+<div class="promos slider-highlights">
+
+     <section class="promo-block slide">
+
+         <div class="promo-head" style="background: url('images/promo-bg-football-1.jpg');">
+
+             <div class="promo-content">
+                 <header>
+                     <h2>Premier League</h2><p>Live - SKY Sports 2</p>
+                 </header>
+
+                 <ul class="market match-highlight">
+                     <li>
+                         <div class="time"><em>TODAY</em>14:30</div> 
+                         <div class="selection">
+                             <a href="#">
+                                 <span class="team home">Manchester United <span class="score">1</span></span>
+                                 <span class="team away">West Bromich Albion <span class="score">0</span></span> 
+                             </a>
+                         </div>
+                     </li>
+                 </ul>
+
+             </div>
+
+         </div>
+
+     </section>
+
+
+     <section class="promo-block slide">
+
+         <div class="promo-head" style="background: url('images/promo-bg-football-3.jpg');">
+
+             <div class="promo-content">
+
+                 <h2>Copa Del Ray</h2>
+                 <ul class="market match-highlight">
+                     <li>
+                         <div class="time"><em>SAT</em>14:30</div> 
+                         <div class="selection">
+                             <a href="#">
+                                 <span class="team home">Brazil</span>
+                                 <span class="team away">Mexico</span> 
+                             </a>
+                         </div>
+                     </li>
+                 </ul>
+
+             </div>
+
+         </div>
+
+     </section>
+
+
+     <section class="promo-block slide">
+
+         <div class="promo-head" style="background: url('images/promo-bg-football-2.jpg');">
+
+             <div class="promo-content">
+
+                 <h2>Premier League</h2>
+
+                 <ul class="market match-highlight">
+                     <li>
+                         <div class="time"><em>NOW</em>14:30</div> 
+                         <div class="selection">
+                             <a href="#">
+                                 <span class="team home">Sunderland <span class="score">1</span></span>
+                                 <span class="team away">Cardiff <span class="score">0</span></span> 
+                             </a>
+                         </div>
+                     </li>
+                 </ul>
+
+             </div>
+
+         </div>
+
+     </section>
+
+ </div>
+-->
+

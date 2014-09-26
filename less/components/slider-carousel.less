@@ -1,0 +1,144 @@
+@import  "variables";
+@import  "mixins";
+
+.slider-carousel{
+	background: @grey1 !important;
+	padding: 0 !important;
+
+	header{
+		background: @grey1;
+		color: @white;
+		font-size: 20px;
+		margin: 0 5px;
+
+		h2{
+			padding: 18px 8px 12px 8px;
+		}
+	}
+
+	.slider-container{
+		border: 35px solid @color-highlight;
+		border-width: 0 35px 0 35px;
+		position: relative;
+	}
+
+	.bx-wrapper{
+		background: @grey1;
+		padding: 0 0 0 10px;
+		position: static;
+
+		.bx-prev {
+			left: -33px;
+			background: none;
+			color: @white;
+
+			&:after{
+				position: absolute;
+				left: 7px;
+				text-indent: 0;
+				font-family: fontAwesome;
+				content: "\f0d9";
+				font-size: 3em;
+			}
+		}
+
+		.bx-next {
+			right: -33px;
+			background: none;
+			color: @white;
+
+			&:after{
+				position: absolute;
+				right: 7px;
+				text-indent: 0;
+				font-family: fontAwesome;
+				content: "\f0da";
+				font-size: 3em;
+			}
+		}
+	}
+
+
+	.slide{
+		//border: 1px solid red;
+		color: @white;
+		padding-bottom: 10px;
+
+		&:hover{
+			background: @grey2;
+			article{
+				border-color: @color-highlight;
+			}
+		}
+
+		header{
+			position: relative;
+
+			h2{
+				position: absolute;
+				bottom: 0;
+				background: @color-highlight;
+				font-size: 12px;
+				padding: 10px;
+			}
+		}
+
+		article{
+			padding: 10px 4px 15px 14px;
+			color: @grey10;
+			font-size: 12px;
+			border-bottom: 4px solid @grey5;
+
+			h3{
+				font-weight: bold;
+				padding-bottom: 8px;
+				color: @color-highlight;
+			}
+
+			p{
+				line-height: 1.4em;
+
+				&.cta{
+					padding-top: 20px;
+					font-weight: bold;
+					font-size: 0.9em;
+				}
+			}
+		}
+	}
+}
+
+.slider-highlights{
+	
+	margin-right: -0.5%;
+	
+	&.promos{
+		margin-top: 0 !important;
+		 
+		 
+		 &:after {
+			display:table;
+			content:''; 
+		 }
+
+		section{
+	
+			&.slide{
+				padding: 0 !important; 
+			}
+			
+		
+
+			.promo-head{
+				background: @grey6;
+				background-repeat: no-repeat;
+				height: 210px;
+				background-repeat: no-repeat;
+				background-size: cover!important;
+				background-repeat: no-repeat;
+			}
+		}
+
+	}
+}
+

@@ -1,0 +1,162 @@
+
+	 <div class="promos slider-highlights">
+
+        <a class="promo-block slide" href="#soccer">
+
+            <div class="promo-head" style="background: url('images/promo-bg-soccer-1.jpg');">
+
+                <div class="promo-content">
+                    <header>
+                        <h2>Premier League</h2><p>Live - SKY Sports 2</p>
+                    </header>
+                </div>
+
+            </div>
+
+        </a>
+
+        <a class="promo-block slide" href="#basketball">
+
+            <div class="promo-head" style="background: url('images/promo-bg-basketball-2.jpg');">
+
+                <div class="promo-content">
+					<header>
+                	    <h2>NBA</h2>
+					</header>
+                </div>
+
+            </div>
+
+        </a>
+ 
+
+        <a class="promo-block slide" href="#baseball">
+
+            <div class="promo-head" style="background: url('images/promo-bg-baseball-2.jpg');">
+
+                <div class="promo-content">
+
+                    <h2>Major League</h2>
+
+                </div>
+
+            </div>
+            <div class="market">
+            
+            </div>
+        </a>
+
+    </div>
+    
+	
+  <% _.each(schedules, function(schedule) {  if (schedule.attributes.prematch.length > 0 && !jQuery.isEmptyObject(schedule.getGroupedEvents())) { %>
+          
+	<section class="include">
+		
+		  <ul class="market-container">
+
+            <li>
+                <div class="market-title-selector">
+                    <h2><%=StringUtil.properCase(StringUtil.humanize(schedule.get('sportCodes')))%></h2>
+
+                </div>
+                
+                  <%  _.each(schedule.getGroupedEvents(), function(group, index) { %>
+                  
+                 <div class="market-content">
+                    <ul class="market h2h in-play active">
+
+                        <% _.each(group.events, function(event) {
+                        if(event.data.numMarkets != 0){
+							var clazzName = event.attributes.state == 'SUSPENDED' ? 'disabled' : 'enabled';
+                        %>
+
+                        <li id="event-schedule-market-<%= event.id%>" class="<%=clazzName %> <%=(event.getInplay() == true) ? 'inplay' : ''%>" style="display: <%=(event.attributes.displayed) ? 'block' : 'none'%>">
+                            <div class="time">
+                            <% if (event.attributes.state == 'SUSPENDED') { %><p class="suspendedTag">Suspended</p><% } %>
+                             
+                             <% if(event.getInplay() == true) { %>
+	                       	
+	                       	  <em>IN PLAY</em>
+	                       	  <span><%=event.getInplayClock() %></span>
+	                       
+	                        <% } else { %>
+	                      	
+	                      	  <%=event.displayTime %>
+	                        
+	                        <% } %>
+	                        
+
+							</div>
+                            <div class="selection">
+                           
+                              <p><a href="#<%=schedule.getSportCodes().toLowerCase()%>/competition/<%=event.attributes.compId%>"><%=schedule.getCompetitionsNameById(event.attributes.compId)%></a></p>
+                                <a href="#<%=schedule.getSportCodes().toLowerCase()%>/event/<%=event.attributes.id%>">
+                                
+                                
+                                    <% if(event.getInplay()) { %>
+                                        <span id="event-schedule-participant-a-<%=event.id%>" ><%=event.getParticipantA()%></span>
+                                        <span id="event-schedule-inplay-score-<%=event.id%>"><b><%=event.getInplayScore()%></b></span>
+                                        <span id="event-schedule-participant-b-<%=event.id%>"><%=event.getParticipantB()%></span>
+                                    <% } else{ %>
+                                        <span id="event-schedule-participant-a-<%=event.id%>"><%=event.attributes.name %></span>
+                                    <% } %>
+                                </a>
+
+                            </div>
+
+                            <div class="table-wrapper">
+                                <div class="table">
+                                    <div class="table-row">
+
+                                        <% _.each(event.marketsCollection.byMostBalanced().models, function(market, index) {
+                                            if (index <= 4) {
+                                        %>
+
+                                                <div class="prices">
+                                                    <span class="market-title"><%= market.attributes.name%></span>
+                                                    <div class="table" id="event-schedule-market-<%= market.id%>">
+                                                        <div class="table-row">
+
+                                                            <%
+                                                            _.each(_.sortBy(market.selections.models, function(obj){
+                                                                return obj.attributes.pos.col;
+
+                                                            }), function(s) {
+                                                            %>
+
+                                                            <div><a id="event-schedule-selection-<%=s.id%>"
+                                                                    eventid="event-schedule-selection-<%=event.id%>">
+                                                                <i><%=s.attributes.type%></i>
+                                                                <em><%=s.getOdds(format)%></em></a>
+                                                            </div>
+
+
+                                                            <% }); %>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                        <% };}); %>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="options">
+                                <a href="#<%=schedule.getSportCodes().toLowerCase()%>/event/<%=event.attributes.id%>"><div class="more">+<%= event.attributes.numMarkets %><span>more</span></div></a>
+                            </div>
+                        </li>
+
+                        <%}; }); %>
+                    </ul>
+                </div>
+                
+            <% }); %>
+            
+            </li>
+       
+	    </ul>
+	</section>
+
+ <% } }); %>

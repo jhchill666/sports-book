@@ -1,0 +1,66 @@
+define(['backbone'],
+        function(Backbone) {
+            return Backbone.Model.extend({
+
+                defaults: {
+                    sportCodes:null,
+                    marketGroups:[],
+                    displayTemplates:[],
+                },
+                                
+                setSportCodes: function(code) {
+                    this.set('sportCodes', code);
+                },
+
+                getMarketGroup: function() {
+                    return this.get('marketGroups');
+                },
+
+                getDisplayTemplates: function() {
+                    return this.get('displayTemplates');  
+                },
+
+                setMarketGroups: function(templateGroups) {
+
+                    this.set('displayTemplates', templateGroups);
+                    var collection = []; 
+                    var groupsArray = [];
+			
+                    for (var i = 0; i < templateGroups.length; i++)  {
+                        var groupObj = templateGroups[i];
+                        for (var j = 0; j < groupObj.groups.length; j++) {
+                            var groupName = groupObj.groups[j].code;
+                            groupsArray[groupName] = groupName;	
+                        } 
+                    }
+			
+                    var allObject = {};
+                    allObject.name = 'All Markets'; 
+                    allObject.type = 'ALL';
+                    allObject.count = 0;
+                    allObject.marketTypes = [];
+                    collection.push(allObject);
+			
+                    for (var group in groupsArray) {
+                        var myObject = {};
+                        myObject.name = group; 
+                        myObject.type = group;
+                        myObject.count = 0;
+                        myObject.marketTypes = [];
+                        collection.push(myObject);
+                    }
+                    
+                    if(collection.length > 0){
+                    	//Hide date menu if other filters available
+	                    $("#date-nav").hide();
+                    }
+                    
+                    
+                    
+                    this.set('marketGroups', collection);
+                }
+                
+                
+                
+            });
+        });

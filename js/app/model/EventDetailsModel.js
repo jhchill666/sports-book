@@ -1,0 +1,48 @@
+define(['backbone','app/model/Event'],
+        function(Backbone,Event) {
+            return Backbone.Model.extend({
+
+                defaults: {
+                    eventDetails:null,
+                },
+                               
+                setEventDetails: function(eventData) {
+                    var event = new Event(eventData, {parse: true});
+                    this.set('eventDetails',event);
+                },
+                
+                getEventDetails: function() {
+                    return this.get('eventDetails');
+                },
+                
+                getNumberOfMarkets: function() {
+                    var markets = this.getMarkets();
+                    if (markets && markets.length) {
+                        return markets.length;
+                    }
+                    else {
+                        return 0;   
+                    }
+                },
+                
+                getMarkets: function() {
+                    var event = this.get('eventDetails');
+                    return (event) ? event.Markets : null;
+                },
+                
+                setParticipants: function(data) {
+                    if (data) {
+                        var particpantA = data[0];
+                        var particpantB = data[1];
+                        var event = this.get('eventDetails');
+                        event.setParticipantA(particpantA.name);
+                        event.setParticipantB(particpantB.name);
+                        this.trigger("change:participants", event);   
+                    }
+                }
+
+
+            });
+        });
+
+

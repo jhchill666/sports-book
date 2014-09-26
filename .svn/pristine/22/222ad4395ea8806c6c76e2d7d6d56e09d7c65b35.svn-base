@@ -1,0 +1,37 @@
+<ul class="bet-slip-head">
+    <li>
+        <div class="selection">Singles</div>
+        <div class="odds">Odds</div>
+        <div class="stake">Stake</div>
+    </li>
+</ul>
+<ul class="bet-selections">
+	<% if (bets.length > 0 ) { %>
+	    <% _.each(bets, function(bet) { %>
+	        <li id="<%= bet.betId() %>">
+	            <div class="row">
+	                <div class="option"><a class="remove" title="Remove selection"><span>Remove</span></a></div>
+	                <div class="selection">
+	                    <h3><%= bet.selectionName() %></h3>
+	                    <p><%= bet.marketName() %></p>
+	                </div>
+	                <div class="bet-value"><%= bet.fractionalOdds() %></div>
+	                <!-- <div class="bet-option"><em class="highlight"><%= bet.type %></em></div> -->
+	                <label class="stake">
+	                    <span><%= bet.totalStake() %></span>
+	                    <input type="text" value="<%= bet.totalStake() %>" />
+	                </label>
+	            </div>
+	            <div class="row2">
+	                <div class="option"></div>
+	                <div class="returns">Returns: &pound;<span><%= bet.estimatedReturnsDisplayVal() %></span></div>
+	            </div>
+	        </li>
+	    <% }); %>
+    <% } else { %>
+    	
+    	<li><p class="noBets">Your bet slip is currently empty</p></li>
+    	
+    <% } %>
+
+</ul>

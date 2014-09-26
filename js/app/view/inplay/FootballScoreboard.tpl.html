@@ -1,0 +1,64 @@
+	<div class="inplay-area football">
+	
+		<div class="inplay-box">
+			
+			<div class="progressBar">
+				<div class="time"><i class="fa fa-clock-o"></i>&#160;<span><%=event.getInplayClock()%></span></div>
+				<div class="activeBar" style="width:0px;"></div>
+			</div>
+			<div class="iconBar">
+				<div class="icons">
+					<div class="gap"></div>
+					<span class="icon corner-flag"><div>&#160;</div></span>
+					<span class="icon yellow-card"><div>&#160;</div></span>
+					<span class="icon red-card"><div>&#160;</div></span>
+					<span class="icon penalty"><div>&#160;</div></span>
+					<span class="icon goal"><div>&#160;</div></span>
+				</div>
+			</div>
+			<div class="teams">
+				<div class="row middle home">
+					<span class="team"><%= event.getParticipantA() %></span>
+					
+					<span class="stat corner"><% if(currentStats.CORNER_SCORE.split(':')[0] != '' && currentStats.CORNER_SCORE.split(':')[0] != undefined ){ %>
+						<%=currentStats.CORNER_SCORE.split(':')[0] %>
+						<% } else { %>0<% } %></span>
+					<span class="stat yellow"><% if(currentStats.YELLOWCARD_SCORE.split(':')[0] != '' && currentStats.YELLOWCARD_SCORE.split(':')[0] != undefined){ %>
+						<%=currentStats.YELLOWCARD_SCORE.split(':')[0]  %>
+						<% } else { %>0<% } %></span>
+					<span class="stat red"><% if(currentStats.REDCARD_SCORE.split(':')[0] != '' && currentStats.REDCARD_SCORE.split(':')[0] != undefined){ %>
+						<%=currentStats.REDCARD_SCORE.split(':')[0] %>
+						<% } else { %>0<% } %></span>
+					<span class="stat penalty"><% if(currentStats.PENALTY_SCORE.split(':')[0] != '' && currentStats.PENALTY_SCORE.split(':')[0] != undefined){ %>
+						<%=currentStats.PENALTY_SCORE.split(':')[0] %>
+						<% } else { %>0<% } %></span>
+					<span class="stat goal"><%=event.getInplayScore().split('-')[0] %></span>
+					
+				</div>
+				<div class="row bottom away">
+					<span class="team"><%= event.getParticipantB() %></span>
+					
+					
+					<span class="stat corner"><% if(currentStats.CORNER_SCORE.split(':')[1] != '' && currentStats.CORNER_SCORE.split(':')[1] != undefined) { %>
+						<%=currentStats.CORNER_SCORE.split(':')[1] %>
+						<% } else { %>0<% } %></span>
+					<span class="stat yellow"><% if(currentStats.YELLOWCARD_SCORE.split(':')[1] != '' && currentStats.YELLOWCARD_SCORE.split(':')[1] != undefined) { %>
+						<%=currentStats.YELLOWCARD_SCORE.split(':')[1] %>
+						<% } else { %>0<% } %></span>
+					<span class="stat red"><% if(currentStats.REDCARD_SCORE.split(':')[1] != '' && currentStats.REDCARD_SCORE.split(':')[1] != undefined){ %>
+						<%=currentStats.REDCARD_SCORE.split(':')[1] %>
+						<% } else { %>0<% } %></span>
+					<span class="stat penalty"><% if(currentStats.PENALTY_SCORE.split(':')[1] != '' && currentStats.PENALTY_SCORE.split(':')[1] != undefined){ %>
+						<%=currentStats.PENALTY_SCORE.split(':')[1] %>
+						<% } else { %>0<% } %></span>
+					<span class="stat goal"><%=event.getInplayScore().split('-')[1] %></span>
+					
+				</div>
+			</div>
+			
+		</div>
+		
+		<div class="box-shadow">
+			<br/>
+		</div>
+	</div>

@@ -1,0 +1,621 @@
+@import  "variables";
+@import  "mixins";
+
+#content-side-panel-2{
+
+	#bet-slip{
+		
+		margin-top: -56px;
+
+		.bet-slip-content{
+			margin-top: 12px; 
+			border: 4px solid @color-bet-slip-border;
+		}
+
+		> header{
+			background: @grey5;
+			color: @white;
+			font-weight: bold;
+			height: 46px;
+
+			.toggle{
+				color: @white;
+				font-size: 26px;
+				padding: 10px 14px 10px 14px;
+				max-height: 46px;
+				border-left: 2px solid @black;
+				border-right: 2px solid @black;
+				//margin-left: -2px;
+				display: block;
+				float: left;
+
+				.active-right &{
+					margin-left: -2px;
+				}	
+			}
+			
+			h2{
+				display: block;
+				width: 100%;
+				padding: 16px 14px;
+				float: left;
+
+				a{
+					float: right;
+					display: block;
+					color: @white;
+				}
+
+				/*&:after{
+					content: '\f078';
+					font-family: fontAwesome;
+					float: right;
+					padding-left: 5px;
+				}*/
+			}
+
+			&:hover{
+				.user-account{
+					display: block;
+				}
+			}
+
+		}
+		section{
+			padding: 0;
+			margin-bottom: 0;
+			
+			.remove{
+				.pill(@grey10, #a4a4a4);
+				&:after{
+					font-family: fontAwesome;
+					content: "\f00d";
+				}
+				span{
+					display: inline-block;
+					text-indent: -99999px;
+				}
+			}
+
+			.btn{
+				.btn;
+			}
+
+			header{
+				background: black;
+				color: @color-secondary;
+				padding: 16px 14px;
+
+				h1{
+					font-size: 1.2em;
+					font-weight: bold;
+					display: inline-block;
+					width: 68%;
+				}
+
+				p{
+					display: inline-block;
+					width: 30.5%;
+					text-align: right;
+					font-weight: bold;
+				}
+			}
+
+			.cta{
+				display: table;
+				width: 100%;
+				//margin-bottom: 10px;
+
+				li{
+					display: table-cell;
+					width: 50%;
+					padding: 5px;
+
+					a{
+						.btn;
+					}
+
+					input{
+						.btn(@color-highlight, @color-highlight, @white);
+						font-weight: normal
+					}
+				
+				}
+
+			}
+
+			.dropzone{
+				text-align: center;
+				color: @grey7;
+				font-weight: bold;
+				padding: 18px 0;
+				border-bottom: 2px solid @color-bet-slip-border;
+			}
+
+			.ordering{
+				counter-reset: ol-counter;
+
+				li{
+					border-top: 1px solid @grey9;
+					display: table;
+					width: 100%;
+
+					div{
+						display: table-cell;
+						padding-left: 5px;
+					}
+
+					&:first-child{
+						border: none;
+					}
+
+					&:before{
+						.pill;
+						content: counter(ol-counter);
+    					counter-increment: ol-counter;
+						font-weight: bold;
+						margin-right: 10px;
+					}
+				}
+			}
+
+			.dialog-messages{
+				// border: 2px solid @color-secondary;
+				
+				border: 8px solid #3C3D3C;
+				
+				
+				width: 100%;
+				padding: 0;
+				margin-bottom: 5px;
+
+				li{
+					display: table;
+					width: 100%;
+					border-top: none;
+				}
+
+				li.dialog{
+					// background: @color-secondary;
+					background:transparent;
+					color: @white;
+					border: none;
+					padding-left: 5px;
+					min-height: 45px;
+					position: relative;
+
+					div{
+						padding-left: 8px;
+					}
+
+					h3{
+						color: @white;
+					}
+
+					&:before{
+						.pill(@white, @color-secondary);
+						content: "\f12a";
+						font-weight: bold;
+						margin-right: 10px;
+						font-family: FontAwesome;
+						border:0;
+						background: #90CB39 !important
+						
+					}
+				}
+
+
+				.action{
+					.create-percentage-bet-slip(170px, 0, 316px);
+					padding-left: 8px;
+					font-weight: bold;
+				}
+
+				.details{
+					.create-percentage-bet-slip(140px, 0, 316px);
+				}
+			}
+			
+			&.bet-placed{
+				li.dialog{
+					&:before{
+						.pill(@color-secondary, @white);
+						content: "\f00c";
+						border: 4px solid @white;
+					}
+				}
+			}
+			
+			// Widths based on multiples
+
+			&.multiples{
+				.bet-selections{
+					.selection{
+						.create-percentage-bet-slip(170px);
+						padding-right: 10px;
+						padding-left: 10px;
+					}
+				}
+				.add-to-list{
+					.option{
+						.create-percentage-bet-slip(35px);
+					}
+					.selection{
+						.create-percentage-bet-slip(275px);
+						padding-left: 0;
+					}
+				}
+			}
+
+			// Widths based on forecasts/tricasts
+
+			&.forecasts{
+				.bet-slip-head{
+					.selection{
+						.create-percentage-bet-slip(240px);
+					}
+					.stake{
+						.create-percentage-bet-slip(70px);
+					}
+				}
+				.bet-selections{
+					.selection{
+						.create-percentage-bet-slip(240px);
+						padding-right: 10px;
+						padding-left: 10px;
+					}
+				}
+				.ordering{
+					.option{
+						.create-percentage-bet-slip(35px);
+					}
+					.selection{
+						.create-percentage-bet-slip(275px);
+						padding-left: 0;
+					}
+				}
+
+			}
+
+			&.bet-placed{
+				.option{
+					padding-left: 10px !important;
+				}
+			}
+
+		}
+
+		.bet-slip-head{
+			li{
+				display: table;
+				background: @color-bet-slip-head;
+				color: @white;
+				width: 100%;
+				font-size: 11px;
+				font-weight: bold;
+				
+				div{
+					padding: 6px 0 9px 0;
+					display: table-cell;
+
+				}
+			}
+
+			.selection{
+				padding-left: 14px;
+				.create-percentage-bet-slip(175px, 0);
+			}
+
+			.odds{
+				.create-percentage-bet-slip(70px, 0);
+			}
+
+			.stake{
+				.create-percentage-bet-slip(75px, 0);
+				text-align: center;
+				padding-right: 14px;
+			}
+			
+		}
+
+		.event{
+			border-top: none;
+			background: @white;
+			margin-bottom: 2px;
+
+			li{
+				> h3{
+					color: @white;
+					background: @color-secondary;
+					padding: 6px 12px 6px 12px;
+				}
+			}
+
+			&+li{
+				border: none;
+			}
+
+			.bet-selections{
+				background: @white;
+				border-bottom: 2px solid @color-secondary;
+				
+				li{
+					border-color: @color-secondary;
+				}
+
+			}
+		}
+
+		.bet-selections{
+
+			background: @color-page-bg;
+			padding-bottom: 2px;
+			font-size: 0.85em;
+			
+
+			&.error{
+				border: 2px solid @color-error-border;
+				padding-top: 0;
+
+				input{
+					border: 1px solid @color-error-border;
+					background: @color-error-secondary;
+					color: @color-error-text;
+				}
+
+				li{
+					border-color: @color-error-border;
+					padding: 5px 0;
+					margin: 0 3px;
+				}
+
+			}
+
+			&.add-to-list{
+				li{
+					border-style: solid;
+					border-color: @color-bet-slip-border;
+				}
+			}
+			
+			li{
+				background: @white;
+				padding: 10px 5px;
+				border-top: 1px dashed @color-bet-slip-border;
+				position: relative;
+				overflow: hidden;
+
+				&:first-child{
+					border: none;
+				}
+
+				.suspended{
+					//background: @color-error-bg;
+					position: absolute;
+					right: 0;
+					top: 0;
+					height: 100%;
+					width: 50%;
+					z-index: 9999;
+					border-style: solid;
+					border-width: 42px 0 42px 42px;
+					@color-suspend: fade(@color-error-bg, 90%);
+					border-color: @color-suspend @color-suspend @color-suspend  transparent;
+
+					em{
+						position: absolute;
+						z-index: 999999;
+						color: @white;
+						font-weight: bold;
+						font-size: 1.2em;
+						margin-top: -7%;
+						margin-left: 18px;
+					}
+
+					/*&:before{
+						width: 60%;
+						height: 50%;
+						background: @color-error-bg;
+						content: " ";
+						display: block;
+						left: -30%;
+						position: absolute;
+						.rotate(45deg);
+						z-index: 1;
+					}
+
+					&:after{
+						width: 60%;
+						height: 50%;
+						background: @color-error-bg;
+						content: " ";
+						display: block;
+						left: -30%;
+						top: 50%;
+						position: absolute;
+						.rotate(-45deg);
+						z-index: 1;
+					}*/
+				}
+			}
+
+			.row,
+			.row2{
+				display: table;
+				width: 100%;
+			}
+
+			h3{
+				color: @color-link;
+				font-weight: bold;
+				font-size: 1.1em;
+				padding-bottom: 3px;
+			}
+			
+			div{
+				display: table-cell;
+				vertical-align: middle
+			}
+				
+
+			// Default widths based on singles
+
+			.option{
+				.create-percentage-bet-slip(35px);
+				padding: 0 4px 0 2px;
+			}
+
+			.selection{
+				.create-percentage-bet-slip(135px);
+				padding-right: 10px;
+			}
+
+			.odds{
+				.create-percentage-bet-slip(70px);
+			}
+
+			.bet-value{
+				.create-percentage-bet-slip(38px);
+				font-weight: bold;
+
+				&.increased{
+					color: @green1;
+					&:after{
+						content: '\f0de';
+						display: block;
+						font-family: fontAwesome;
+						padding: 3px 10px 0 10px;
+					}
+				}
+
+				&.decreased{
+					color: @red1;
+					padding-bottom: 10px;
+					&:before{
+						content: '\f0dd';
+						display: block;
+						font-family: fontAwesome;
+						padding: 0 10px 3px 10px;
+					}
+				}
+			}
+
+			.bet-option{
+				.create-percentage-bet-slip(32px);
+				padding-right: 4px;
+				em{
+					.pill;
+					font-weight: bold;
+					font-size: 11px;
+					color: #a4a4a4;
+					border: 1px solid #e4e5e6;
+					
+					&.highlight{
+						.pill(@color-secondary, @white);
+					}
+				}
+				
+			}
+
+			.option{
+				padding-left: 0 !important;
+				em{
+					.pill;
+					font-weight: bold;
+					font-size: 11px;
+					
+					&.highlight{
+						.pill(@color-secondary, @white);
+					}
+				}
+			}
+
+			.stake{
+				.create-percentage-bet-slip(70px);
+				//padding-right: 5px;
+
+				span{
+					position: absolute;
+					left: -10000px;
+				}
+
+				input,
+				em{
+					width: 100%;
+					padding: 8px;
+					border: 1px solid @grey8;
+					border-radius: 5px;
+					text-align: center;
+				}
+
+				em{
+					border: none;
+					display: block;
+				}
+			}
+
+			.row2{
+				width: 100%;
+				padding: 10px 0 0 0;		
+				div{
+					.create-percentage-bet-slip(170px);
+					padding-left: 5px;
+					padding-right: 10px;
+				}
+
+				div + div{
+					.create-percentage-bet-slip(140px);
+					padding-left: 0;
+				}
+
+			}
+			
+		}
+
+		.bet-total-stake{
+			background: @grey4;
+			color: @white;
+			font-weight: bold;
+			display: table;
+			width: 100%;
+			
+			p, span{
+				display: table-cell;
+				vertical-align: middle
+			}
+
+			p{
+				.create-percentage-bet-slip(285px, 0);
+				padding: 18px 14px;
+			}
+
+			span{
+				.create-percentage-bet-slip(35px, 0);
+				padding-right: 4px;
+			}
+
+			.remove{
+				.pill(@black, @grey9);
+				padding: 0 5px;
+
+				span{
+					padding: 0;
+				}
+			}
+
+		}
+	
+	}
+}
+
+
+@media all and (max-width: 1024px) {
+	#content-side-panel-2{
+		#bet-slip {
+			margin-top: 0px;
+		}	
+	} 
+}
+
+
+		

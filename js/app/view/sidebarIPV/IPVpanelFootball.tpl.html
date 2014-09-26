@@ -1,0 +1,275 @@
+	
+	<div id="IPVPanelWrapper">
+	
+	<div id="tabs">
+	
+		<div class="tab-bar">
+			<ul>
+				<li><a href="#close"><i class="fa fa-chevron-up"></i></a></li>
+				<li class="active"><a href="#IPVpanelFootball">Inplay</a></li>
+				<li><a href="#IPVpanelStream">Live Stream</a></li>
+				
+			</ul>
+		</div>
+			
+			<div id="IPVpanelStream" class="inplay-panel">
+				
+				<iframe width="320" height="226" src="//www.youtube.com/embed/F_KQchfbB_w" frameborder="0" allowfullscreen="false"></iframe>
+		
+				
+			</div>
+			
+			<div id="IPVpanelFootball" class="inplay-panel openTab">
+	
+			
+			<div class="progressBar">
+				<div class="time center"><i class="fa fa-clock-o"></i>&#160;<span></span></div>
+				<div class="activeBar"></div>
+			</div>
+		
+			<div class="teams">
+				<div class="team">
+					<span class="loc">HOME</span>
+					<span class="name"><%= event.getParticipantA() %></span>
+					<span class="score left"><%= event.getInplayScore().split('-')[0] %></span>
+					<div class="flash left"></div>
+				</div>
+				<span class="v">v</span>
+				<div class="team">
+					<span class="loc">AWAY</span>
+					<span class="name"><%= event.getParticipantB() %></span>
+					<span class="score right"><%= event.getInplayScore().split('-')[1] %></span>
+					<div class="flash right"></div>
+				</div>
+			</div>
+			<div class="football-pitch">
+					
+				<!--  kick off -->
+				
+				<div class="kick-off-left hide">
+					<div class="whistle">
+						<span class="lg">KickOff!</span>
+						<span class="sm"><%= event.getParticipantA() %></span>
+					</div>
+				</div>
+				<div class="kick-off-right hide">
+					<div class="whistle">
+						<span class="lg">KickOff!</span>
+						<span class="sm"><%= event.getParticipantB() %></span>
+					</div>
+				</div>
+				
+				
+				<!--  start second half -->
+				
+				<div class="start-second-left hide">
+					<div class="whistle">
+						<span class="lg">Start 2nd Half</span>
+						<span class="sm"><%= event.getParticipantA() %></span>
+					</div>
+				</div>
+				<div class="start-second-right hide">
+					<div class="whistle">
+						<span class="lg">Start 2nd Half</span>
+						<span class="sm"><%= event.getParticipantB() %></span>
+					</div>
+				</div>
+				
+				
+				<!-- penalty -->
+				
+				<div class="penalty-right-back hide">
+					<div class="penalty-right">
+						<div class="penalty-right-inner">
+						</div>
+					</div>
+					<span class="sm"><%= event.getParticipantB() %></span>
+					<span class="lg">Penalty!</span>
+				</div>
+				
+				<div class="penalty-left-back hide">
+					<div class="penalty-left">
+						<div class="penalty-left-inner">
+						</div>
+					</div>
+					<span class="sm"><%= event.getParticipantA() %></span>
+					<span class="lg">Penalty!</span>
+				</div>
+		
+				
+				
+				<!-- goal -->
+				
+				<div class="goal-left hide"></div>
+				<div class="goal-left-2 hide">
+					<div class="ball"></div>
+					<div class="confetti"></div>
+					<span class="lg">GOAL!</span>
+					<span class="sm"></span>
+				</div>
+				
+				<div class="goal-right hide"></div>
+				<div class="goal-right-2 hide">
+					<div class="ball"></div>
+					<div class="confetti"></div>
+					<span class="lg">GOAL!</span>
+					<span class="sm"></span>
+				</div>
+		
+				
+				<!-- dangerous-attack -->
+				
+				<div class="dangerous-attack-left hide">
+					<span class="sm"><%= event.getParticipantA() %></span>
+					<span class="lg">DANGEROUS ATTACK</span>
+				</div>
+				<div class="dangerous-attack-right hide">
+					<span class="sm"><%= event.getParticipantB() %></span>
+					<span class="lg">DANGEROUS ATTACK</span>
+				</div>
+				
+				
+				<!-- attack -->
+				
+				<div class="attack-left hide">
+					<span class="sm"><%= event.getParticipantA() %></span>
+					<span class="lg">ATTACKING</span>
+				</div>
+				<div class="attack-right hide">
+					<span class="sm"><%= event.getParticipantB() %></span>
+					<span class="lg">ATTACKING</span>
+				</div>
+				
+				
+				
+				<!-- possession -->
+				
+				<div class="possession-left hide">
+					<div class="contents">
+						<span class="sm"><%= event.getParticipantA() %></span>
+						<span class="lg">IN POSSESSION</span>
+					</div>
+				</div>
+				<div class="possession-right hide">
+					<div class="contents">
+						<span class="sm"><%= event.getParticipantB() %></span>
+						<span class="lg">IN POSSESSION</span>
+					</div>
+				</div>
+				
+				
+				
+				<!-- possible yellow -->
+				
+				<div class="possible-yellow-left hide">
+					<div class="contents">
+						<span class="sm"></span>
+						<span class="lg">POSSIBLE YELLOW</span>
+					</div>
+				</div>
+				<div class="possible-yellow-right hide">
+					<div class="contents">
+						<span class="sm"></span>
+						<span class="lg">POSSIBLE YELLOW</span>
+					</div>
+				</div>
+				
+				
+				
+				<!-- yellow -->
+					
+				<div class="yellow-left hide">
+					<div class="contents">
+						<span class="sm"></span>
+						<span class="lg">YELLOW CARD!</span>
+					</div>
+				</div>
+				<div class="yellow-right hide">
+					<div class="contents">
+						<span class="sm">RONALDO</span>
+						<span class="lg">YELLOW CARD!</span>
+					</div>
+				</div>
+				
+				
+				
+				<!-- possible red -->
+				
+				<div class="possible-red-left hide">
+					<div class="contents">
+						<span class="sm"></span>
+						<span class="lg">POSSIBLE RED</span>
+					</div>
+				</div>
+				<div class="possible-red-right hide">
+					<div class="contents">
+						<span class="sm"></span>
+						<span class="lg">POSSIBLE RED</span>
+					</div>
+				</div>
+				
+				
+				<!--  red -->
+				
+				<div class="red-left hide">
+					<div class="contents">
+						<span class="sm"></span>
+						<span class="lg">RED CARD!</span>
+					</div>
+				</div>
+				<div class="red-right hide">
+					<div class="contents">
+						<span class="sm"></span>
+						<span class="lg">RED CARD!</span>
+					</div>
+				</div>
+				
+				
+				<!-- corners -->
+				
+				<div class="corner-right hide">
+					<div class="corner-flash">
+						<span class="sm"><%= event.getParticipantB() %></span>
+						<span class="lg">CORNER!</span>
+					</div>
+					<div class="corner-arrow"></div>
+				</div>
+				<div class="corner-left hide">
+					<div class="corner-flash">
+						<span class="sm"><%= event.getParticipantA() %></span>
+						<span class="lg">CORNER!</span>
+					</div>
+					<div class="corner-arrow"></div>
+				</div>
+				
+				
+				
+				
+				<!-- free kick -->
+					
+				<div class="free-kick-right hide">
+				<div class="radar-right"></div>
+					<div class="contents">
+						<span class="sm"><%= event.getParticipantB() %></span>
+						<span class="lg">FREE KICK</span>
+					</div>
+				</div>
+				<div class="free-kick-left hide">
+				<div class="radar-left"></div>
+					<div class="contents">
+						<span class="sm"><%= event.getParticipantA() %></span>
+						<span class="lg">FREE KICK</span>
+					</div>
+				</div>
+				
+				
+				
+			</div> <!-- end of 'pitch' -->
+			
+			<div style="clear:both;"></div>
+			
+		</div> <!-- inpay panel -->
+	
+	</div> <!-- tabs -->
+	
+	</div> <!-- wrapper -->

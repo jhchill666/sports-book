@@ -1,0 +1,1238 @@
+@import  "../components/variables";
+@import  "../components/mixins";
+@import  "quickpick";
+@import  "promos";
+@import  "competitions";
+@import  "match";
+@import  "match-live";
+
+
+.market-container{
+
+	> li{
+		margin-bottom: 12px;
+		
+		.market-title-selector{
+			
+			border-bottom: 2px solid @color-secondary;
+
+			h2{
+				display: inline-block;
+				width: 49.5%;
+				font-size: 16px;
+				font-weight: bold;
+				// padding: 0 0 10px 10px;
+				padding: 0 0 5px 0px;
+				cursor: pointer;
+			}
+			p{
+				display: none;
+				width: 49.5%;
+				text-align: right;
+				font-weight:500;
+			}
+		}
+		
+	}
+}
+
+		
+.half-width{
+	width:49%;
+	display:inline-block;
+}
+
+.half-width:first-of-type{	
+	margin-right:2%;
+}
+
+
+/*----- SECTIONS OF RESULTS GROUPED BY EVENT -----*/
+
+.market-event{
+	background: @grey9 !important;
+	padding: 5px !important;
+	border: 10px solid @white;
+
+	header{
+		padding: 6px 0 0 10px;
+		min-height: 50px;
+		line-height: 1.4em;
+		position: relative;
+		
+		h2{
+			font-weight: bold;
+			font-size: 18px;
+		}
+
+		p{
+			font-size: 0.9em;
+		}
+
+		.time{
+			position: absolute;
+			width: 40px;
+			height: 45px;
+			top: 0;
+			right: 5px;
+			text-align: center;
+			font-size: 0.9em;
+
+			&:before{
+				font-family: fontAwesome;
+				content: "\f017";
+				color: @color-highlight;
+				font-size: 2em;
+				display: block;
+				padding: 5px 0 0 0;
+			}
+
+		}
+
+	}
+
+	.market{
+		background: @white;
+	}
+
+	p.racing{
+		background: @white;
+		padding: 12px 0 12px 55px;
+		font-weight: bold;
+	}
+}
+
+/*----- MARKET EVENT CAROUSEL -----*/
+
+.market-carousel-container{
+	background: white; 
+	overflow: hidden;
+}
+
+.market-carousel{
+	width: 2000px;
+	overflow: auto;
+
+	.market-event{
+		width: 420px;
+		float: left;
+		margin-right: 10px;
+		margin-bottom: 5px !important;
+		border: none;
+
+		h2{
+			padding-bottom: 0;
+		}
+	}
+}
+
+/*----- MARKET DISPLAY IN COLUMNS-----*/
+.market-cols{
+
+	.clearfix;
+	
+	.col{
+		width: 33.333333333333%;
+		float: left;
+		padding-right: 10px;
+		
+		&.double{
+			width: 66.666666666666%;
+		}
+
+		&:last-child{
+			padding-right: 0;
+		}
+
+		&.padding{
+			section{
+				padding: 0 10px 10px 10px !important;
+			}
+		}
+
+		> header{
+			position: relative;
+			padding: 8px 0 14px 10px;
+			
+			p{
+				position: absolute;
+				right: 10px;
+				bottom: 14px;
+				font-size: 12px;
+			}
+
+		}
+
+		section{
+			padding: 0 !important;
+			margin-bottom: 10px !important;
+			//font-size: 0.9em;
+
+			&.border{
+				border: 5px solid @grey9;
+				header{
+					padding-bottom: 0;
+					height: 35px;
+				}
+			}
+
+			header{
+			//	padding: 8px 10px 8px 10px;
+				h2{
+					padding-top: 8px;
+				}
+			}
+
+			.prices{
+				padding-right: 5px;
+				width: 100%;
+				height: 40px;
+
+				a{
+					padding-top: 0.4em;
+					padding-bottom: 0.5em;
+				}
+			}
+
+			ul + p{
+				padding: 10px;
+			}
+
+			ul{
+				li:first-child{
+					div{
+						border-top: 1px solid @grey8;
+					}
+				}
+			}
+		}
+
+		header + section > header{
+			padding: 0 0 0 10px;
+			height: 40px;
+			display: table-cell;
+			vertical-align: middle;
+
+			h2{
+				padding-top: 0;
+				padding-bottom: 2px;
+				font-size: 16px;
+				color: @grey4;
+			}
+
+			p{
+				font-size: 11px;
+				color: @color-secondary;
+			}
+		}
+	}
+}
+
+
+/*----- MARKET DATA -----*/
+
+// Default dimensions set for h2h markets, other market types set at the bottom of this block.
+
+.market{
+	display: table;
+	width: 100%;
+	
+	.suspend{
+		background-color: @grey9;
+		.selection{
+			
+		}
+	}
+	
+	> li{
+		display: table-row;
+ 		width: 100%;
+ 		position: relative;
+ 		
+ 		&:hover{
+ 			background: @color-selection-hover;
+			
+			.time{
+				// border-right: 1px solid @white;
+			}
+
+ 		}
+
+ 		a{
+ 			font-weight: 500;
+ 			&:hover {
+	 		 cursor: pointer;
+ 			}
+ 		}
+ 		
+ 		> div {
+	 		display: table-cell;
+			vertical-align: middle;
+			padding: 5px 0;
+			border-bottom: 1px solid @color-market-border;
+			font-weight: 500;
+			
+			.addTransitions(0.5s);
+			
+			&.prices:nth-child(4), &.prices:nth-child(5){
+				display:table-cell;
+			}
+ 		}
+		
+		div {
+			
+			b{
+				color: @color-highlight-2;
+			}
+
+			&.time{
+				border-right: 1px solid @color-market-border;
+				text-align: center;
+				min-width: 60px;
+				position:relative;
+				& em{
+					display: block;
+					text-transform: uppercase;
+					color: @color-highlight;
+					font-weight: bold;
+					font-size: 0.8em;
+					line-height: 1.6em
+				}
+				
+
+			}
+
+			&.selection{
+				
+				.create-percentage-main-content(190px);
+				padding-left: 10px;
+				padding-right: 5px;
+				a:hover{
+					
+					span{
+						text-decoration: underline;
+					}
+					
+				}
+				&.comp-view{
+						line-height:16px;
+						font-weight: normal;
+						padding-left:0;
+						padding-right: 10px;
+				}
+				p {
+					font-size: 11px;
+					line-height: 1.6em;
+					
+					a {
+						color: #455767;
+						font-weight:600;
+					}
+				}
+				
+				span {
+					display: inline;
+					line-height: 16px;
+					font-size: 1.1em;
+					font-weight: 600;
+				}
+				
+				b {
+					// float:right;
+				}
+			}
+
+			&.logo{
+				.create-percentage-main-content(70px);
+				text-align: center;
+			}
+
+			&.options{
+				.create-percentage-main-content(62px);
+				text-align: right;
+				padding-right: 3px;
+				a{
+					height: 47px;
+					.price-large(@blue1, @blue3, @blue2, @blue1, @white, @blue2);
+					margin-left:8%;
+					display: table;
+					font-weight:500;
+					div.more{
+						font-size:11px;
+						display: table-cell;
+						vertical-align: middle;
+						span{
+							display: block;
+						}
+					}
+					&:hover{
+							color:#fff;
+					}
+				}
+			}
+			
+			.table {
+				display: table;
+				table-layout: fixed;
+				width: 100%;
+				.table-row {
+					display:table-row;
+					
+					> * {
+						display:table-cell;
+					}
+				}
+			}
+
+			&.prices{
+				
+				// .create-percentage-main-content(200px); 
+				
+				.table {
+					display:table;
+					padding: 2px 3px 4px 3px;
+
+									
+					.table-row {
+						
+							> * {
+								float:none;
+							
+							a {
+								width: 96%;
+								margin-left: 4%;
+								
+							}
+							
+							&:first-child{
+								
+								a {
+									margin-left:0;
+									width:100%;
+								}
+							}
+
+						}
+					}
+				}
+				
+				a{
+				
+					.price(@grey3, @blue3, @blue2);
+
+					padding: 0px;
+					text-align: center;
+					padding-top: 0;
+					padding-bottom: 3px;
+					width:98%;
+
+
+					&:hover{
+						background: @color-highlight;
+						color: @white;
+						border: 1px solid @blue1;
+						
+						i {
+							color: @white;
+						}
+					}
+				}
+				
+				.market-title {
+					display: block;
+					font-weight: 600;
+					font-size: 79%;
+					text-align: center;
+					background-color: @blue1;
+					margin: 3px;
+					padding: 2px;
+					color: @white;
+					.border-radius(2px 2px 0 0); 
+					padding-left: 0;
+					padding-right: 0;
+					
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					overflow: hidden;
+
+				}
+			}
+		}
+	
+	
+		&.inplay {
+			
+			> div {
+			
+				border-bottom:1px solid rgba(144, 212, 85, 0.22);
+				
+				&:first-child {
+
+					background-color: rgba(144, 212, 85, 0.22);
+					em {
+						color: #71A841;
+					}
+					
+				}
+				
+				//	background: -moz-linear-gradient(top,  rgba(96,166,35,0.06) 0%, rgba(96,166,35,0.19) 100%); /* FF3.6+ */
+				//	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(96,166,35,0.06)), color-stop(100%,rgba(96,166,35,0.19))); /* Chrome,Safari4+ */
+				//	background: -webkit-linear-gradient(top,  rgba(96,166,35,0.06) 0%,rgba(96,166,35,0.19) 100%); /* Chrome10+,Safari5.1+ */
+				//	background: -o-linear-gradient(top,  rgba(96,166,35,0.06) 0%,rgba(96,166,35,0.19) 100%); /* Opera 11.10+ */
+				//	background: -ms-linear-gradient(top,  rgba(96,166,35,0.06) 0%,rgba(96,166,35,0.19) 100%); /* IE10+ */
+				//	background: linear-gradient(to bottom,  rgba(96,166,35,0.06) 0%,rgba(96,166,35,0.19) 100%); /* W3C */
+				//	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f60a623', endColorstr='#3060a623',GradientType=0 ); /* IE6-9 */
+			
+			}
+		}
+	}
+
+	// A or B to win
+	&.ab{
+		.selection{
+			.create-percentage-main-content(460px);
+		}
+		.prices{
+			.create-percentage-main-content(251px);
+			a{
+				width: 48%;
+			}
+		}
+	}
+
+	// Outright
+	&.outright{
+		.selection{
+			width: 80%
+		}
+
+		.prices{
+			width: 20%;
+			
+			a{
+				margin: 0;
+				width: 100%;
+				text-align: center;
+			}
+		}
+	}
+
+	// Racing (Horses, greyhounds, etc)
+	&.racing{
+		
+		li{
+			&:hover{
+				background: none;
+			}
+		}
+
+		.identity{
+			width: 50px;
+			padding-left: 5px;
+			
+			img{
+				max-width: 40px;
+			}
+
+		}
+		.selection{
+			width: 100%;
+			font-weight: bold;
+			p{
+				font-weight: normal;
+			}
+		}
+		.prices{
+			width: auto;
+
+			&:before{
+				content: " ";
+				width: 120px;
+				background: red;
+				display: block;
+			}
+
+			a{
+				.price(@grey3, @blue3, @blue2);
+				width: 30%;
+				text-align: center;
+
+				&:hover{
+					background: @color-highlight;
+					color: @white;
+				}
+				
+				&:first-child{
+					width: 60%
+				}
+
+			}
+		}
+	}
+
+	&.antepost{
+		li{
+			margin-bottom: 2px;
+			background: @grey9;
+			display: block;
+			padding: 0 10px;
+		}
+		a{
+			display: table-cell;
+			vertical-align: middle;
+			height: 38px;
+		}
+	}
+
+	&.tote{
+		.selection{
+			width: 55%;
+		}
+		.value{
+			width: 15%;
+		}
+		.prices{
+			width: 30%;
+			a{
+				.price(@grey4, @grey9);
+				border: 1px solid @grey8;
+				width: 100%;
+			}
+		}
+	}
+
+
+	&.top-5{
+	
+		counter-reset: ol-counter;
+		
+		li{
+			display: table;
+			margin-bottom: 0px;
+			font-size: 1em;
+			position: relative;
+			
+			&:first-child{
+				div{
+					border-top: none !important;
+				}
+			}
+
+			.time{
+				width:15%;
+				padding-left: 33px;
+				font-weight: 600;
+				
+				&:before{
+					content: counter(ol-counter);
+    				counter-increment: ol-counter;
+    				position: absolute;
+    				display: table-cell;
+    				width: 33px;
+    				height: 98%;
+    				background: @grey8;
+    				font-size: 1.2em;
+    				left: 0;
+    				top: 0;
+    				vertical-align: middle;
+    				text-align: center;
+    				line-height: 26px;
+				}
+
+				&:after{
+					display: block;
+					min-width: 51px;
+					content: "";
+				}
+			}
+
+			.selection{
+				width:auto;
+				
+				a{
+					display: block;
+					min-width: 165px;
+					line-height: 16px;
+					
+				}
+			}
+			.dummy{
+				width:auto; 
+			}
+			.prices.single{
+				width:45%;
+			}
+			.prices.single, .dummy{
+				padding-right: 0px;
+
+				a{
+					width: 100%;
+					font-weight: bold;
+					padding: 8px 11px 8px 11px;
+					margin-right: 0;
+					margin-left: 0;
+				}
+			}
+		}
+		
+
+		.team{
+			display: block;
+			font-weight: bold;
+			font-size: 12px;
+				
+			.score{
+				float: right;
+				padding-right: 10px;
+			}
+			&:first-child{
+				.score{
+					padding-right:10px;
+				}
+				&:after{
+					content: "  v  ";
+					color: #000000;
+				}
+			}
+			&:last-child{
+				display:block;
+				.score{
+					padding-left:5px;
+				}
+			}
+
+		}
+	}
+
+	&.match-highlight{
+		font-size: 12px;
+
+		.time{
+			width: (65px / 300)*100%;
+		}
+
+		.selection{
+			width: (235px / 300)*100%;
+			padding: 10px;
+			a{
+				display: block;
+				min-width: 186px;
+			}
+		}
+
+		.team{
+			display: block;
+			font-weight: bold;
+			position: relative;
+				
+			.score{
+				position: absolute;
+				padding: 5px;
+				right: -10px;
+				background: @color-highlight;
+				text-align: center;
+				min-width: 25px;
+			}
+
+			&.home{
+				
+				margin-bottom: 3px;
+
+				.score{
+					top: -10px;
+					padding-top: 10px;
+				}
+			}
+
+			&.away{
+				.score{
+					bottom: -10px;
+					padding-bottom: 10px;
+				}
+			}
+
+		}
+	}
+}
+
+.col-2{
+	-webkit-column-count: 2;
+	-webkit-column-gap: 10px;
+	-webkit-column-rule-color: @color-market-border;
+	-webkit-column-rule-style: solid ;
+	-webkit-column-rule-width: 1px;
+	-moz-column-count: 2;
+	-moz-column-gap: 10px;
+	-moz-column-rule-style: @color-market-border;
+	-moz-column-rule-color: @grey7;
+	-moz-column-rule-style: solid;
+	-moz-column-rule-width:  1px;
+  
+	width: 100%;
+}
+
+
+
+@media all and (max-width: 1600px) {
+
+	.market{
+		
+		> li{
+		
+			div.prices:nth-child(5)  {
+				display: none;
+			}
+		
+		}
+		
+		
+		
+	}
+
+}
+
+@media all and (max-width: 1400px) {
+
+		
+	.market-cols{
+		.col, .col.double{
+			width: 100%;
+			float: left;
+			padding-right:0;
+			
+		
+		}
+	}
+	
+	
+	.market{
+		&.top-5{
+			.team{
+				display:inline;
+					.score{
+						display:inline;
+						float:none;
+						padding:0;
+					}
+					&.away{
+						.score{
+							&:after{
+								content:" ";
+							}
+						}
+					}
+					&:last-child{
+						display:inline;
+					}
+			}
+		
+		}
+		> li{
+		
+			> div.prices:nth-child(5) {
+				display: none;
+			}
+			
+			
+			div.selection{
+				span{
+					padding-right:0;
+					&.team{
+						&:last-child{
+							display:inline;
+
+						}
+						&:first-child:after{
+							padding-left:0;
+						}
+					}
+				}
+				
+			}
+		
+		}
+		
+	}
+
+}
+
+@media all and (max-width: 1280px) {
+
+	.market{
+		
+		li{
+		
+			> div .table{
+				.table-row{
+					.prices{
+						&:nth-child(n+4) {
+							display: none;
+						}
+					}
+				}
+			}
+			
+			
+			
+		}
+		
+	}
+
+
+}
+
+
+
+
+@media all and (max-width: 1180px) {
+
+	
+	
+	.market{
+		display: block;
+		width: 100%;
+		li{
+			padding:10px 0 5px 0;
+			display: block;
+	 		width: 100%;
+	 		border-top: 1px solid @grey8;
+	 		.clearfix;
+			> div{
+				display: block;
+		 		border-bottom:0;
+		 		padding: 0;
+				.table{
+				
+					.table-row{
+						
+						.prices{
+							&:nth-child(-n+4) {
+								display: block;
+							}
+							&:nth-child(n+5) {
+								display: none;
+							}
+						}
+					}
+				}
+			}
+			
+	 		div  {
+		 		
+		 		&.time {
+			 		float:left;
+			 		width:12%;
+			 		min-width:60px;
+			 		text-align: left;
+			 		padding-left: 5px;
+			 		border-right:none;
+			 		
+		 		}
+		 		&.selection {
+			 		margin-left:5%;
+			 		width:90%;
+			 		height: 20px;
+			 		.clearfix;
+			 		&.comp-view{
+						margin-left: 0;
+						padding: 0;
+						margin-top: 10px;
+					}
+					span{
+						line-height: 11px;
+						font-size:12px;
+						&.team{
+							&:last-child{
+								display:inline;
+							}	
+						}
+					}
+					p{
+						line-height: 1em;
+						display: inline-block;
+						margin-right: 5px;
+						font-size: 12px;
+					}
+			 		
+		 		}
+		 		
+		 		
+		 		&.prices {
+				 	width: 50%;
+					margin-right: 0%;
+					margin-left: 0%;
+					float: left;
+					&:nth-child{}
+			 		
+			 		&:after {
+				 		display:table;
+				 		.clearfix();
+				 		content:'';
+			 		}
+			 		a {
+			 			margin-right: 0%;
+						margin-left: 1%;
+						width: 32%;
+			 		}
+			 		
+			 		.market-title {
+			 			margin: 2px;
+			 		}
+		 		}
+		 		
+		 		
+		 		&.options {
+			 		width:66px;
+		 			position: absolute;
+					top: 4px;
+					right: 0;
+					a{
+						height:auto;
+						width: 100%;
+						margin-left:0;
+						padding:4px;
+						div.more{
+							span{
+								display:inline;
+								margin-left:2px;
+							}
+						}
+					}
+		 		}
+	 		}
+	 		
+	 		
+	 		&.inplay {
+			 	
+			 	> div {
+				 	border-bottom:0;
+			 	}
+		 		
+		 		div.time {
+			 		background-color: rgba(144, 212, 85, 0.22);
+					min-width: 60px;
+					text-align: center;
+					margin-right: 9px;
+					margin-top: -10px;
+					padding: 0;
+					padding-bottom: 2px;
+					margin-top: -10px;
+					padding-top: 2px;
+		 		
+		 		}
+		 		
+		 		div.selection {
+			 		height: 24px;
+		 		}
+	 		}
+			
+		}
+
+	 	
+	 	
+	 	// top 5 markets
+	 	
+	 	&.top-5 {
+			font-size: 0.9em; 
+			.team{
+				display:inline;
+				&:last-child:before{
+					padding-right: 10px;
+				}
+				span.score{
+					float:none;
+					display:inline;
+					padding-right:0;
+				}
+			}
+			li {
+				display:block;
+				
+				div  {
+			 		display: table-cell;
+			 		border-bottom: 0;
+			 		float:none;
+
+			 		&.time {
+				 		padding-left: 40px;
+				 		width:8%;
+			 		}
+			 		&.selection{
+				 		width:80%;
+			 		}
+			 		
+				 	&.prices {
+				 	
+						display: block;
+						padding: 0;
+						margin-top: 0px;
+						height: auto;
+						margin-bottom: 8px;
+						float: left;
+						width: 45%;
+						&:nth-child(odd){
+							margin-left:38px;
+						}
+						
+						&.single {
+							clear: both;
+							min-width: 93%;
+							float: none;
+							margin: 4px 0px 2px 38px;
+
+						}
+	
+				 	}
+			 	
+				 	&.dummy{
+					 	clear: both;
+						min-width: 90%;
+						float: none;
+						display:block;
+						height: 0;
+						padding: 0;
+				 	}
+			 	}
+		 	}
+		}
+		
+ 		
+ 	}
+ 	
+ 	
+
+	.market-container{
+		
+		> li{
+
+			.market-title-selector{
+			
+				p {
+					margin-right: -5%;
+				}
+				
+				h2 {
+					padding: 0 0 5px 0px;
+				}
+			}
+			
+		}
+	}
+
+}
+
+@media all and (max-width: 480px){
+	
+	.market{
+		li{
+			padding:12px 0 4px 0;
+			
+			&.inplay{
+				div{
+					&.selection{
+						p{
+							position:absolute;
+							top:5px;
+						}
+						a{
+							position: absolute;
+							top: 22px;
+							left: 5px;
+							span{
+								font-size: 12px;
+							}
+						}
+					}
+					&.time{
+						min-width:100px;
+						text-align: left;
+						margin-top:-12px;
+						padding:1px 0;
+						em{
+							display: inline-block;
+							padding-left: 10px;
+							padding-right: 5px;
+							font-size:1em;
+						}
+						i{
+							display:inline-block;
+							line-height: 1.6em;
+							font-size:1em;
+						}
+					}
+				}
+			}
+			div{
+				&.selection{
+					height:32px;
+					margin-left:10%;
+				a{
+					position: absolute;
+					top: 28px;
+					left: 5px;
+					span{
+						font-size: 12px;
+					}
+				}
+				p{
+					padding-bottom:8px;
+				}
+					span{
+						font-size: 11px;
+						line-height: 14px;
+						&.team{
+							&:last-child{
+								display:inline;
+							}
+						}
+					}
+				}
+
+				&.time{
+					min-width: 50px;
+					max-width: 70px;
+					font-size: 11px;
+				}
+				&.options{
+					padding-right:0;
+					top:4px;
+					a{
+						padding:2px;
+					}
+				}
+			}
+		}		
+		
+		&.top-5{
+			li{
+								div.prices{
+					width:44%;
+					&.single{
+						min-width:88%;
+					}
+				}
+			}
+		}
+	}
+	
+}
+@media all and (max-width: 380px){
+	
+	.market{
+				&.top-5{
+			li{
+				div.prices{
+					width:42%;
+				}
+			}
+			.team{
+				span.score{
+					float:right;
+					padding-right:10px;
+					
+				}
+			}
+		}
+	}
+	
+}

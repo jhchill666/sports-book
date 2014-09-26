@@ -1,0 +1,34 @@
+define(['backbone.command', 'ctx'], function (Command, ctx){
+    return Command.extend({
+
+        execute: function( sport, channelId, locale ){
+            var service = ctx.get('apiService');
+            return service.getSportSchedule( sport.toUpperCase(), channelId, locale  );
+        },
+
+        /**
+         * @param resp
+         */
+        success: function(resp){
+            if (_.has(resp, 'Sport')){
+                var model = ctx.get('eventScheduleModel');
+                var silent = true;
+                model.setSportCodes(resp.Sport.code);
+                model.setInplay(resp.Sport.inplay,silent);
+                model.setPrematch(resp.Sport.prematch,silent);
+                model.setCompetitions(resp.Sport.competitions.category);
+                model.setCoupons(resp.Sport.coupons.coupon);
+            }
+        },
+        
+        always: function(){
+            var model = ctx.get('eventScheduleModel');
+            model.updateComplete();
+        }
+        
+        
+    });
+});
+
+
+

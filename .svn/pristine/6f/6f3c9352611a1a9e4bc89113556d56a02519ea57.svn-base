@@ -1,0 +1,27 @@
+define(['backbone.command', 'ctx'], function (Command, ctx){
+    return Command.extend({
+
+
+        /**
+         * @param channelId
+         * @param locale
+         * @returns {*}
+         */
+        execute: function( channelId, locale ){
+            this.model = ctx.get('frontPageModel');
+            return ctx.get('apiService')
+                .getFrontPageSchedule(channelId, locale);
+        },
+
+        /**
+         * @param resp
+         */
+        success: function(resp){
+            if (_.has(resp, 'FrontPageSchedule'))
+                this.model.parseSchedule(resp.FrontPageSchedule.sports);
+        }
+    });
+});
+
+
+

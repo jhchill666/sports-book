@@ -1,0 +1,170 @@
+@import  "components/reset";
+
+@import  "components/variables";
+@import  "components/custom-variables";
+@import  "components/mixins";
+@import  "components/typography";
+@import  "components/jquery-bxslider";
+@import  "components/slider-carousel";
+
+
+
+@import  "modal/backbone.modal.less";
+@import  "modal/backbone.modal.theme.less";
+
+
+@font-face {
+    font-family: 'open_sanscondensed_light';
+    src: url('../fonts/OpenSans-CondLight-webfont.eot');
+    src: url('../fonts/OpenSans-CondLight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-CondLight-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-CondLight-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-CondLight-webfont.svg#open_sanscondensed_light') format('svg');
+    font-weight: normal;
+    font-style: normal; 
+
+}
+
+
+@font-face {
+    font-family: 'open_sans_condensedbold';
+    src: url('../fonts/OpenSans-CondBold-webfont.eot');
+    src: url('../fonts/OpenSans-CondBold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans-CondBold-webfont.woff') format('woff'),
+         url('../fonts/OpenSans-CondBold-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans-CondBold-webfont.svg#open_sans_condensedbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+* {
+	-moz-box-sizing: border-box; 
+	box-sizing: border-box;
+}
+
+
+
+html {
+	background-image:url("@{image-path}/backgrounds/grunge.jpg");
+	// background-position:center center;
+	background-repeat: repeat;
+	background-position: 151px -12px;
+  //  background-attachment: fixed;
+	
+
+}
+
+body {
+
+	&:before {
+	
+		content:'';
+		position:fixed;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		
+	//	background: -moz-radial-gradient(center, ellipse cover,  rgba(153,153,153,0) 0%, rgba(0,0,0,0.55) 100%); /* FF3.6+ */
+	//	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(153,153,153,0)), color-stop(100%,rgba(0,0,0,0.55))); /* Chrome,Safari4+ */
+	//	background: -webkit-radial-gradient(center, ellipse cover,  rgba(153,153,153,0) 0%,rgba(0,0,0,0.55) 100%); /* Chrome10+,Safari5.1+ */
+	//	background: -o-radial-gradient(center, ellipse cover,  rgba(153,153,153,0) 0%,rgba(0,0,0,0.55) 100%); /* Opera 12+ */
+	//	background: -ms-radial-gradient(center, ellipse cover,  rgba(153,153,153,0) 0%,rgba(0,0,0,0.55) 100%); /* IE10+ */
+	//	background: radial-gradient(ellipse at center,  rgba(153,153,153,0) 0%,rgba(0,0,0,0.55) 100%); /* W3C */
+	//	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00999999', endColorstr='#8c000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+	}
+	
+}
+
+.disabled{
+	// pointer-events: none;
+	color:@grey7 !important;
+	background: fade(@blue1, 0%) !important;
+	
+	span.market-title{
+		background:  #B9D8EA !important;
+		
+	}
+	div{
+		background: fade(@blue1, 0%) !important;
+	} 
+	
+	a{
+		color:fade(@blue6, 60%) !important;
+		// background: fade(@blue1, 5%) !important;
+		// border: 1px solid @grey9 !important;
+		
+		 * {
+			color:fade(@blue6, 60%) !important;
+		}
+	}
+	i{
+		color:fade(@blue6, 60%) !important;
+	}
+	em{
+		color:fade(@blue6, 60%) !important;
+	}
+	
+	.prices {
+		pointer-events: none;
+	}
+	
+	.options a:hover {
+		background:#F5FAFF!important;
+	}
+	
+	.suspendedTag {
+		background-color: #EC1313!important;
+		border-radius: 0px;
+		font-size: 9px;
+		padding: 7px 6px 8px 5px;
+		color: #FFF;
+		position: absolute;
+		top: 20px;
+		font-weight: 700;
+		border: 1px solid #C81C1C;
+		left: -1px;
+	}
+
+
+	
+	/*
+&:hover{
+		pointer-events: none;
+		background: fade(@blue1, 5%) !important;
+		color:@grey7 !important;
+	}
+*/
+}
+
+
+@media screen and (max-width: @breakpoint-mobile) {
+	.wrapper-width-mixin(@width-mobile);
+}
+
+@media screen and (min-width: @breakpoint-desktop) {
+	.wrapper-width-mixin(@width-desktop);
+}
+
+.wrapper-width-mixin(@width-desktop);
+
+@import  "components/common";
+@import  "components/inplay-markets"; 
+@import  "components/header";
+// @import  "components/bet-slip";
+@import  "components/bet-slip-dark"; 
+@import  "components/inplay-main"; 
+@import  "components/inplay-sidebar"; 
+@import  "components/highlights"; 
+@import  "components/panels";
+@import  "components/page-layout";
+@import  "components/footer";
+@import  "components/modals";
+
+
+/*----- Market types -----*/
+@import  "markets/markets"; 

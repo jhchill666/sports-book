@@ -1,0 +1,107 @@
+@import  "colours";
+
+/*---- Breakpoints ----*/
+
+@breakpoint-mobile: 480px;
+@breakpoint-desktop: 421px;
+
+/*---- Layout / structure ----*/
+
+@width-desktop: 1280px;
+@width-mobile: 100%;
+
+/*---- Page padding ----*/
+
+@wrapper-page-padding-px: 10px;
+@wrapper-page-padding: (@wrapper-page-padding-px / @width-desktop) * 100%;
+
+/*---- Desktop component dimensions ----*/
+
+@width-container-main-px: @width-content-main-px + (@width-content-margin-px * 2) + @width-side-panel-1-px + @width-side-panel-2-px;
+
+@width-content-main-px: 970px;
+@width-content-main-reduced-px: 930px;
+@width-content-margin-px: 10px;
+@width-side-panel-1-px: 200px;
+@width-side-panel-3-px: 175px;
+@width-side-panel-2-px: 320px;
+@width-internal-content-padding-total: @wrapper-page-padding-px*2;
+
+@width-margin-left-offset-px: 0; //@width-container-main-px - (@width-content-main-reduced-px + @width-side-panel-1-px + (@width-content-margin-px * 2) - 6); //Added correction factor prob due to rounding of values
+
+//convert pixel values to percentages
+@width-container-main: 100%;
+@width-content-main: (@width-content-main-px / @width-container-main-px)* 100%; 
+@width-content-main-reduced: (@width-content-main-reduced-px / @width-container-main-px)* 100%;
+@width-side-panel-1: (@width-side-panel-1-px / @width-container-main-px)* 100%; 
+@width-side-panel-2: (@width-side-panel-2-px / @width-container-main-px)* 100%; 
+@width-content-margin: (@width-content-margin-px / @width-container-main-px)* 100%; 
+
+@width-margin-left-offset: ((@width-margin-left-offset-px/ @width-container-main-px)*100%)*-1;
+
+//Content main internal padding based in 10px
+@width-content-main-padding: (@wrapper-page-padding-px / @width-content-main-px)* 100%;
+@width-content-main-reduced-padding: (@wrapper-page-padding-px / @width-content-main-reduced-px)* 100%;
+
+/*---- Colours ----*/
+
+@color-body-bg: @white;
+
+.color-body-bg-grad{
+	background-color: @color-body-bg;
+	//background-image: linear-gradient(#000, @color-body-bg 200px);
+}
+
+@color-page-bg: @grey9;
+@color-header-bg: @grey3;
+
+@color-nav-global-bg: @black;
+@color-nav-global-link: @white;
+@color-nav-global-link-hover: @grey5;
+@color-nav-global-link-active: @grey3;
+@color-nav-main-bg: @grey3;
+@color-nav-main-control: @grey5;
+@color-nav-main-control-text: @white;
+@color-nav-main-link: @grey7;
+@color-nav-main-link-hover: @white;
+@color-nav-main-link-active: @white;
+@color-nav-main-more-bg: @grey6;
+@color-nav-main-more-link: @grey7;
+@color-nav-main-more-link-hover: @white;
+@color-nav-main-more-link-border: darken(@color-nav-main-more-link, 35%);
+@color-nav-main-border: @grey6;
+@color-nav-all-bg: @color-secondary;
+@color-nav-all-link: @white; 
+
+@color-secondary: @blue1;
+@color-secondary-2: @blue2;
+@color-highlight: @blue1;
+@color-highlight-2: @black;
+@color-link: @blue1;
+
+//Side panel
+@color-panel-header: @grey5;
+@color-panel-bg: @grey11;
+@color-panel-active-header-border: @grey9; 
+@color-panel-active-header-bg: @grey10;
+@color-panel-link: @color-link;
+@color-panel-score: @color-link;
+@color-panel-text: @color-link;
+@color-panel-active: @color-link;
+@color-panel-border: @white;
+
+//Market tables
+@color-market-border: @grey9;
+@color-selection-hover: @grey11;
+
+//Bet slip border
+@color-bet-slip-border: @grey6;
+@color-bet-slip-head: @grey5;
+
+//Errors
+@color-error-border: @blue1;
+@color-error-bg: @blue1;
+@color-error-text: @blue1;
+@color-error-secondary: @blue2;
+
+

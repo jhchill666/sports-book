@@ -1,0 +1,50 @@
+@import  "colours";
+
+/*---- Paths ----*/
+@image-path: "../images/style-beteast";
+
+/*---- Colours ----*/
+@color-body-bg: #323232;
+
+.color-body-bg-grad{
+	background-color: @color-body-bg;
+	background-image: linear-gradient(#000, @color-body-bg 200px);
+	background-position: no-repeat;
+}
+
+@color-page-bg: #050505;
+@color-header-bg: @grey3;
+
+@color-nav-global-bg: #1a1a1a;
+
+@color-secondary: @blue1;
+@color-secondary-2: lighten(@color-secondary, 60%);
+@color-highlight: @blue1;
+@color-highlight-2: @black;
+@color-link: @blue1;
+
+//Side panel
+@color-panel-header: @white;
+@color-panel-bg: #2c2c2c;
+@color-panel-active-header-border: @grey6; 
+@color-panel-active-header-bg: @grey4;
+@color-panel-link: @white;
+@color-panel-score: @color-link;
+@color-panel-text: @white;
+@color-panel-active: @color-link;
+@color-panel-border: @grey6;
+
+//Market tables
+@color-market-border: @grey9;
+@color-selection-hover: #FCFCFC;
+@color-price-background: @blue3;
+@color-price-border: @blue4;
+//Bet slip border
+@color-bet-slip-border: #424242;
+@color-bet-slip-head: @grey2;
+
+//Errors
+@color-error-border: #b51001;
+@color-error-bg: #b51001;
+@color-error-text: #b51001;
+@color-error-secondary: @blue2;

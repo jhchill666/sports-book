@@ -1,0 +1,276 @@
+@import  "../components/variables";
+@import  "../components/mixins";
+
+#content-main{
+.competitions{
+
+	header{
+		
+		padding: 4px 0px;
+		font-weight: bold;
+		position: relative;
+		border:0;
+		
+
+		.secondary{
+			position: absolute;
+			right: 2px;
+			font-size: 0.8em;
+			bottom: 10px;
+		}
+	}
+	
+	> header {
+		padding-bottom:0;
+	}
+	
+	> ul{
+		width:100%;
+			display: table;
+		> li{
+			width:100%;
+			display: table-row;
+			margin-top: 10px;
+			
+			header{
+				.header-internal-list();
+				display: table-cell;
+				vertical-align:middle;
+				width:15%;
+				background:none;
+				padding: 8px 2px;
+				border-bottom: 1px solid @grey10;
+				line-height: 15px;
+				h3 a{
+					color:@grey1;
+				}
+			}
+			
+			
+			ul{
+				width: 85%;
+				padding: 3px 0 8px 0;
+				border-bottom: 1px solid @grey10;
+				background: @white;
+				.clearfix();
+				display: table-cell;
+				font-size: 0.9em;
+
+				li{
+					display: block;
+					float: left;
+					margin-top:5px;
+					margin-left:1%;
+					.border-radius(3px);
+					border:1px solid @blue4;
+					width: 19%;
+					text-align: center;
+					background-color: @blue3;
+					&.oneComp{
+						/* width:100%; */
+					}
+					&.twoComp{
+						/* width:50%; */
+						
+					}
+					
+						
+					
+					.col &{
+						width: 100%;
+					}
+
+					.col.double &{
+						width: 50%;
+					}
+
+
+					a{
+						font-weight: bold;
+						display: block;
+						padding: 8px 10px 10px 10px;
+						white-space: nowrap;
+						overflow: hidden;
+						text-overflow: ellipsis;
+
+						&:hover{
+							text-decoration: none;
+							background: @blue1;
+							color:#fff;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
+
+
+.coupons, .countries{
+	 
+
+	> header {
+		padding-bottom:0;
+		padding: 4px 0px;
+		font-weight: bold;
+		position: relative;
+		border:0;
+	}
+	.secondary{
+		position: absolute;
+		right: 2px;
+		font-size: 0.8em;
+		bottom: 10px;
+	}
+				ul{
+				width: 100%;
+				background: @white;
+				.clearfix();
+				margin-bottom: 15px;
+				font-size: 0.9em;
+
+				li{
+					display: block;
+					//width: 65px;
+					/* width: 100%; */
+					float: left;
+					margin: 5px 5px 0 0;
+					.border-radius(3px);
+					border:1px solid @blue4;
+					width: 19%;
+					margin-left: 0.5%;
+					margin-right: 0.5%;
+					text-align: center;
+					background-color: @blue3; 
+					.col &{
+					/* 	width: 100%; */
+					}
+
+					.col-double &{
+						/* width: 50%; */
+					}
+
+
+					a{
+						font-weight: bold;
+						/* background: @grey11; */
+						display: block;
+						padding: 8px 10px 10px 10px;
+						white-space: nowrap;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						font-size: 11px;
+
+						&:hover{
+							text-decoration: none;
+							background-color:@blue1;
+							color:#fff;
+						}
+					}
+				}
+			}
+}
+
+}
+@media all and (max-width: 1280px) {
+	#content-main .competitions > ul > li{
+		header{
+			width:15%;	
+			margin-bottom: 0;
+		} 
+		ul {
+			width:85%;
+			li{
+				width:24%;
+			}
+		}
+	}
+}
+@media all and (max-width: 1180px) {
+	#content-main {
+	
+		.coupons, .countries{
+			ul{
+				li{
+					width:24%;
+				}
+			}
+		}
+	
+		.competitions > ul > li{
+			header{
+				width:20%;	
+			} 
+			ul {
+				width:80%;
+				li{
+					width: 32.3%;
+				}
+			}
+		}	
+	}
+}
+@media all and (max-width: 480px) {
+	#content-main{
+		.col.double .competitions > ul > li ul li {	
+			width: 100%;
+		}
+		.coupons, .countries{
+			ul{
+				li{
+					width:49%;
+				}
+			}
+		}
+		.competitions > ul > li{
+			header{
+				width:30%;	
+			} 
+			ul {
+				width:70%;
+				li{
+					width:100%;
+					text-align:left;
+					margin-top:3px;
+				}
+			}
+		}
+
+	}
+
+}
+@media all and (max-width: 320px) {
+	#content-main{
+		.col.double .competitions > ul > li ul li {	
+			width: 100%;
+		}
+		.coupons, .countries{
+			ul{
+				li{
+					width:100%;
+					text-align:left;
+				}
+			}
+		}
+		.competitions > ul > li{
+			header{
+				display:block;
+				width:100%;
+				
+			} 
+			ul {
+				display:block;
+				width:100%;
+				li{
+					width:100%;
+					margin-left:0;
+					text-align:left;
+				}
+			}
+		}
+
+	}
+
+}

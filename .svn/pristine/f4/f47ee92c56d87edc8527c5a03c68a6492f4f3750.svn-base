@@ -1,0 +1,49 @@
+<section class="singles">
+    <header>
+        <h1>Singles</h1>
+    </header>
+    <ul class="bet-selections dialog-messages">
+        <li class="dialog">
+            <div>
+                <h3>Stakes(s) exceed the maximum limit</h3>
+            </div>
+        </li>
+<!--        <li>
+            <div class="action"><a href="#">Deposit</a></div>
+            <div class="details">Min amount: <a href="#">&pound;27.00</a></div>
+        </li>-->
+    </ul>
+    <ul class="bet-slip-head">
+        <li>
+            <div class="selection">Selection</div>
+            <div class="odds">Odds</div>
+            <div class="stake">Stake</div>
+        </li>
+    </ul>
+    <ul class="event">
+        <li><h3>12:15 Vaal</h3>
+            <ul class="bet-selections error">
+                <% _.each(bets, function(bet) { %>
+                    <li>
+                        <div class="row">
+                            <div class="option"><a href="#" class="remove" title="Remove selection"><span>Remove</span></a></div>
+                            <div class="selection">
+                                <h3><%= bet.selectionName() %></h3>
+                                <p>WIN</p>
+                            </div>
+                            <div class="bet-value"><%= bet.fractionalOdds() %></div>
+                            <div class="bet-option"><em>EW</em></div>
+                            <label class="stake">
+                                <span><%= bet.totalStake() %></span>
+                            </label>
+                        </div>
+                        <div class="row2">
+                            <div class="option"></div>
+                            <div class="returns">Returns: &pound;<span><%= bet.estimatedReturnsDisplayVal() %></div>
+                        </div>
+                    </li>
+                <% }); %>
+            </ul>
+        </li>
+    </ul>
+</section>

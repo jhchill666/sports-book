@@ -1,0 +1,57 @@
+<style type="text/css">
+
+    .inner {
+        display: table;
+        width: 100%;
+        font-size: 14px;
+        padding: 4px 20px;
+    }
+    label {
+        display: table-cell;
+        width: 100px;
+        text-align: right;
+        padding-right: 10px;
+    }
+    span {
+        display: table-cell;
+        width: 100%;
+        padding: 0px 10px;
+    }
+    input {
+        padding-left: 20px;
+        width: 100%;
+        font-size: 14px;;
+    }
+    #feedback {
+        width: 100%;
+        color: #e80037;
+        text-align: right;
+    }
+
+</style>
+
+<form method="post" action="">
+<div class="login">
+    <div class="bbm-modal__topbar">
+        <h3 class="bbm-modal__title">Sign In</h3>
+        <a href="#" class="bbm-button close">x</a>
+    </div>
+    <div class="bbm-modal__section">
+
+        <div class="inner">
+            <label>Username</label><input name="username" type="text" />
+        </div>
+        <div class="inner">
+            <label>Password</label><input name="password" type="password" />
+        </div>
+        <div class="inner">
+            <div id="feedback"></div>
+        </div>
+
+    </div>
+    <div class="bbm-modal__bottombar">
+        <a href="#" class="bbm-button clear">Clear</a>
+        <a href="#" class="bbm-button submit" type="submit">Sign In</a>
+    </div>
+    </div>
+</form>
